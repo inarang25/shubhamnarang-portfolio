@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham Narang</title>
+<meta name="description" content="Shubham Narang — Digital transformation and data strategy, plus independent products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --ink:#1C1F1C;
+    --pine:#2B4A3E;
+    --brass:#8A6D3B;
+    --sage:#6B6F66;
+    --rule:#DEDAD0;
+    --accent: var(--pine);
+    --max: 760px;
+  }
+  body[data-lens="builder"]{ --accent: var(--brass); }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    transition:background 0.4s ease;
+  }
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(0,0,0,0.2); transition:border-color 0.2s;}
+  a:hover{border-bottom-color:var(--accent);}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  header.hero{padding:96px 0 48px;}
+
+  .lens-toggle{
+    display:inline-flex; border:1px solid var(--rule); border-radius:999px; padding:3px; margin-bottom:36px; background:#fff;
+  }
+  .lens-toggle button{
+    border:none; background:none; padding:8px 18px; border-radius:999px; font-family:'IBM Plex Sans', sans-serif;
+    font-size:0.85rem; color:var(--sage); cursor:pointer; transition:all 0.25s ease;
+  }
+  .lens-toggle button.active{ background:var(--ink); color:var(--paper); }
+
+  .hero h1{
+    font-family:'Newsreader', serif;
+    font-weight:500;
+    font-size:clamp(2.2rem, 5vw, 3rem);
+    line-height:1.15;
+    margin:0 0 18px;
+    letter-spacing:-0.01em;
+  }
+  .hero .role{ color:var(--sage); font-size:1.02rem; margin:0 0 24px; }
+  .lede{ font-size:1.08rem; max-width:60ch; display:none; }
+  .lede.active{ display:block; }
+  .hero .links{margin-top:28px; display:flex; gap:20px; flex-wrap:wrap; font-size:0.95rem;}
+
+  .stat-strip{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--rule); border:1px solid var(--rule); margin-top:48px; border-radius:2px; overflow:hidden;
+  }
+  .stat{ background:var(--paper); padding:20px 16px; }
+  .stat .num{
+    font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:1.5rem; color:var(--accent);
+  }
+  .stat .label{ font-size:0.78rem; color:var(--sage); margin-top:4px; line-height:1.3; }
+
+  section{padding:56px 0; border-top:1px solid var(--rule);}
+  h2{ font-family:'Newsreader', serif; font-weight:500; font-size:1.5rem; margin:0 0 32px; }
+
+  .role-block{margin-bottom:36px;}
+  .role-block:last-child{margin-bottom:0;}
+  .role-head{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;}
+  .role-head .org{font-weight:600; font-size:1.02rem;}
+  .role-head .dates{color:var(--sage); font-size:0.9rem; white-space:nowrap;}
+  .role-title{color:var(--accent); font-size:0.92rem; margin:2px 0 10px;}
+  .role-block ul{margin:0; padding-left:20px;}
+  .role-block li{margin-bottom:8px; font-size:0.97rem;}
+  .role-block li:last-child{margin-bottom:0;}
+
+  /* Case studies */
+  .case{
+    border:1px solid var(--rule); border-left:3px solid var(--accent);
+    margin-bottom:22px; background:rgba(0,0,0,0.015);
+  }
+  .case-head{
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+    padding:22px 24px; cursor:pointer; user-select:none;
+  }
+  .case-head .proj-title{ font-family:'Newsreader', serif; font-size:1.25rem; font-weight:500; }
+  .case-head .proj-sub{ font-size:0.88rem; color:var(--sage); margin-top:4px; }
+  .case-toggle{
+    font-family:'IBM Plex Mono', monospace; font-size:1rem; color:var(--accent); flex-shrink:0;
+    width:24px; height:24px; display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--rule); border-radius:50%;
+  }
+  .case-body{ max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .case.open .case-body{ max-height:2400px; }
+  .case-body-inner{ padding:0 24px 26px; }
+  .case-body-inner h4{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--sage); margin:18px 0 6px; font-weight:600; }
+  .case-body-inner h4:first-child{ margin-top:0; }
+  .case-body-inner p{ margin:0; font-size:0.97rem; }
+  .case-stack{ margin-top:14px; font-size:0.85rem; color:var(--sage); font-family:'IBM Plex Mono', monospace; }
+  .embed-btn{
+    display:inline-block; margin-top:16px; padding:9px 16px; border:1px solid var(--accent); border-radius:3px;
+    font-size:0.85rem; color:var(--accent); cursor:pointer; background:none; border-bottom:1px solid var(--accent);
+  }
+  .embed-wrap{ margin-top:16px; border:1px solid var(--rule); border-radius:2px; overflow:hidden; display:none; }
+  .embed-wrap.show{ display:block; }
+  .embed-wrap iframe{ width:100%; height:420px; border:none; display:block; }
+
+  .case-shot{ width:100%; display:block; border:1px solid var(--rule); border-radius:2px; margin-top:16px; }
+  .case-shot.multi{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; border:none; }
+  .case-shot.multi img{ width:100%; border:1px solid var(--rule); border-radius:2px; display:block; }
+  .proj-shot{ width:100%; display:block; border:1px solid var(--rule); border-radius:2px; margin-top:12px; }
+  .placeholder-shot{
+    margin-top:12px; border:1px dashed var(--rule); border-radius:2px; padding:32px 16px;
+    text-align:center; color:var(--sage); font-size:0.82rem; background:rgba(0,0,0,0.015);
+  }
+
+  .proj-group{margin-bottom:32px;}
+  .proj-group:last-child{margin-bottom:0;}
+  .proj-group h3{ font-weight:600; font-size:0.82rem; color:var(--sage); margin:0 0 14px; }
+  .proj-item{ padding:14px 0; border-top:1px solid var(--rule); }
+  .proj-group .proj-item:first-of-type{border-top:none; padding-top:0;}
+  .proj-item p{margin:4px 0 0; font-size:0.96rem;}
+  .proj-item .proj-title{font-weight:600; font-size:1rem;}
+
+  .skills-grid{display:flex; flex-wrap:wrap; gap:10px;}
+  .skill-pill{ border:1px solid var(--rule); padding:7px 14px; border-radius:3px; font-size:0.88rem; }
+
+  footer{padding:56px 0 80px; border-top:1px solid var(--rule);}
+  footer p{color:var(--sage); font-size:0.9rem; margin:0 0 6px;}
+  footer .links a{margin-right:20px;}
+
+  @media (max-width:640px){
+    header.hero{padding:64px 0 32px;}
+    section{padding:40px 0;}
+    .role-head{flex-direction:column; gap:2px;}
+    .stat-strip{grid-template-columns:repeat(2,1fr);}
+    .case-head{padding:18px 18px;}
+    .case-body-inner{padding:0 18px 22px;}
+    .embed-wrap iframe{height:320px;}
+  }
+</style>
+</head>
+<body data-lens="exec">
+
+<div class="wrap">
+  <header class="hero">
+    <div class="lens-toggle">
+      <button id="btn-exec" class="active" onclick="setLens('exec')">Executive view</button>
+      <button id="btn-builder" onclick="setLens('builder')">Builder view</button>
+    </div>
+
+    <h1>Shubham Narang</h1>
+    <p class="role">Digital Transformation Manager, Mahindra Group — Chandigarh, India</p>
+
+    <p class="lede active" id="lede-exec">I run enterprise data and AI strategy for large organizations — standardizing how a 250+ KPI, multi-billion-rupee business sees itself, and reporting that directly to a CEO and CIO.</p>
+    <p class="lede" id="lede-builder">I build and ship my own products end to end, outside of any employer — from idea, to a real backend on Supabase, to a live domain I manage myself.</p>
+
+    <div class="links">
+      <a href="mailto:i.shubham25@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub</a>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat"><div class="num" data-count="250">0</div><div class="label">KPIs standardized, Project Vihan</div></div>
+      <div class="stat"><div class="num" data-count="86.7" data-suffix="%">0</div><div class="label">Forecast accuracy, demand.ai</div></div>
+      <div class="stat"><div class="num" data-count="50" data-prefix="₹" data-suffix="Cr">0</div><div class="label">Defence program delivered</div></div>
+      <div class="stat"><div class="num" data-count="10" data-suffix="+">0</div><div class="label">Independent projects shipped</div></div>
+    </div>
+  </header>
+
+  <section id="work">
+    <h2>Flagship work</h2>
+
+    <div class="case open" data-case>
+      <div class="case-head" onclick="toggleCase(this)">
+        <div>
+          <div class="proj-title">nurchur.in</div>
+          <div class="proj-sub">Independent product — built, shipped, and self-managed</div>
+        </div>
+        <div class="case-toggle">−</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <h4>Problem</h4>
+          <p>Wanted a live product I owned completely — not a work deliverable, something built, launched, and operated end to end on my own.</p>
+          <h4>Approach</h4>
+          <p>Built and launched on Lovable to move fast initially, then migrated the entire stack — repo, hosting, and domain — onto a self-managed GitHub → Vercel pipeline once the product needed to stand on its own outside a no-code tool.</p>
+          <h4>Outcome</h4>
+          <p>A production product with its own domain, a Supabase backend I control, and a deployment pipeline I can extend without depending on any single platform.</p>
+          <div class="case-stack">Vite · React · Supabase · Vercel · Razorpay</div>
+          <img class="case-shot" src="images/nurchur.png" alt="nurchur.in app screens — feeding, growth, and diaper tracking">
+        </div>
+      </div>
+    </div>
+
+    <div class="case" data-case>
+      <div class="case-head" onclick="toggleCase(this)">
+        <div>
+          <div class="proj-title">demand.ai &amp; Project Vihan</div>
+          <div class="proj-sub">Mahindra Group — enterprise forecasting and data platform</div>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <h4>Problem</h4>
+          <p>Forecasting ran on Kinaxis with limited signal, and KPI reporting was fragmented across 10 separate business functions with no single source of truth for executive decisions.</p>
+          <h4>Approach</h4>
+          <p>Spearheading demand.ai, an ML forecasting engine that folds in TMA, Economist sentiment data, and environmental signals like rainfall and reservoir levels. In parallel, leading Project Vihan to consolidate all 10 functions onto one data platform and standardize 250+ KPIs.</p>
+          <h4>Outcome</h4>
+          <p>86.7% forecast accuracy to date, with a monthly CEO cadence and weekly CIO cadence now built around the consolidated numbers.</p>
+          <div class="case-stack">Power Query · ML forecasting · Executive dashboards</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case" data-case>
+      <div class="case-head" onclick="toggleCase(this)">
+        <div>
+          <div class="proj-title">Indian EV market analysis</div>
+          <div class="proj-sub">Independent research — live dashboard</div>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <h4>Problem</h4>
+          <p>Wanted to understand what was actually driving India's EV adoption curve, state by state and OEM by OEM, rather than relying on headline growth numbers.</p>
+          <h4>Approach</h4>
+          <p>Built a Power BI model across state and OEM-level sales and revenue data to break down growth and competitive share.</p>
+          <h4>Outcome</h4>
+          <p>Found a 156.9% revenue CAGR and 93.9% EV sales CAGR, with Ola Electric holding a 37.5% share — and the underlying adoption drivers behind it.</p>
+          <button class="embed-btn" onclick="loadEmbed(this, 'ev-embed', 'https://app.powerbi.com/reportEmbed?reportId=674f045b-ab4f-40b7-9b86-6afa6f809624&autoAuth=true&ctid=2e85bef9-d499-4f5a-a7c1-fd0f4ecfaea7')">View live dashboard</button>
+          <div class="embed-wrap" id="ev-embed"></div>
+          <div class="placeholder-shot">Dashboard screenshot pending</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="more-work">
+    <h2>More projects</h2>
+
+    <div class="proj-group">
+      <h3>Business performance &amp; market analysis</h3>
+      <div class="proj-item">
+        <div class="proj-title">Electronics manufacturing forecast analysis</div>
+        <p>Integrated finance, sales, and supply chain data; surfaced a 26.8% demand-forecast deviation and a path to improve accuracy past 65%.</p>
+        <button class="embed-btn" onclick="loadEmbed(this, 'elec-embed', 'https://app.powerbi.com/view?r=eyJrIjoiZjM3NjVlYjAtMjFkMi00MGFjLWExYjQtOTdkODg2MzY5OTEzIiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9')">View live dashboard</button>
+        <div class="embed-wrap" id="elec-embed"></div>
+        <img class="proj-shot" src="images/electronics.png" alt="Electronics manufacturing dashboard — finance, sales, marketing, and supply chain views">
+      </div>
+      <div class="proj-item">
+        <div class="proj-title">Hospitality revenue &amp; occupancy analysis</div>
+        <p>₹1.69bn in revenue, 57.79% occupancy, 70.14% realization — patterns across platform, category, and season to optimize RevPAR and ADR.</p>
+        <button class="embed-btn" onclick="loadEmbed(this, 'hosp-embed', 'https://app.powerbi.com/view?r=eyJrIjoiYzY0NmY0Y2ItMTlhYS00NjhlLTg0MzgtMTNkNmVhNGU5OTczIiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9')">View live dashboard</button>
+        <div class="embed-wrap" id="hosp-embed"></div>
+        <img class="proj-shot" src="images/hospitality.png" alt="Hospitality revenue and occupancy dashboard">
+      </div>
+      <div class="proj-item">
+        <div class="proj-title">FMCG service-level dashboard</div>
+        <p>Tracked in-full, on-time, and OTIF performance by city, plus fill-rate and order trends by customer and product — used to pinpoint where service levels were missing target.</p>
+        <img class="proj-shot" src="images/fmcg-service-levels.png" alt="FMCG service level dashboard — OTIF, fill rate, and product-level trends">
+      </div>
+      <div class="proj-item">
+        <div class="proj-title">Fuel retail sales &amp; inventory dashboard</div>
+        <p>Station-level view across 20 sites — revenue, liters sold, and inventory by fuel type, with a maintenance-to-revenue ratio to flag underperforming stations.</p>
+        <img class="proj-shot" src="images/oil-gas.png" alt="Fuel station sales and inventory dashboard">
+      </div>
+    </div>
+
+    <div class="proj-group">
+      <h3>Customer &amp; market intelligence</h3>
+      <div class="proj-item">
+        <div class="proj-title">British Airways review analysis</div>
+        <p>20,000+ customer reviews assessed; weak satisfaction surfaced in food (2.4) and entertainment (1.4), broken out by aircraft type and geography.</p>
+        <button class="embed-btn" onclick="loadEmbed(this, 'ba-embed', 'https://public.tableau.com/views/BritishAirwaysReviewAnalysis_17263136404000/BritishAirwaysReview?:language=en-US&:showVizHome=no&:embed=true')">View live dashboard</button>
+        <div class="embed-wrap" id="ba-embed"></div>
+        <img class="proj-shot" src="images/british-airways.png" alt="British Airways review analysis dashboard">
+      </div>
+      <div class="proj-item">
+        <div class="proj-title">SaaS subscription lifecycle study</div>
+        <p>892 users analyzed — 84.36% active rate, 5.75% resubscription — used to inform retention strategy.</p>
+        <button class="embed-btn" onclick="loadEmbed(this, 'saas-embed', 'https://app.powerbi.com/view?r=eyJrIjoiM2IxNjNkOTUtNTAyYS00Yjg0LTg1Y2UtNTVhM2Y3NWUxNGE3IiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9')">View live dashboard</button>
+        <div class="embed-wrap" id="saas-embed"></div>
+        <img class="proj-shot" src="images/software-sales.png" alt="SaaS subscription lifecycle dashboard">
+      </div>
+    </div>
+
+    <div class="proj-group">
+      <h3>Predictive &amp; personalization</h3>
+      <div class="proj-item">
+        <div class="proj-title"><a href="https://inarang25-ml-project-premium-prediction.streamlit.app/" target="_blank" rel="noopener">Health insurance premium predictor</a></div>
+        <p>Supervised ML model with a Streamlit front end, predicting premiums from age, disease profile, and plan type to support personalized pricing.</p>
+      </div>
+    </div>
+
+    <div class="proj-group">
+      <h3>Product strategy &amp; experimentation</h3>
+      <div class="proj-item">
+        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/EDA_%26_Target_Market_Identification.ipynb" target="_blank" rel="noopener">Credit card target-market EDA</a></div>
+        <p>Python and pandas analysis of customer, credit, and transaction data, identifying an untapped 18–25 segment to inform a new product launch.</p>
+      </div>
+      <div class="proj-item">
+        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/AB_Testing.ipynb" target="_blank" rel="noopener">Credit card A/B test</a></div>
+        <p>Ran a test at 0.05 significance to validate the product decision before rollout.</p>
+      </div>
+      <div class="proj-item">
+        <div class="proj-title"><a href="https://www.linkedin.com/posts/shubhamnarang25_bigquery-sql-celonis-activity-7245681577702146048-G3sR" target="_blank" rel="noopener">eCommerce process mining</a></div>
+        <p>Applied Celonis process mining to an eCommerce dataset to surface operational bottlenecks and recommend fixes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="role-block">
+      <div class="role-head"><div class="org">Mahindra Group</div><div class="dates">Feb 2026 — Present</div></div>
+      <div class="role-title">Digital Transformation Manager · Chandigarh</div>
+      <ul>
+        <li>Leading Project Vihan — consolidating data from 10 business functions and standardizing 250+ KPIs, with a direct reporting cadence to the CEO and CIO.</li>
+        <li>Spearheading demand.ai, an ML-based forecasting engine (86.7% accuracy) replacing Kinaxis.</li>
+        <li>Owning C-suite intelligence dashboards end to end — information architecture, visual hierarchy, and how insight gets represented at the top of the org.</li>
+      </ul>
+    </div>
+
+    <div class="role-block">
+      <div class="role-head"><div class="org">IBM</div><div class="dates">Jun 2022 — Jan 2026</div></div>
+      <div class="role-title">Business Analytics Analyst · Noida</div>
+      <ul>
+        <li>Led digital transformation engagements for Fortune 500 clients across manufacturing, retail fuel, and aerospace, using Celonis and Power BI to unify fragmented data.</li>
+        <li>Delivered 15% efficiency gains, 10–15% faster cycle times, and 8% cost savings through process optimization.</li>
+      </ul>
+    </div>
+
+    <div class="role-block">
+      <div class="role-head"><div class="org">Larsen &amp; Toubro (Defence)</div><div class="dates">Aug 2017 — Aug 2019</div></div>
+      <div class="role-title">Sr. Engineer, Data &amp; Delivery (PMG)</div>
+      <ul>
+        <li>Orchestrated delivery on a ₹50 Cr defence program, synchronizing milestones between manufacturing units and DRDO.</li>
+        <li>Digitized procurement and supplier evaluation, cutting operational costs by 10%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="background">
+    <h2>Background</h2>
+    <div class="role-block">
+      <div class="role-head"><div class="org">NMIMS</div><div class="dates">2020 — 2022</div></div>
+      <div class="role-title">MBA, Operations and Data Sciences</div>
+    </div>
+    <div class="role-block">
+      <div class="role-head"><div class="org">University of Petroleum and Energy Studies</div><div class="dates">2013 — 2017</div></div>
+      <div class="role-title">B.Tech, Mechatronics, Robotics and Automation Engineering</div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills &amp; certifications</h2>
+    <div class="skills-grid">
+      <span class="skill-pill">AI Strategy</span>
+      <span class="skill-pill">Business Transformation</span>
+      <span class="skill-pill">Power BI</span>
+      <span class="skill-pill">Celonis Process Mining</span>
+      <span class="skill-pill">Python / pandas</span>
+      <span class="skill-pill">Tableau</span>
+      <span class="skill-pill">Streamlit</span>
+      <span class="skill-pill">Google Cloud Digital Leader</span>
+      <span class="skill-pill">AWS Certified Cloud Practitioner</span>
+      <span class="skill-pill">Power BI Data Analyst</span>
+      <span class="skill-pill">Lean Six Sigma Green Belt</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>Chandigarh, India</p>
+    <div class="links">
+      <a href="mailto:i.shubham25@gmail.com">i.shubham25@gmail.com</a>
+      <a href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function setLens(mode){
+    document.body.setAttribute('data-lens', mode);
+    document.getElementById('btn-exec').classList.toggle('active', mode === 'exec');
+    document.getElementById('btn-builder').classList.toggle('active', mode === 'builder');
+    document.getElementById('lede-exec').classList.toggle('active', mode === 'exec');
+    document.getElementById('lede-builder').classList.toggle('active', mode === 'builder');
+  }
+
+  function toggleCase(headEl){
+    var caseEl = headEl.parentElement;
+    var isOpen = caseEl.classList.contains('open');
+    caseEl.classList.toggle('open');
+    headEl.querySelector('.case-toggle').textContent = isOpen ? '+' : '−';
+  }
+
+  function loadEmbed(btn, id, url){
+    var wrap = document.getElementById(id);
+    if(wrap.classList.contains('show')){
+      wrap.classList.remove('show');
+      wrap.innerHTML = '';
+      btn.textContent = 'View live dashboard';
+      return;
+    }
+    wrap.innerHTML = '<iframe src="' + url + '" loading="lazy" allowfullscreen></iframe>';
+    wrap.classList.add('show');
+    btn.textContent = 'Hide dashboard';
+  }
+
+  // Animated stat counters, triggered once on scroll into view
+  (function(){
+    var stats = document.querySelectorAll('.stat .num');
+    var done = false;
+    function animate(){
+      if(done) return;
+      var strip = document.querySelector('.stat-strip');
+      var rect = strip.getBoundingClientRect();
+      if(rect.top > window.innerHeight * 0.85) return;
+      done = true;
+      stats.forEach(function(el){
+        var target = parseFloat(el.getAttribute('data-count'));
+        var prefix = el.getAttribute('data-prefix') || '';
+        var suffix = el.getAttribute('data-suffix') || '';
+        var isDecimal = target % 1 !== 0;
+        var start = 0;
+        var duration = 900;
+        var startTime = null;
+        function step(ts){
+          if(!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = start + (target - start) * eased;
+          el.textContent = prefix + (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
+          if(progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+      window.removeEventListener('scroll', animate);
+    }
+    window.addEventListener('scroll', animate);
+    animate();
+  })();
+</script>
+
+</body>
+</html>
