@@ -7,177 +7,206 @@
 <meta name="description" content="Shubham Narang — Digital transformation and data strategy, plus independent products.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F7F5F0;
-    --ink:#1C1F1C;
-    --pine:#2B4A3E;
-    --brass:#8A6D3B;
-    --sage:#6B6F66;
-    --rule:#DEDAD0;
-    --accent: var(--pine);
-    --max: 760px;
+    --ink:#14171F;
+    --paper:#F5F1E8;
+    --amber:#C98A3A;
+    --teal:#3F8FA6;
+    --grey:#8B8D93;
+    --ink-rule: rgba(245,241,232,0.14);
+    --paper-rule: rgba(20,23,31,0.12);
+    --max:920px;
   }
-  body[data-lens="builder"]{ --accent: var(--brass); }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:17px;
-    line-height:1.6;
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif; font-size:17px; line-height:1.6;
     -webkit-font-smoothing:antialiased;
-    transition:background 0.4s ease;
   }
-  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(0,0,0,0.2); transition:border-color 0.2s;}
-  a:hover{border-bottom-color:var(--accent);}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
-  header.hero{padding:96px 0 48px;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:500; margin:0;}
+  ::selection{ background:var(--amber); color:var(--ink); }
+
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(20,23,31,0.88); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--ink-rule);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; }
+  .brand{ color:var(--paper); font-family:'Fraunces', serif; font-size:1.05rem; }
+  .navlinks{ display:flex; gap:28px; }
+  .navlinks a{ color:var(--paper); font-size:0.9rem; opacity:0.75; transition:opacity 0.2s; }
+  .navlinks a:hover{ opacity:1; }
+
+  .band{ padding:80px 0; }
+  .band-dark{ background:var(--ink); color:var(--paper); }
+  .band-light{ background:var(--paper); color:var(--ink); }
+  .band h2{ font-size:1.7rem; margin-bottom:36px; }
+  .band-dark h2{ color:var(--paper); }
+
+  .hero-band{ position:relative; overflow:hidden; padding:0; }
+  .hero-inner{ position:relative; z-index:2; padding:110px 0 64px; }
+  .hero-chart{ position:absolute; inset:0; z-index:1; opacity:0.5; }
+  .hero-chart path{ fill:none; stroke-width:1.4; stroke-dasharray:1400; stroke-dashoffset:1400; animation:draw 2.6s ease forwards; }
+  .hero-chart path:nth-child(2){ animation-delay:0.15s; }
+  .hero-chart path:nth-child(3){ animation-delay:0.3s; }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @media (prefers-reduced-motion: reduce){
+    .hero-chart path{ animation:none; stroke-dashoffset:0; }
+  }
 
   .lens-toggle{
-    display:inline-flex; border:1px solid var(--rule); border-radius:999px; padding:3px; margin-bottom:36px; background:#fff;
+    display:inline-flex; border:1px solid var(--ink-rule); border-radius:999px; padding:3px; margin-bottom:32px;
   }
   .lens-toggle button{
     border:none; background:none; padding:8px 18px; border-radius:999px; font-family:'IBM Plex Sans', sans-serif;
-    font-size:0.85rem; color:var(--sage); cursor:pointer; transition:all 0.25s ease;
+    font-size:0.85rem; color:var(--paper); opacity:0.6; cursor:pointer; transition:all 0.25s ease;
   }
-  .lens-toggle button.active{ background:var(--ink); color:var(--paper); }
+  .lens-toggle button.active{ background:var(--amber); color:var(--ink); opacity:1; }
 
-  .hero h1{
-    font-family:'Newsreader', serif;
-    font-weight:500;
-    font-size:clamp(2.2rem, 5vw, 3rem);
-    line-height:1.15;
-    margin:0 0 18px;
-    letter-spacing:-0.01em;
-  }
-  .hero .role{ color:var(--sage); font-size:1.02rem; margin:0 0 24px; }
-  .lede{ font-size:1.08rem; max-width:60ch; display:none; }
+  .hero h1{ font-size:clamp(2.6rem, 6vw, 4rem); line-height:1.05; color:var(--paper); margin-bottom:20px; letter-spacing:-0.01em; }
+  .hero .role{ color:var(--teal); font-size:1rem; margin-bottom:26px; }
+  .lede{ font-size:1.12rem; max-width:56ch; display:none; color:rgba(245,241,232,0.88); }
   .lede.active{ display:block; }
-  .hero .links{margin-top:28px; display:flex; gap:20px; flex-wrap:wrap; font-size:0.95rem;}
+  .hero .links{ margin-top:30px; display:flex; gap:26px; flex-wrap:wrap; font-size:0.95rem; }
+  .hero .links a{ color:var(--paper); border-bottom:1px solid rgba(245,241,232,0.35); padding-bottom:2px; }
+  .hero .links a:hover{ border-color:var(--amber); color:var(--amber); }
 
-  .stat-strip{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
-    background:var(--rule); border:1px solid var(--rule); margin-top:48px; border-radius:2px; overflow:hidden;
-  }
-  .stat{ background:var(--paper); padding:20px 16px; }
-  .stat .num{
-    font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:1.5rem; color:var(--accent);
-  }
-  .stat .label{ font-size:0.78rem; color:var(--sage); margin-top:4px; line-height:1.3; }
+  .stat-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:56px; border-top:1px solid var(--ink-rule); }
+  .stat{ padding:22px 20px 0; border-right:1px solid var(--ink-rule); }
+  .stat:last-child{ border-right:none; }
+  .stat .num{ font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:1.6rem; color:var(--amber); }
+  .stat .label{ font-size:0.8rem; color:var(--grey); margin-top:6px; line-height:1.35; }
 
-  section{padding:56px 0; border-top:1px solid var(--rule);}
-  h2{ font-family:'Newsreader', serif; font-weight:500; font-size:1.5rem; margin:0 0 32px; }
-
-  .role-block{margin-bottom:36px;}
-  .role-block:last-child{margin-bottom:0;}
-  .role-head{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;}
-  .role-head .org{font-weight:600; font-size:1.02rem;}
-  .role-head .dates{color:var(--sage); font-size:0.9rem; white-space:nowrap;}
-  .role-title{color:var(--accent); font-size:0.92rem; margin:2px 0 10px;}
-  .role-block ul{margin:0; padding-left:20px;}
-  .role-block li{margin-bottom:8px; font-size:0.97rem;}
-  .role-block li:last-child{margin-bottom:0;}
-
-  /* Case studies */
-  .case{
-    border:1px solid var(--rule); border-left:3px solid var(--accent);
-    margin-bottom:22px; background:rgba(0,0,0,0.015);
-  }
-  .case-head{
-    display:flex; justify-content:space-between; align-items:center; gap:16px;
-    padding:22px 24px; cursor:pointer; user-select:none;
-  }
-  .case-head .proj-title{ font-family:'Newsreader', serif; font-size:1.25rem; font-weight:500; }
-  .case-head .proj-sub{ font-size:0.88rem; color:var(--sage); margin-top:4px; }
+  .case{ border:1px solid var(--paper-rule); border-radius:4px; margin-bottom:20px; background:rgba(20,23,31,0.02); }
+  .case-head{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 26px; cursor:pointer; }
+  .case-head .proj-title{ font-family:'Fraunces', serif; font-size:1.3rem; }
+  .case-head .proj-sub{ font-size:0.88rem; color:var(--grey); margin-top:4px; }
   .case-toggle{
-    font-family:'IBM Plex Mono', monospace; font-size:1rem; color:var(--accent); flex-shrink:0;
-    width:24px; height:24px; display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--rule); border-radius:50%;
+    font-family:'IBM Plex Mono', monospace; font-size:1rem; color:var(--amber); flex-shrink:0;
+    width:26px; height:26px; display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--paper-rule); border-radius:50%;
   }
   .case-body{ max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
-  .case.open .case-body{ max-height:2400px; }
-  .case-body-inner{ padding:0 24px 26px; }
-  .case-body-inner h4{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--sage); margin:18px 0 6px; font-weight:600; }
+  .case.open .case-body{ max-height:2600px; }
+  .case-body-inner{ padding:0 26px 28px; }
+  .case-body-inner h4{ font-size:0.78rem; color:var(--teal); margin:18px 0 6px; font-weight:600; }
   .case-body-inner h4:first-child{ margin-top:0; }
-  .case-body-inner p{ margin:0; font-size:0.97rem; }
-  .case-stack{ margin-top:14px; font-size:0.85rem; color:var(--sage); font-family:'IBM Plex Mono', monospace; }
+  .case-body-inner p{ margin:0; font-size:0.98rem; }
+  .tag-row{ margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{ font-size:0.78rem; padding:4px 10px; border:1px solid var(--paper-rule); border-radius:3px; color:var(--grey); }
   .embed-btn{
-    display:inline-block; margin-top:16px; padding:9px 16px; border:1px solid var(--accent); border-radius:3px;
-    font-size:0.85rem; color:var(--accent); cursor:pointer; background:none; border-bottom:1px solid var(--accent);
+    display:inline-block; margin-top:18px; padding:9px 16px; border:1px solid var(--amber); border-radius:3px;
+    font-size:0.85rem; color:var(--amber); cursor:pointer; background:none;
   }
-  .embed-wrap{ margin-top:16px; border:1px solid var(--rule); border-radius:2px; overflow:hidden; display:none; }
+  .embed-wrap{ margin-top:16px; border:1px solid var(--paper-rule); border-radius:4px; overflow:hidden; display:none; }
   .embed-wrap.show{ display:block; }
   .embed-wrap iframe{ width:100%; height:420px; border:none; display:block; }
 
-  .case-shot{ width:100%; display:block; border:1px solid var(--rule); border-radius:2px; margin-top:16px; }
-  .case-shot.multi{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; border:none; }
-  .case-shot.multi img{ width:100%; border:1px solid var(--rule); border-radius:2px; display:block; }
-  .proj-shot{ width:100%; display:block; border:1px solid var(--rule); border-radius:2px; margin-top:12px; }
-  .placeholder-shot{
-    margin-top:12px; border:1px dashed var(--rule); border-radius:2px; padding:32px 16px;
-    text-align:center; color:var(--sage); font-size:0.82rem; background:rgba(0,0,0,0.015);
+  .shot-frame{
+    background:#FFFFFF; padding:10px; border-radius:5px; margin-top:18px;
+    box-shadow:0 24px 48px -20px rgba(20,23,31,0.35), 0 2px 8px rgba(20,23,31,0.08);
   }
+  .shot-frame img{
+    display:block; width:100%; border-radius:2px;
+    box-shadow:inset 0 1px 3px rgba(20,23,31,0.25);
+  }
+  .placeholder-shot{
+    margin-top:18px; border:1px dashed var(--paper-rule); border-radius:4px; padding:36px 16px;
+    text-align:center; color:var(--grey); font-size:0.82rem;
+  }
+  .band-dark .placeholder-shot{ border-color:var(--ink-rule); }
 
-  .proj-group{margin-bottom:32px;}
-  .proj-group:last-child{margin-bottom:0;}
-  .proj-group h3{ font-weight:600; font-size:0.82rem; color:var(--sage); margin:0 0 14px; }
-  .proj-item{ padding:14px 0; border-top:1px solid var(--rule); }
-  .proj-group .proj-item:first-of-type{border-top:none; padding-top:0;}
-  .proj-item p{margin:4px 0 0; font-size:0.96rem;}
-  .proj-item .proj-title{font-weight:600; font-size:1rem;}
+  .proj-group{ margin-bottom:36px; }
+  .proj-group:last-child{ margin-bottom:0; }
+  .proj-group h3{ font-family:'IBM Plex Sans', sans-serif; font-weight:600; font-size:0.85rem; color:var(--teal); margin-bottom:16px; }
+  .proj-item{ padding:20px 0; border-top:1px solid var(--ink-rule); }
+  .proj-group .proj-item:first-of-type{ border-top:none; padding-top:0; }
+  .proj-item p{ margin:6px 0 0; font-size:0.97rem; color:rgba(245,241,232,0.85); }
+  .proj-item .proj-title{ font-weight:600; font-size:1.05rem; color:var(--paper); }
 
-  .skills-grid{display:flex; flex-wrap:wrap; gap:10px;}
-  .skill-pill{ border:1px solid var(--rule); padding:7px 14px; border-radius:3px; font-size:0.88rem; }
+  .role-block{ margin-bottom:38px; padding-left:26px; border-left:2px solid var(--ink-rule); position:relative; }
+  .role-block::before{
+    content:''; position:absolute; left:-6px; top:4px; width:10px; height:10px; border-radius:50%;
+    background:var(--amber);
+  }
+  .role-block:last-child{ margin-bottom:0; }
+  .role-head{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; }
+  .role-head .org{ font-family:'Fraunces', serif; font-size:1.15rem; color:var(--paper); }
+  .role-head .dates{ color:var(--grey); font-size:0.85rem; white-space:nowrap; font-family:'IBM Plex Mono', monospace; }
+  .role-title{ color:var(--teal); font-size:0.9rem; margin:4px 0 12px; }
+  .role-block ul{ margin:0; padding-left:20px; }
+  .role-block li{ margin-bottom:8px; font-size:0.96rem; color:rgba(245,241,232,0.85); }
+  .role-block li:last-child{ margin-bottom:0; }
 
-  footer{padding:56px 0 80px; border-top:1px solid var(--rule);}
-  footer p{color:var(--sage); font-size:0.9rem; margin:0 0 6px;}
-  footer .links a{margin-right:20px;}
+  .skills-grid{ display:flex; flex-wrap:wrap; gap:10px; }
+  .skill-pill{ border:1px solid var(--paper-rule); padding:8px 15px; border-radius:3px; font-size:0.88rem; }
+
+  footer{ background:var(--ink); color:var(--paper); padding:52px 0; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  footer p{ color:var(--grey); font-size:0.9rem; margin:0; }
+  footer .links a{ margin-left:22px; color:var(--paper); border-bottom:1px solid rgba(245,241,232,0.3); }
+  footer .links a:hover{ color:var(--amber); border-color:var(--amber); }
 
   @media (max-width:640px){
-    header.hero{padding:64px 0 32px;}
-    section{padding:40px 0;}
-    .role-head{flex-direction:column; gap:2px;}
-    .stat-strip{grid-template-columns:repeat(2,1fr);}
-    .case-head{padding:18px 18px;}
-    .case-body-inner{padding:0 18px 22px;}
-    .embed-wrap iframe{height:320px;}
+    .hero-inner{ padding:88px 0 48px; }
+    .band{ padding:56px 0; }
+    .stat-strip{ grid-template-columns:repeat(2,1fr); }
+    .stat{ border-bottom:1px solid var(--ink-rule); padding-bottom:16px; margin-bottom:16px; }
+    .role-head{ flex-direction:column; gap:2px; }
+    footer .wrap{ flex-direction:column; align-items:flex-start; }
+    footer .links a{ margin-left:0; margin-right:20px; }
   }
 </style>
 </head>
 <body data-lens="exec">
 
-<div class="wrap">
-  <header class="hero">
+<nav>
+  <div class="wrap">
+    <div class="brand">Shubham Narang</div>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#career">Career</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="band band-dark hero-band">
+  <svg class="hero-chart" viewBox="0 0 1000 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,320 C120,300 180,180 280,190 C380,200 420,300 520,280 C620,260 680,120 780,140 C860,156 920,220 1000,200" stroke="#3F8FA6"/>
+    <path d="M0,250 C100,260 200,150 300,160 C420,172 460,260 560,230 C660,200 720,90 820,110 C900,126 950,180 1000,160" stroke="#C98A3A"/>
+    <path d="M0,360 C140,350 220,300 340,310 C460,320 500,250 600,255 C700,260 760,200 860,210 C920,216 960,240 1000,235" stroke="#F5F1E8"/>
+  </svg>
+  <div class="wrap hero-inner">
     <div class="lens-toggle">
       <button id="btn-exec" class="active" onclick="setLens('exec')">Executive view</button>
       <button id="btn-builder" onclick="setLens('builder')">Builder view</button>
     </div>
-
     <h1>Shubham Narang</h1>
     <p class="role">Digital Transformation Manager, Mahindra Group — Chandigarh, India</p>
-
     <p class="lede active" id="lede-exec">I run enterprise data and AI strategy for large organizations — standardizing how a 250+ KPI, multi-billion-rupee business sees itself, and reporting that directly to a CEO and CIO.</p>
     <p class="lede" id="lede-builder">I build and ship my own products end to end, outside of any employer — from idea, to a real backend on Supabase, to a live domain I manage myself.</p>
-
     <div class="links">
       <a href="mailto:i.shubham25@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub</a>
     </div>
-
     <div class="stat-strip">
-      <div class="stat"><div class="num" data-count="250">0</div><div class="label">KPIs standardized, Project Vihan</div></div>
+      <div class="stat"><div class="num" data-count="250" data-suffix="+">0</div><div class="label">KPIs standardized, Project Vihan</div></div>
       <div class="stat"><div class="num" data-count="86.7" data-suffix="%">0</div><div class="label">Forecast accuracy, demand.ai</div></div>
       <div class="stat"><div class="num" data-count="50" data-prefix="₹" data-suffix="Cr">0</div><div class="label">Defence program delivered</div></div>
       <div class="stat"><div class="num" data-count="10" data-suffix="+">0</div><div class="label">Independent projects shipped</div></div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section id="work">
+<section class="band band-light" id="work">
+  <div class="wrap">
     <h2>Flagship work</h2>
 
     <div class="case open" data-case>
@@ -196,8 +225,8 @@
           <p>Built and launched on Lovable to move fast initially, then migrated the entire stack — repo, hosting, and domain — onto a self-managed GitHub → Vercel pipeline once the product needed to stand on its own outside a no-code tool.</p>
           <h4>Outcome</h4>
           <p>A production product with its own domain, a Supabase backend I control, and a deployment pipeline I can extend without depending on any single platform.</p>
-          <div class="case-stack">Vite · React · Supabase · Vercel · Razorpay</div>
-          <img class="case-shot" src="images/nurchur.png" alt="nurchur.in app screens — feeding, growth, and diaper tracking">
+          <div class="tag-row"><span class="tag">Vite</span><span class="tag">React</span><span class="tag">Supabase</span><span class="tag">Vercel</span><span class="tag">Razorpay</span></div>
+          <div class="shot-frame"><img src="images/nurchur.png" alt="nurchur.in app screens — feeding, growth, and diaper tracking"></div>
         </div>
       </div>
     </div>
@@ -218,7 +247,7 @@
           <p>Spearheading demand.ai, an ML forecasting engine that folds in TMA, Economist sentiment data, and environmental signals like rainfall and reservoir levels. In parallel, leading Project Vihan to consolidate all 10 functions onto one data platform and standardize 250+ KPIs.</p>
           <h4>Outcome</h4>
           <p>86.7% forecast accuracy to date, with a monthly CEO cadence and weekly CIO cadence now built around the consolidated numbers.</p>
-          <div class="case-stack">Power Query · ML forecasting · Executive dashboards</div>
+          <div class="tag-row"><span class="tag">Power Query</span><span class="tag">ML forecasting</span><span class="tag">Executive dashboards</span></div>
         </div>
       </div>
     </div>
@@ -245,9 +274,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="more-work">
+<section class="band band-dark" id="more-work">
+  <div class="wrap">
     <h2>More projects</h2>
 
     <div class="proj-group">
@@ -257,24 +288,24 @@
         <p>Integrated finance, sales, and supply chain data; surfaced a 26.8% demand-forecast deviation and a path to improve accuracy past 65%.</p>
         <button class="embed-btn" onclick="loadEmbed(this, 'elec-embed', 'https://app.powerbi.com/view?r=eyJrIjoiZjM3NjVlYjAtMjFkMi00MGFjLWExYjQtOTdkODg2MzY5OTEzIiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9')">View live dashboard</button>
         <div class="embed-wrap" id="elec-embed"></div>
-        <img class="proj-shot" src="images/electronics.png" alt="Electronics manufacturing dashboard — finance, sales, marketing, and supply chain views">
+        <div class="shot-frame"><img src="images/electronics.png" alt="Electronics manufacturing dashboard — finance, sales, marketing, and supply chain views"></div>
       </div>
       <div class="proj-item">
         <div class="proj-title">Hospitality revenue &amp; occupancy analysis</div>
         <p>₹1.69bn in revenue, 57.79% occupancy, 70.14% realization — patterns across platform, category, and season to optimize RevPAR and ADR.</p>
         <button class="embed-btn" onclick="loadEmbed(this, 'hosp-embed', 'https://app.powerbi.com/view?r=eyJrIjoiYzY0NmY0Y2ItMTlhYS00NjhlLTg0MzgtMTNkNmVhNGU5OTczIiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9')">View live dashboard</button>
         <div class="embed-wrap" id="hosp-embed"></div>
-        <img class="proj-shot" src="images/hospitality.png" alt="Hospitality revenue and occupancy dashboard">
+        <div class="shot-frame"><img src="images/hospitality.png" alt="Hospitality revenue and occupancy dashboard"></div>
       </div>
       <div class="proj-item">
         <div class="proj-title">FMCG service-level dashboard</div>
         <p>Tracked in-full, on-time, and OTIF performance by city, plus fill-rate and order trends by customer and product — used to pinpoint where service levels were missing target.</p>
-        <img class="proj-shot" src="images/fmcg-service-levels.png" alt="FMCG service level dashboard — OTIF, fill rate, and product-level trends">
+        <div class="shot-frame"><img src="images/fmcg-service-levels.png" alt="FMCG service level dashboard — OTIF, fill rate, and product-level trends"></div>
       </div>
       <div class="proj-item">
         <div class="proj-title">Fuel retail sales &amp; inventory dashboard</div>
         <p>Station-level view across 20 sites — revenue, liters sold, and inventory by fuel type, with a maintenance-to-revenue ratio to flag underperforming stations.</p>
-        <img class="proj-shot" src="images/oil-gas.png" alt="Fuel station sales and inventory dashboard">
+        <div class="shot-frame"><img src="images/oil-gas.png" alt="Fuel station sales and inventory dashboard"></div>
       </div>
     </div>
 
@@ -285,21 +316,21 @@
         <p>20,000+ customer reviews assessed; weak satisfaction surfaced in food (2.4) and entertainment (1.4), broken out by aircraft type and geography.</p>
         <button class="embed-btn" onclick="loadEmbed(this, 'ba-embed', 'https://public.tableau.com/views/BritishAirwaysReviewAnalysis_17263136404000/BritishAirwaysReview?:language=en-US&:showVizHome=no&:embed=true')">View live dashboard</button>
         <div class="embed-wrap" id="ba-embed"></div>
-        <img class="proj-shot" src="images/british-airways.png" alt="British Airways review analysis dashboard">
+        <div class="shot-frame"><img src="images/british-airways.png" alt="British Airways review analysis dashboard"></div>
       </div>
       <div class="proj-item">
         <div class="proj-title">SaaS subscription lifecycle study</div>
         <p>892 users analyzed — 84.36% active rate, 5.75% resubscription — used to inform retention strategy.</p>
         <button class="embed-btn" onclick="loadEmbed(this, 'saas-embed', 'https://app.powerbi.com/view?r=eyJrIjoiM2IxNjNkOTUtNTAyYS00Yjg0LTg1Y2UtNTVhM2Y3NWUxNGE3IiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9')">View live dashboard</button>
         <div class="embed-wrap" id="saas-embed"></div>
-        <img class="proj-shot" src="images/software-sales.png" alt="SaaS subscription lifecycle dashboard">
+        <div class="shot-frame"><img src="images/software-sales.png" alt="SaaS subscription lifecycle dashboard"></div>
       </div>
     </div>
 
     <div class="proj-group">
       <h3>Predictive &amp; personalization</h3>
       <div class="proj-item">
-        <div class="proj-title"><a href="https://inarang25-ml-project-premium-prediction.streamlit.app/" target="_blank" rel="noopener">Health insurance premium predictor</a></div>
+        <div class="proj-title"><a href="https://inarang25-ml-project-premium-prediction.streamlit.app/" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(245,241,232,0.35)">Health insurance premium predictor</a></div>
         <p>Supervised ML model with a Streamlit front end, predicting premiums from age, disease profile, and plan type to support personalized pricing.</p>
       </div>
     </div>
@@ -307,65 +338,66 @@
     <div class="proj-group">
       <h3>Product strategy &amp; experimentation</h3>
       <div class="proj-item">
-        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/EDA_%26_Target_Market_Identification.ipynb" target="_blank" rel="noopener">Credit card target-market EDA</a></div>
+        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/EDA_%26_Target_Market_Identification.ipynb" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(245,241,232,0.35)">Credit card target-market EDA</a></div>
         <p>Python and pandas analysis of customer, credit, and transaction data, identifying an untapped 18–25 segment to inform a new product launch.</p>
       </div>
       <div class="proj-item">
-        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/AB_Testing.ipynb" target="_blank" rel="noopener">Credit card A/B test</a></div>
+        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/AB_Testing.ipynb" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(245,241,232,0.35)">Credit card A/B test</a></div>
         <p>Ran a test at 0.05 significance to validate the product decision before rollout.</p>
       </div>
       <div class="proj-item">
-        <div class="proj-title"><a href="https://www.linkedin.com/posts/shubhamnarang25_bigquery-sql-celonis-activity-7245681577702146048-G3sR" target="_blank" rel="noopener">eCommerce process mining</a></div>
+        <div class="proj-title"><a href="https://www.linkedin.com/posts/shubhamnarang25_bigquery-sql-celonis-activity-7245681577702146048-G3sR" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(245,241,232,0.35)">eCommerce process mining</a></div>
         <p>Applied Celonis process mining to an eCommerce dataset to surface operational bottlenecks and recommend fixes.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="experience">
-    <h2>Experience</h2>
+<section class="band band-light" id="career">
+  <div class="wrap">
+    <h2>Career</h2>
 
-    <div class="role-block">
-      <div class="role-head"><div class="org">Mahindra Group</div><div class="dates">Feb 2026 — Present</div></div>
-      <div class="role-title">Digital Transformation Manager · Chandigarh</div>
-      <ul>
-        <li>Leading Project Vihan — consolidating data from 10 business functions and standardizing 250+ KPIs, with a direct reporting cadence to the CEO and CIO.</li>
-        <li>Spearheading demand.ai, an ML-based forecasting engine (86.7% accuracy) replacing Kinaxis.</li>
-        <li>Owning C-suite intelligence dashboards end to end — information architecture, visual hierarchy, and how insight gets represented at the top of the org.</li>
+    <div class="role-block" style="border-color:var(--paper-rule);">
+      <div class="role-head"><div class="org" style="color:var(--ink);">Mahindra Group</div><div class="dates">Feb 2026 — Present</div></div>
+      <div class="role-title">Digital Transformation Manager, Chandigarh</div>
+      <ul style="color:var(--ink);">
+        <li style="color:var(--ink);">Leading Project Vihan — consolidating data from 10 business functions and standardizing 250+ KPIs, with a direct reporting cadence to the CEO and CIO.</li>
+        <li style="color:var(--ink);">Spearheading demand.ai, an ML-based forecasting engine (86.7% accuracy) replacing Kinaxis.</li>
+        <li style="color:var(--ink);">Owning C-suite intelligence dashboards end to end — information architecture, visual hierarchy, and how insight gets represented at the top of the org.</li>
       </ul>
     </div>
 
-    <div class="role-block">
-      <div class="role-head"><div class="org">IBM</div><div class="dates">Jun 2022 — Jan 2026</div></div>
-      <div class="role-title">Business Analytics Analyst · Noida</div>
-      <ul>
-        <li>Led digital transformation engagements for Fortune 500 clients across manufacturing, retail fuel, and aerospace, using Celonis and Power BI to unify fragmented data.</li>
-        <li>Delivered 15% efficiency gains, 10–15% faster cycle times, and 8% cost savings through process optimization.</li>
+    <div class="role-block" style="border-color:var(--paper-rule);">
+      <div class="role-head"><div class="org" style="color:var(--ink);">IBM</div><div class="dates">Jun 2022 — Jan 2026</div></div>
+      <div class="role-title">Business Analytics Analyst, Noida</div>
+      <ul style="color:var(--ink);">
+        <li style="color:var(--ink);">Led digital transformation engagements for Fortune 500 clients across manufacturing, retail fuel, and aerospace, using Celonis and Power BI to unify fragmented data.</li>
+        <li style="color:var(--ink);">Delivered 15% efficiency gains, 10–15% faster cycle times, and 8% cost savings through process optimization.</li>
       </ul>
     </div>
 
-    <div class="role-block">
-      <div class="role-head"><div class="org">Larsen &amp; Toubro (Defence)</div><div class="dates">Aug 2017 — Aug 2019</div></div>
+    <div class="role-block" style="border-color:var(--paper-rule);">
+      <div class="role-head"><div class="org" style="color:var(--ink);">Larsen &amp; Toubro (Defence)</div><div class="dates">Aug 2017 — Aug 2019</div></div>
       <div class="role-title">Sr. Engineer, Data &amp; Delivery (PMG)</div>
-      <ul>
-        <li>Orchestrated delivery on a ₹50 Cr defence program, synchronizing milestones between manufacturing units and DRDO.</li>
-        <li>Digitized procurement and supplier evaluation, cutting operational costs by 10%.</li>
+      <ul style="color:var(--ink);">
+        <li style="color:var(--ink);">Orchestrated delivery on a ₹50 Cr defence program, synchronizing milestones between manufacturing units and DRDO.</li>
+        <li style="color:var(--ink);">Digitized procurement and supplier evaluation, cutting operational costs by 10%.</li>
       </ul>
     </div>
-  </section>
 
-  <section id="background">
-    <h2>Background</h2>
-    <div class="role-block">
-      <div class="role-head"><div class="org">NMIMS</div><div class="dates">2020 — 2022</div></div>
+    <div class="role-block" style="border-color:var(--paper-rule); margin-top:48px;">
+      <div class="role-head"><div class="org" style="color:var(--ink);">NMIMS</div><div class="dates">2020 — 2022</div></div>
       <div class="role-title">MBA, Operations and Data Sciences</div>
     </div>
-    <div class="role-block">
-      <div class="role-head"><div class="org">University of Petroleum and Energy Studies</div><div class="dates">2013 — 2017</div></div>
+    <div class="role-block" style="border-color:var(--paper-rule);">
+      <div class="role-head"><div class="org" style="color:var(--ink);">University of Petroleum and Energy Studies</div><div class="dates">2013 — 2017</div></div>
       <div class="role-title">B.Tech, Mechatronics, Robotics and Automation Engineering</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="skills">
+<section class="band band-dark">
+  <div class="wrap">
     <h2>Skills &amp; certifications</h2>
     <div class="skills-grid">
       <span class="skill-pill">AI Strategy</span>
@@ -380,17 +412,19 @@
       <span class="skill-pill">Power BI Data Analyst</span>
       <span class="skill-pill">Lean Six Sigma Green Belt</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
+<footer id="contact">
+  <div class="wrap">
     <p>Chandigarh, India</p>
     <div class="links">
       <a href="mailto:i.shubham25@gmail.com">i.shubham25@gmail.com</a>
       <a href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub</a>
     </div>
-  </footer>
-</div>
+  </div>
+</footer>
 
 <script>
   function setLens(mode){
@@ -421,7 +455,6 @@
     btn.textContent = 'Hide dashboard';
   }
 
-  // Animated stat counters, triggered once on scroll into view
   (function(){
     var stats = document.querySelectorAll('.stat .num');
     var done = false;
@@ -429,21 +462,19 @@
       if(done) return;
       var strip = document.querySelector('.stat-strip');
       var rect = strip.getBoundingClientRect();
-      if(rect.top > window.innerHeight * 0.85) return;
+      if(rect.top > window.innerHeight * 0.9) return;
       done = true;
       stats.forEach(function(el){
         var target = parseFloat(el.getAttribute('data-count'));
         var prefix = el.getAttribute('data-prefix') || '';
         var suffix = el.getAttribute('data-suffix') || '';
         var isDecimal = target % 1 !== 0;
-        var start = 0;
-        var duration = 900;
-        var startTime = null;
+        var duration = 900; var startTime = null;
         function step(ts){
           if(!startTime) startTime = ts;
           var progress = Math.min((ts - startTime) / duration, 1);
           var eased = 1 - Math.pow(1 - progress, 3);
-          var current = start + (target - start) * eased;
+          var current = target * eased;
           el.textContent = prefix + (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
           if(progress < 1) requestAnimationFrame(step);
         }
