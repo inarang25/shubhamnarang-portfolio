@@ -8,173 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --white:#FFFFFF;
-    --black:#0A0A0A;
-    --gold:#B8956A;
-    --graphite:#6E6E6E;
-    --hair-on-white: rgba(10,10,10,0.10);
-    --hair-on-black: rgba(255,255,255,0.14);
-    --max:960px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--white); color:var(--black);
-    font-family:'Inter', sans-serif; font-weight:300; font-size:17px; line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit; text-decoration:none;}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
-  h1,h2,h3{font-family:'Fraunces', serif; font-weight:400; margin:0;}
-  ::selection{ background:var(--gold); color:var(--white); }
-
-  /* reveal-on-scroll: whole-band reveal, not per-card */
-  .reveal{ opacity:0; transform:translateY(28px); transition:opacity 0.9s ease, transform 0.9s ease; }
-  .reveal.in{ opacity:1; transform:translateY(0); }
-  @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
-  }
-
-  nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(10,10,10,0.85); backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--hair-on-black);
-  }
-  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:20px 32px; }
-  .brand{ color:var(--white); font-family:'Fraunces', serif; font-size:1.05rem; letter-spacing:0.01em; }
-  .navlinks{ display:flex; gap:32px; }
-  .navlinks a{ color:var(--white); font-size:0.85rem; opacity:0.65; transition:opacity 0.2s; letter-spacing:0.02em; }
-  .navlinks a:hover{ opacity:1; }
-
-  .band{ padding:100px 0; }
-  .band-black{ background:var(--black); color:var(--white); }
-  .band-white{ background:var(--white); color:var(--black); }
-  .band h2{ font-size:1.9rem; margin-bottom:44px; font-weight:400; }
-
-  /* Hero */
-  .hero-band{ position:relative; overflow:hidden; padding:0; }
-  .hero-inner{ position:relative; z-index:2; padding:140px 0 0; }
-  #hero-parallax{ will-change:transform; }
-
-  .lens-toggle{
-    display:inline-flex; border:1px solid var(--hair-on-black); border-radius:999px; padding:4px; margin-bottom:36px;
-  }
-  .lens-toggle button{
-    border:none; background:none; padding:9px 20px; border-radius:999px; font-family:'Inter', sans-serif;
-    font-size:0.82rem; letter-spacing:0.02em; color:var(--white); opacity:0.55; cursor:pointer; transition:all 0.25s ease;
-  }
-  .lens-toggle button.active{ background:var(--gold); color:var(--black); opacity:1; }
-
-  .hero h1{ font-size:clamp(3rem, 7vw, 5.2rem); line-height:1.0; color:var(--white); margin-bottom:24px; letter-spacing:-0.02em; font-weight:300; }
-  .hero .role{ color:var(--gold); font-size:0.98rem; margin-bottom:28px; letter-spacing:0.01em; }
-  .lede{ font-size:1.15rem; max-width:52ch; display:none; color:rgba(255,255,255,0.78); font-weight:300; }
-  .lede.active{ display:block; }
-  .hero .links{ margin-top:34px; display:flex; gap:30px; flex-wrap:wrap; font-size:0.92rem; }
-  .hero .links a{ color:var(--white); border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:2px; }
-  .hero .links a:hover{ border-color:var(--gold); color:var(--gold); }
-
-  .stat-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:64px; border-top:1px solid var(--hair-on-black); }
-  .stat{ padding:26px 24px 0; border-right:1px solid var(--hair-on-black); }
-  .stat:last-child{ border-right:none; }
-  .stat .num{ font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:1.7rem; color:var(--gold); }
-  .stat .label{ font-size:0.78rem; color:var(--graphite); margin-top:8px; line-height:1.4; }
-
-  /* Logo strip */
-  .logo-strip-wrap{ padding:44px 0 46px; border-top:1px solid var(--hair-on-black); margin-top:0; }
-  .logo-strip-label{ font-size:0.78rem; color:var(--graphite); margin-bottom:26px; letter-spacing:0.02em; }
-  .logo-strip{ display:flex; align-items:center; flex-wrap:wrap; gap:40px; }
-  .logo-tile{ height:34px; display:flex; align-items:center; }
-  .logo-tile img{
-    height:100%; max-width:120px; object-fit:contain;
-    filter:grayscale(1) brightness(0) invert(1); opacity:0.55;
-    transition:opacity 0.3s ease, filter 0.3s ease;
-  }
-  .logo-tile img:hover{ opacity:1; filter:none; }
-
-  /* Case studies */
-  .case{ border:1px solid var(--hair-on-white); border-radius:2px; margin-bottom:22px; }
-  .case-head{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:28px 30px; cursor:pointer; }
-  .case-head .proj-title{ font-family:'Fraunces', serif; font-size:1.4rem; font-weight:400; }
-  .case-head .proj-sub{ font-size:0.88rem; color:var(--graphite); margin-top:6px; }
-  .case-toggle{
-    font-family:'IBM Plex Mono', monospace; font-size:1rem; color:var(--gold); flex-shrink:0;
-    width:28px; height:28px; display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--hair-on-white); border-radius:50%;
-  }
-  .case-body{ max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
-  .case.open .case-body{ max-height:2600px; }
-  .case-body-inner{ padding:0 30px 32px; }
-  .case-body-inner h4{ font-size:0.76rem; color:var(--gold); margin:20px 0 8px; font-weight:500; letter-spacing:0.02em; }
-  .case-body-inner h4:first-child{ margin-top:0; }
-  .case-body-inner p{ margin:0; font-size:1rem; }
-  .tag-row{ margin-top:18px; display:flex; flex-wrap:wrap; gap:8px; }
-  .tag{ font-size:0.78rem; padding:5px 12px; border:1px solid var(--hair-on-white); border-radius:2px; color:var(--graphite); }
-  .embed-btn{
-    display:inline-block; margin-top:20px; padding:10px 18px; border:1px solid var(--gold); border-radius:2px;
-    font-size:0.85rem; color:var(--gold); cursor:pointer; background:none;
-  }
-  .embed-wrap{ margin-top:18px; border:1px solid var(--hair-on-white); border-radius:2px; overflow:hidden; display:none; }
-  .embed-wrap.show{ display:block; }
-  .embed-wrap iframe{ width:100%; height:420px; border:none; display:block; }
-
-  .shot-frame{
-    background:var(--white); padding:12px; border-radius:2px; margin-top:20px;
-    box-shadow:0 30px 60px -24px rgba(10,10,10,0.4), 0 2px 10px rgba(10,10,10,0.06);
-  }
-  .shot-frame img{
-    display:block; width:100%; border-radius:1px;
-    box-shadow:inset 0 1px 3px rgba(10,10,10,0.22);
-  }
-  .placeholder-shot{
-    margin-top:20px; border:1px dashed var(--hair-on-white); border-radius:2px; padding:40px 16px;
-    text-align:center; color:var(--graphite); font-size:0.82rem;
-  }
-  .band-black .placeholder-shot{ border-color:var(--hair-on-black); }
-
-  .proj-group{ margin-bottom:40px; }
-  .proj-group:last-child{ margin-bottom:0; }
-  .proj-group h3{ font-family:'Inter', sans-serif; font-weight:500; font-size:0.82rem; color:var(--gold); margin-bottom:18px; letter-spacing:0.02em; }
-  .proj-item{ padding:22px 0; border-top:1px solid var(--hair-on-black); }
-  .proj-group .proj-item:first-of-type{ border-top:none; padding-top:0; }
-  .proj-item p{ margin:8px 0 0; font-size:0.98rem; color:rgba(255,255,255,0.75); }
-  .proj-item .proj-title{ font-weight:500; font-size:1.08rem; color:var(--white); font-family:'Fraunces', serif; }
-
-  .role-block{ margin-bottom:42px; padding-left:28px; border-left:1px solid var(--hair-on-white); position:relative; }
-  .role-block::before{
-    content:''; position:absolute; left:-4.5px; top:6px; width:8px; height:8px; border-radius:50%;
-    background:var(--gold);
-  }
-  .role-block:last-child{ margin-bottom:0; }
-  .role-head{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; }
-  .role-head .org{ font-family:'Fraunces', serif; font-size:1.2rem; color:var(--black); font-weight:400; }
-  .role-head .dates{ color:var(--graphite); font-size:0.85rem; white-space:nowrap; font-family:'IBM Plex Mono', monospace; }
-  .role-title{ color:var(--gold); font-size:0.9rem; margin:6px 0 14px; }
-  .role-block ul{ margin:0; padding-left:20px; }
-  .role-block li{ margin-bottom:9px; font-size:0.97rem; color:rgba(10,10,10,0.78); }
-  .role-block li:last-child{ margin-bottom:0; }
-
-  .skills-grid{ display:flex; flex-wrap:wrap; gap:10px; }
-  .skill-pill{ border:1px solid var(--hair-on-black); padding:9px 16px; border-radius:2px; font-size:0.87rem; color:var(--white); }
-
-  footer{ background:var(--black); color:var(--white); padding:56px 0; }
-  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-  footer p{ color:var(--graphite); font-size:0.9rem; margin:0; }
-  footer .links a{ margin-left:24px; color:var(--white); border-bottom:1px solid rgba(255,255,255,0.25); }
-  footer .links a:hover{ color:var(--gold); border-color:var(--gold); }
-
-  @media (max-width:640px){
-    .hero-inner{ padding:104px 0 0; }
-    .band{ padding:64px 0; }
-    .stat-strip{ grid-template-columns:repeat(2,1fr); }
-    .stat{ border-bottom:1px solid var(--hair-on-black); padding-bottom:18px; margin-bottom:18px; }
-    .logo-strip{ gap:28px; }
-    .role-head{ flex-direction:column; gap:3px; }
-    footer .wrap{ flex-direction:column; align-items:flex-start; }
-    footer .links a{ margin-left:0; margin-right:22px; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body data-lens="exec">
 
@@ -190,13 +24,14 @@
 </nav>
 
 <section class="band band-black hero-band">
+  <div class="grain"></div>
   <div class="wrap hero-inner">
     <div id="hero-parallax">
       <div class="lens-toggle">
         <button id="btn-exec" class="active" onclick="setLens('exec')">Executive view</button>
         <button id="btn-builder" onclick="setLens('builder')">Builder view</button>
       </div>
-      <h1>Shubham Narang</h1>
+      <h1>Shubham<br>Narang</h1>
       <p class="role">Digital Transformation Manager, Mahindra Group — Chandigarh, India</p>
       <p class="lede active" id="lede-exec">I run enterprise data and AI strategy for large organizations — standardizing how a 250+ KPI, multi-billion-rupee business sees itself, and reporting that directly to a CEO and CIO.</p>
       <p class="lede" id="lede-builder">I build and ship my own products end to end, outside of any employer — from idea, to a real backend on Supabase, to a live domain I manage myself.</p>
@@ -216,11 +51,11 @@
   <div class="wrap logo-strip-wrap">
     <div class="logo-strip-label">Experience and education across</div>
     <div class="logo-strip">
-      <div class="logo-tile"><img src="images/logo-mahindra.png" alt="Mahindra Group"></div>
-      <div class="logo-tile"><img src="images/logo-ibm.png" alt="IBM"></div>
-      <div class="logo-tile"><img src="images/logo-lt.png" alt="Larsen & Toubro"></div>
-      <div class="logo-tile"><img src="images/logo-nmims.png" alt="NMIMS"></div>
-      <div class="logo-tile"><img src="images/logo-upes.png" alt="UPES"></div>
+      <div class="logo-plaque"><img src="images/logo-mahindra.png" alt="Mahindra Group"></div>
+      <div class="logo-plaque"><img src="images/logo-ibm.png" alt="IBM"></div>
+      <div class="logo-plaque dark-plaque"><img src="images/logo-lt.png" alt="Larsen & Toubro"></div>
+      <div class="logo-plaque"><img src="images/logo-nmims.png" alt="NMIMS"></div>
+      <div class="logo-plaque"><img src="images/logo-upes.png" alt="UPES"></div>
     </div>
   </div>
 </section>
@@ -298,6 +133,7 @@
 </section>
 
 <section class="band band-black reveal" id="more-work">
+  <div class="grain"></div>
   <div class="wrap">
     <h2>More projects</h2>
 
@@ -417,6 +253,7 @@
 </section>
 
 <section class="band band-black reveal">
+  <div class="grain"></div>
   <div class="wrap">
     <h2>Skills &amp; certifications</h2>
     <div class="skills-grid">
@@ -446,96 +283,6 @@
   </div>
 </footer>
 
-<script>
-  function setLens(mode){
-    document.body.setAttribute('data-lens', mode);
-    document.getElementById('btn-exec').classList.toggle('active', mode === 'exec');
-    document.getElementById('btn-builder').classList.toggle('active', mode === 'builder');
-    document.getElementById('lede-exec').classList.toggle('active', mode === 'exec');
-    document.getElementById('lede-builder').classList.toggle('active', mode === 'builder');
-  }
-
-  function toggleCase(headEl){
-    var caseEl = headEl.parentElement;
-    var isOpen = caseEl.classList.contains('open');
-    caseEl.classList.toggle('open');
-    headEl.querySelector('.case-toggle').textContent = isOpen ? '+' : '−';
-  }
-
-  function loadEmbed(btn, id, url){
-    var wrap = document.getElementById(id);
-    if(wrap.classList.contains('show')){
-      wrap.classList.remove('show');
-      wrap.innerHTML = '';
-      btn.textContent = 'View live dashboard';
-      return;
-    }
-    wrap.innerHTML = '<iframe src="' + url + '" loading="lazy" allowfullscreen></iframe>';
-    wrap.classList.add('show');
-    btn.textContent = 'Hide dashboard';
-  }
-
-  /* Stat counters */
-  (function(){
-    var stats = document.querySelectorAll('.stat .num');
-    var done = false;
-    function animate(){
-      if(done) return;
-      var strip = document.querySelector('.stat-strip');
-      var rect = strip.getBoundingClientRect();
-      if(rect.top > window.innerHeight * 0.9) return;
-      done = true;
-      stats.forEach(function(el){
-        var target = parseFloat(el.getAttribute('data-count'));
-        var prefix = el.getAttribute('data-prefix') || '';
-        var suffix = el.getAttribute('data-suffix') || '';
-        var isDecimal = target % 1 !== 0;
-        var duration = 900; var startTime = null;
-        function step(ts){
-          if(!startTime) startTime = ts;
-          var progress = Math.min((ts - startTime) / duration, 1);
-          var eased = 1 - Math.pow(1 - progress, 3);
-          var current = target * eased;
-          el.textContent = prefix + (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
-          if(progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      });
-      window.removeEventListener('scroll', animate);
-    }
-    window.addEventListener('scroll', animate);
-    animate();
-  })();
-
-  /* Whole-band reveal on scroll */
-  (function(){
-    var els = document.querySelectorAll('.reveal');
-    if('IntersectionObserver' in window){
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-        });
-      }, { threshold: 0.12 });
-      els.forEach(function(el){ io.observe(el); });
-    } else {
-      els.forEach(function(el){ el.classList.add('in'); });
-    }
-  })();
-
-  /* Subtle hero parallax */
-  (function(){
-    var el = document.getElementById('hero-parallax');
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduced) return;
-    window.addEventListener('scroll', function(){
-      var y = window.scrollY;
-      if(y < 600){
-        el.style.transform = 'translateY(' + (y * 0.18) + 'px)';
-        el.style.opacity = Math.max(1 - y / 500, 0);
-      }
-    });
-  })();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
