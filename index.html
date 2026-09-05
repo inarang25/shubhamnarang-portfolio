@@ -7,159 +7,172 @@
 <meta name="description" content="Shubham Narang — Digital transformation and data strategy, plus independent products.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14171F;
-    --paper:#F5F1E8;
-    --amber:#C98A3A;
-    --teal:#3F8FA6;
-    --grey:#8B8D93;
-    --ink-rule: rgba(245,241,232,0.14);
-    --paper-rule: rgba(20,23,31,0.12);
-    --max:920px;
+    --white:#FFFFFF;
+    --black:#0A0A0A;
+    --gold:#B8956A;
+    --graphite:#6E6E6E;
+    --hair-on-white: rgba(10,10,10,0.10);
+    --hair-on-black: rgba(255,255,255,0.14);
+    --max:960px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family:'IBM Plex Sans', sans-serif; font-size:17px; line-height:1.6;
+    margin:0; background:var(--white); color:var(--black);
+    font-family:'Inter', sans-serif; font-weight:300; font-size:17px; line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit; text-decoration:none;}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
-  h1,h2,h3{font-family:'Fraunces', serif; font-weight:500; margin:0;}
-  ::selection{ background:var(--amber); color:var(--ink); }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:400; margin:0;}
+  ::selection{ background:var(--gold); color:var(--white); }
+
+  /* reveal-on-scroll: whole-band reveal, not per-card */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
 
   nav{
     position:sticky; top:0; z-index:50;
-    background:rgba(20,23,31,0.88); backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--ink-rule);
+    background:rgba(10,10,10,0.85); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--hair-on-black);
   }
-  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; }
-  .brand{ color:var(--paper); font-family:'Fraunces', serif; font-size:1.05rem; }
-  .navlinks{ display:flex; gap:28px; }
-  .navlinks a{ color:var(--paper); font-size:0.9rem; opacity:0.75; transition:opacity 0.2s; }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:20px 32px; }
+  .brand{ color:var(--white); font-family:'Fraunces', serif; font-size:1.05rem; letter-spacing:0.01em; }
+  .navlinks{ display:flex; gap:32px; }
+  .navlinks a{ color:var(--white); font-size:0.85rem; opacity:0.65; transition:opacity 0.2s; letter-spacing:0.02em; }
   .navlinks a:hover{ opacity:1; }
 
-  .band{ padding:80px 0; }
-  .band-dark{ background:var(--ink); color:var(--paper); }
-  .band-light{ background:var(--paper); color:var(--ink); }
-  .band h2{ font-size:1.7rem; margin-bottom:36px; }
-  .band-dark h2{ color:var(--paper); }
+  .band{ padding:100px 0; }
+  .band-black{ background:var(--black); color:var(--white); }
+  .band-white{ background:var(--white); color:var(--black); }
+  .band h2{ font-size:1.9rem; margin-bottom:44px; font-weight:400; }
 
+  /* Hero */
   .hero-band{ position:relative; overflow:hidden; padding:0; }
-  .hero-inner{ position:relative; z-index:2; padding:110px 0 64px; }
-  .hero-chart{ position:absolute; inset:0; z-index:1; opacity:0.5; }
-  .hero-chart path{ fill:none; stroke-width:1.4; stroke-dasharray:1400; stroke-dashoffset:1400; animation:draw 2.6s ease forwards; }
-  .hero-chart path:nth-child(2){ animation-delay:0.15s; }
-  .hero-chart path:nth-child(3){ animation-delay:0.3s; }
-  @keyframes draw{ to{ stroke-dashoffset:0; } }
-  @media (prefers-reduced-motion: reduce){
-    .hero-chart path{ animation:none; stroke-dashoffset:0; }
-  }
+  .hero-inner{ position:relative; z-index:2; padding:140px 0 0; }
+  #hero-parallax{ will-change:transform; }
 
   .lens-toggle{
-    display:inline-flex; border:1px solid var(--ink-rule); border-radius:999px; padding:3px; margin-bottom:32px;
+    display:inline-flex; border:1px solid var(--hair-on-black); border-radius:999px; padding:4px; margin-bottom:36px;
   }
   .lens-toggle button{
-    border:none; background:none; padding:8px 18px; border-radius:999px; font-family:'IBM Plex Sans', sans-serif;
-    font-size:0.85rem; color:var(--paper); opacity:0.6; cursor:pointer; transition:all 0.25s ease;
+    border:none; background:none; padding:9px 20px; border-radius:999px; font-family:'Inter', sans-serif;
+    font-size:0.82rem; letter-spacing:0.02em; color:var(--white); opacity:0.55; cursor:pointer; transition:all 0.25s ease;
   }
-  .lens-toggle button.active{ background:var(--amber); color:var(--ink); opacity:1; }
+  .lens-toggle button.active{ background:var(--gold); color:var(--black); opacity:1; }
 
-  .hero h1{ font-size:clamp(2.6rem, 6vw, 4rem); line-height:1.05; color:var(--paper); margin-bottom:20px; letter-spacing:-0.01em; }
-  .hero .role{ color:var(--teal); font-size:1rem; margin-bottom:26px; }
-  .lede{ font-size:1.12rem; max-width:56ch; display:none; color:rgba(245,241,232,0.88); }
+  .hero h1{ font-size:clamp(3rem, 7vw, 5.2rem); line-height:1.0; color:var(--white); margin-bottom:24px; letter-spacing:-0.02em; font-weight:300; }
+  .hero .role{ color:var(--gold); font-size:0.98rem; margin-bottom:28px; letter-spacing:0.01em; }
+  .lede{ font-size:1.15rem; max-width:52ch; display:none; color:rgba(255,255,255,0.78); font-weight:300; }
   .lede.active{ display:block; }
-  .hero .links{ margin-top:30px; display:flex; gap:26px; flex-wrap:wrap; font-size:0.95rem; }
-  .hero .links a{ color:var(--paper); border-bottom:1px solid rgba(245,241,232,0.35); padding-bottom:2px; }
-  .hero .links a:hover{ border-color:var(--amber); color:var(--amber); }
+  .hero .links{ margin-top:34px; display:flex; gap:30px; flex-wrap:wrap; font-size:0.92rem; }
+  .hero .links a{ color:var(--white); border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:2px; }
+  .hero .links a:hover{ border-color:var(--gold); color:var(--gold); }
 
-  .stat-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:56px; border-top:1px solid var(--ink-rule); }
-  .stat{ padding:22px 20px 0; border-right:1px solid var(--ink-rule); }
+  .stat-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:64px; border-top:1px solid var(--hair-on-black); }
+  .stat{ padding:26px 24px 0; border-right:1px solid var(--hair-on-black); }
   .stat:last-child{ border-right:none; }
-  .stat .num{ font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:1.6rem; color:var(--amber); }
-  .stat .label{ font-size:0.8rem; color:var(--grey); margin-top:6px; line-height:1.35; }
+  .stat .num{ font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:1.7rem; color:var(--gold); }
+  .stat .label{ font-size:0.78rem; color:var(--graphite); margin-top:8px; line-height:1.4; }
 
-  .case{ border:1px solid var(--paper-rule); border-radius:4px; margin-bottom:20px; background:rgba(20,23,31,0.02); }
-  .case-head{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 26px; cursor:pointer; }
-  .case-head .proj-title{ font-family:'Fraunces', serif; font-size:1.3rem; }
-  .case-head .proj-sub{ font-size:0.88rem; color:var(--grey); margin-top:4px; }
+  /* Logo strip */
+  .logo-strip-wrap{ padding:44px 0 46px; border-top:1px solid var(--hair-on-black); margin-top:0; }
+  .logo-strip-label{ font-size:0.78rem; color:var(--graphite); margin-bottom:26px; letter-spacing:0.02em; }
+  .logo-strip{ display:flex; align-items:center; flex-wrap:wrap; gap:40px; }
+  .logo-tile{ height:34px; display:flex; align-items:center; }
+  .logo-tile img{
+    height:100%; max-width:120px; object-fit:contain;
+    filter:grayscale(1) brightness(0) invert(1); opacity:0.55;
+    transition:opacity 0.3s ease, filter 0.3s ease;
+  }
+  .logo-tile img:hover{ opacity:1; filter:none; }
+
+  /* Case studies */
+  .case{ border:1px solid var(--hair-on-white); border-radius:2px; margin-bottom:22px; }
+  .case-head{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:28px 30px; cursor:pointer; }
+  .case-head .proj-title{ font-family:'Fraunces', serif; font-size:1.4rem; font-weight:400; }
+  .case-head .proj-sub{ font-size:0.88rem; color:var(--graphite); margin-top:6px; }
   .case-toggle{
-    font-family:'IBM Plex Mono', monospace; font-size:1rem; color:var(--amber); flex-shrink:0;
-    width:26px; height:26px; display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--paper-rule); border-radius:50%;
+    font-family:'IBM Plex Mono', monospace; font-size:1rem; color:var(--gold); flex-shrink:0;
+    width:28px; height:28px; display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--hair-on-white); border-radius:50%;
   }
-  .case-body{ max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .case-body{ max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
   .case.open .case-body{ max-height:2600px; }
-  .case-body-inner{ padding:0 26px 28px; }
-  .case-body-inner h4{ font-size:0.78rem; color:var(--teal); margin:18px 0 6px; font-weight:600; }
+  .case-body-inner{ padding:0 30px 32px; }
+  .case-body-inner h4{ font-size:0.76rem; color:var(--gold); margin:20px 0 8px; font-weight:500; letter-spacing:0.02em; }
   .case-body-inner h4:first-child{ margin-top:0; }
-  .case-body-inner p{ margin:0; font-size:0.98rem; }
-  .tag-row{ margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; }
-  .tag{ font-size:0.78rem; padding:4px 10px; border:1px solid var(--paper-rule); border-radius:3px; color:var(--grey); }
+  .case-body-inner p{ margin:0; font-size:1rem; }
+  .tag-row{ margin-top:18px; display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{ font-size:0.78rem; padding:5px 12px; border:1px solid var(--hair-on-white); border-radius:2px; color:var(--graphite); }
   .embed-btn{
-    display:inline-block; margin-top:18px; padding:9px 16px; border:1px solid var(--amber); border-radius:3px;
-    font-size:0.85rem; color:var(--amber); cursor:pointer; background:none;
+    display:inline-block; margin-top:20px; padding:10px 18px; border:1px solid var(--gold); border-radius:2px;
+    font-size:0.85rem; color:var(--gold); cursor:pointer; background:none;
   }
-  .embed-wrap{ margin-top:16px; border:1px solid var(--paper-rule); border-radius:4px; overflow:hidden; display:none; }
+  .embed-wrap{ margin-top:18px; border:1px solid var(--hair-on-white); border-radius:2px; overflow:hidden; display:none; }
   .embed-wrap.show{ display:block; }
   .embed-wrap iframe{ width:100%; height:420px; border:none; display:block; }
 
   .shot-frame{
-    background:#FFFFFF; padding:10px; border-radius:5px; margin-top:18px;
-    box-shadow:0 24px 48px -20px rgba(20,23,31,0.35), 0 2px 8px rgba(20,23,31,0.08);
+    background:var(--white); padding:12px; border-radius:2px; margin-top:20px;
+    box-shadow:0 30px 60px -24px rgba(10,10,10,0.4), 0 2px 10px rgba(10,10,10,0.06);
   }
   .shot-frame img{
-    display:block; width:100%; border-radius:2px;
-    box-shadow:inset 0 1px 3px rgba(20,23,31,0.25);
+    display:block; width:100%; border-radius:1px;
+    box-shadow:inset 0 1px 3px rgba(10,10,10,0.22);
   }
   .placeholder-shot{
-    margin-top:18px; border:1px dashed var(--paper-rule); border-radius:4px; padding:36px 16px;
-    text-align:center; color:var(--grey); font-size:0.82rem;
+    margin-top:20px; border:1px dashed var(--hair-on-white); border-radius:2px; padding:40px 16px;
+    text-align:center; color:var(--graphite); font-size:0.82rem;
   }
-  .band-dark .placeholder-shot{ border-color:var(--ink-rule); }
+  .band-black .placeholder-shot{ border-color:var(--hair-on-black); }
 
-  .proj-group{ margin-bottom:36px; }
+  .proj-group{ margin-bottom:40px; }
   .proj-group:last-child{ margin-bottom:0; }
-  .proj-group h3{ font-family:'IBM Plex Sans', sans-serif; font-weight:600; font-size:0.85rem; color:var(--teal); margin-bottom:16px; }
-  .proj-item{ padding:20px 0; border-top:1px solid var(--ink-rule); }
+  .proj-group h3{ font-family:'Inter', sans-serif; font-weight:500; font-size:0.82rem; color:var(--gold); margin-bottom:18px; letter-spacing:0.02em; }
+  .proj-item{ padding:22px 0; border-top:1px solid var(--hair-on-black); }
   .proj-group .proj-item:first-of-type{ border-top:none; padding-top:0; }
-  .proj-item p{ margin:6px 0 0; font-size:0.97rem; color:rgba(245,241,232,0.85); }
-  .proj-item .proj-title{ font-weight:600; font-size:1.05rem; color:var(--paper); }
+  .proj-item p{ margin:8px 0 0; font-size:0.98rem; color:rgba(255,255,255,0.75); }
+  .proj-item .proj-title{ font-weight:500; font-size:1.08rem; color:var(--white); font-family:'Fraunces', serif; }
 
-  .role-block{ margin-bottom:38px; padding-left:26px; border-left:2px solid var(--ink-rule); position:relative; }
+  .role-block{ margin-bottom:42px; padding-left:28px; border-left:1px solid var(--hair-on-white); position:relative; }
   .role-block::before{
-    content:''; position:absolute; left:-6px; top:4px; width:10px; height:10px; border-radius:50%;
-    background:var(--amber);
+    content:''; position:absolute; left:-4.5px; top:6px; width:8px; height:8px; border-radius:50%;
+    background:var(--gold);
   }
   .role-block:last-child{ margin-bottom:0; }
   .role-head{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; }
-  .role-head .org{ font-family:'Fraunces', serif; font-size:1.15rem; color:var(--paper); }
-  .role-head .dates{ color:var(--grey); font-size:0.85rem; white-space:nowrap; font-family:'IBM Plex Mono', monospace; }
-  .role-title{ color:var(--teal); font-size:0.9rem; margin:4px 0 12px; }
+  .role-head .org{ font-family:'Fraunces', serif; font-size:1.2rem; color:var(--black); font-weight:400; }
+  .role-head .dates{ color:var(--graphite); font-size:0.85rem; white-space:nowrap; font-family:'IBM Plex Mono', monospace; }
+  .role-title{ color:var(--gold); font-size:0.9rem; margin:6px 0 14px; }
   .role-block ul{ margin:0; padding-left:20px; }
-  .role-block li{ margin-bottom:8px; font-size:0.96rem; color:rgba(245,241,232,0.85); }
+  .role-block li{ margin-bottom:9px; font-size:0.97rem; color:rgba(10,10,10,0.78); }
   .role-block li:last-child{ margin-bottom:0; }
 
   .skills-grid{ display:flex; flex-wrap:wrap; gap:10px; }
-  .skill-pill{ border:1px solid var(--paper-rule); padding:8px 15px; border-radius:3px; font-size:0.88rem; }
+  .skill-pill{ border:1px solid var(--hair-on-black); padding:9px 16px; border-radius:2px; font-size:0.87rem; color:var(--white); }
 
-  footer{ background:var(--ink); color:var(--paper); padding:52px 0; }
+  footer{ background:var(--black); color:var(--white); padding:56px 0; }
   footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-  footer p{ color:var(--grey); font-size:0.9rem; margin:0; }
-  footer .links a{ margin-left:22px; color:var(--paper); border-bottom:1px solid rgba(245,241,232,0.3); }
-  footer .links a:hover{ color:var(--amber); border-color:var(--amber); }
+  footer p{ color:var(--graphite); font-size:0.9rem; margin:0; }
+  footer .links a{ margin-left:24px; color:var(--white); border-bottom:1px solid rgba(255,255,255,0.25); }
+  footer .links a:hover{ color:var(--gold); border-color:var(--gold); }
 
   @media (max-width:640px){
-    .hero-inner{ padding:88px 0 48px; }
-    .band{ padding:56px 0; }
+    .hero-inner{ padding:104px 0 0; }
+    .band{ padding:64px 0; }
     .stat-strip{ grid-template-columns:repeat(2,1fr); }
-    .stat{ border-bottom:1px solid var(--ink-rule); padding-bottom:16px; margin-bottom:16px; }
-    .role-head{ flex-direction:column; gap:2px; }
+    .stat{ border-bottom:1px solid var(--hair-on-black); padding-bottom:18px; margin-bottom:18px; }
+    .logo-strip{ gap:28px; }
+    .role-head{ flex-direction:column; gap:3px; }
     footer .wrap{ flex-direction:column; align-items:flex-start; }
-    footer .links a{ margin-left:0; margin-right:20px; }
+    footer .links a{ margin-left:0; margin-right:22px; }
   }
 </style>
 </head>
@@ -176,36 +189,43 @@
   </div>
 </nav>
 
-<section class="band band-dark hero-band">
-  <svg class="hero-chart" viewBox="0 0 1000 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,320 C120,300 180,180 280,190 C380,200 420,300 520,280 C620,260 680,120 780,140 C860,156 920,220 1000,200" stroke="#3F8FA6"/>
-    <path d="M0,250 C100,260 200,150 300,160 C420,172 460,260 560,230 C660,200 720,90 820,110 C900,126 950,180 1000,160" stroke="#C98A3A"/>
-    <path d="M0,360 C140,350 220,300 340,310 C460,320 500,250 600,255 C700,260 760,200 860,210 C920,216 960,240 1000,235" stroke="#F5F1E8"/>
-  </svg>
+<section class="band band-black hero-band">
   <div class="wrap hero-inner">
-    <div class="lens-toggle">
-      <button id="btn-exec" class="active" onclick="setLens('exec')">Executive view</button>
-      <button id="btn-builder" onclick="setLens('builder')">Builder view</button>
+    <div id="hero-parallax">
+      <div class="lens-toggle">
+        <button id="btn-exec" class="active" onclick="setLens('exec')">Executive view</button>
+        <button id="btn-builder" onclick="setLens('builder')">Builder view</button>
+      </div>
+      <h1>Shubham Narang</h1>
+      <p class="role">Digital Transformation Manager, Mahindra Group — Chandigarh, India</p>
+      <p class="lede active" id="lede-exec">I run enterprise data and AI strategy for large organizations — standardizing how a 250+ KPI, multi-billion-rupee business sees itself, and reporting that directly to a CEO and CIO.</p>
+      <p class="lede" id="lede-builder">I build and ship my own products end to end, outside of any employer — from idea, to a real backend on Supabase, to a live domain I manage myself.</p>
+      <div class="links">
+        <a href="mailto:i.shubham25@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="stat-strip">
+        <div class="stat"><div class="num" data-count="250" data-suffix="+">0</div><div class="label">KPIs standardized, Project Vihan</div></div>
+        <div class="stat"><div class="num" data-count="86.7" data-suffix="%">0</div><div class="label">Forecast accuracy, demand.ai</div></div>
+        <div class="stat"><div class="num" data-count="50" data-prefix="₹" data-suffix="Cr">0</div><div class="label">Defence program delivered</div></div>
+        <div class="stat"><div class="num" data-count="10" data-suffix="+">0</div><div class="label">Independent projects shipped</div></div>
+      </div>
     </div>
-    <h1>Shubham Narang</h1>
-    <p class="role">Digital Transformation Manager, Mahindra Group — Chandigarh, India</p>
-    <p class="lede active" id="lede-exec">I run enterprise data and AI strategy for large organizations — standardizing how a 250+ KPI, multi-billion-rupee business sees itself, and reporting that directly to a CEO and CIO.</p>
-    <p class="lede" id="lede-builder">I build and ship my own products end to end, outside of any employer — from idea, to a real backend on Supabase, to a live domain I manage myself.</p>
-    <div class="links">
-      <a href="mailto:i.shubham25@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub</a>
-    </div>
-    <div class="stat-strip">
-      <div class="stat"><div class="num" data-count="250" data-suffix="+">0</div><div class="label">KPIs standardized, Project Vihan</div></div>
-      <div class="stat"><div class="num" data-count="86.7" data-suffix="%">0</div><div class="label">Forecast accuracy, demand.ai</div></div>
-      <div class="stat"><div class="num" data-count="50" data-prefix="₹" data-suffix="Cr">0</div><div class="label">Defence program delivered</div></div>
-      <div class="stat"><div class="num" data-count="10" data-suffix="+">0</div><div class="label">Independent projects shipped</div></div>
+  </div>
+  <div class="wrap logo-strip-wrap">
+    <div class="logo-strip-label">Experience and education across</div>
+    <div class="logo-strip">
+      <div class="logo-tile"><img src="images/logo-mahindra.png" alt="Mahindra Group"></div>
+      <div class="logo-tile"><img src="images/logo-ibm.png" alt="IBM"></div>
+      <div class="logo-tile"><img src="images/logo-lt.png" alt="Larsen & Toubro"></div>
+      <div class="logo-tile"><img src="images/logo-nmims.png" alt="NMIMS"></div>
+      <div class="logo-tile"><img src="images/logo-upes.png" alt="UPES"></div>
     </div>
   </div>
 </section>
 
-<section class="band band-light" id="work">
+<section class="band band-white reveal" id="work">
   <div class="wrap">
     <h2>Flagship work</h2>
 
@@ -277,7 +297,7 @@
   </div>
 </section>
 
-<section class="band band-dark" id="more-work">
+<section class="band band-black reveal" id="more-work">
   <div class="wrap">
     <h2>More projects</h2>
 
@@ -330,7 +350,7 @@
     <div class="proj-group">
       <h3>Predictive &amp; personalization</h3>
       <div class="proj-item">
-        <div class="proj-title"><a href="https://inarang25-ml-project-premium-prediction.streamlit.app/" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(245,241,232,0.35)">Health insurance premium predictor</a></div>
+        <div class="proj-title"><a href="https://inarang25-ml-project-premium-prediction.streamlit.app/" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,0.3)">Health insurance premium predictor</a></div>
         <p>Supervised ML model with a Streamlit front end, predicting premiums from age, disease profile, and plan type to support personalized pricing.</p>
       </div>
     </div>
@@ -338,65 +358,65 @@
     <div class="proj-group">
       <h3>Product strategy &amp; experimentation</h3>
       <div class="proj-item">
-        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/EDA_%26_Target_Market_Identification.ipynb" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(245,241,232,0.35)">Credit card target-market EDA</a></div>
+        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/EDA_%26_Target_Market_Identification.ipynb" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,0.3)">Credit card target-market EDA</a></div>
         <p>Python and pandas analysis of customer, credit, and transaction data, identifying an untapped 18–25 segment to inform a new product launch.</p>
       </div>
       <div class="proj-item">
-        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/AB_Testing.ipynb" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(245,241,232,0.35)">Credit card A/B test</a></div>
+        <div class="proj-title"><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/AB_Testing.ipynb" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,0.3)">Credit card A/B test</a></div>
         <p>Ran a test at 0.05 significance to validate the product decision before rollout.</p>
       </div>
       <div class="proj-item">
-        <div class="proj-title"><a href="https://www.linkedin.com/posts/shubhamnarang25_bigquery-sql-celonis-activity-7245681577702146048-G3sR" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(245,241,232,0.35)">eCommerce process mining</a></div>
+        <div class="proj-title"><a href="https://www.linkedin.com/posts/shubhamnarang25_bigquery-sql-celonis-activity-7245681577702146048-G3sR" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,0.3)">eCommerce process mining</a></div>
         <p>Applied Celonis process mining to an eCommerce dataset to surface operational bottlenecks and recommend fixes.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="band band-light" id="career">
+<section class="band band-white reveal" id="career">
   <div class="wrap">
     <h2>Career</h2>
 
-    <div class="role-block" style="border-color:var(--paper-rule);">
-      <div class="role-head"><div class="org" style="color:var(--ink);">Mahindra Group</div><div class="dates">Feb 2026 — Present</div></div>
+    <div class="role-block">
+      <div class="role-head"><div class="org">Mahindra Group</div><div class="dates">Feb 2026 — Present</div></div>
       <div class="role-title">Digital Transformation Manager, Chandigarh</div>
-      <ul style="color:var(--ink);">
-        <li style="color:var(--ink);">Leading Project Vihan — consolidating data from 10 business functions and standardizing 250+ KPIs, with a direct reporting cadence to the CEO and CIO.</li>
-        <li style="color:var(--ink);">Spearheading demand.ai, an ML-based forecasting engine (86.7% accuracy) replacing Kinaxis.</li>
-        <li style="color:var(--ink);">Owning C-suite intelligence dashboards end to end — information architecture, visual hierarchy, and how insight gets represented at the top of the org.</li>
+      <ul>
+        <li>Leading Project Vihan — consolidating data from 10 business functions and standardizing 250+ KPIs, with a direct reporting cadence to the CEO and CIO.</li>
+        <li>Spearheading demand.ai, an ML-based forecasting engine (86.7% accuracy) replacing Kinaxis.</li>
+        <li>Owning C-suite intelligence dashboards end to end — information architecture, visual hierarchy, and how insight gets represented at the top of the org.</li>
       </ul>
     </div>
 
-    <div class="role-block" style="border-color:var(--paper-rule);">
-      <div class="role-head"><div class="org" style="color:var(--ink);">IBM</div><div class="dates">Jun 2022 — Jan 2026</div></div>
+    <div class="role-block">
+      <div class="role-head"><div class="org">IBM</div><div class="dates">Jun 2022 — Jan 2026</div></div>
       <div class="role-title">Business Analytics Analyst, Noida</div>
-      <ul style="color:var(--ink);">
-        <li style="color:var(--ink);">Led digital transformation engagements for Fortune 500 clients across manufacturing, retail fuel, and aerospace, using Celonis and Power BI to unify fragmented data.</li>
-        <li style="color:var(--ink);">Delivered 15% efficiency gains, 10–15% faster cycle times, and 8% cost savings through process optimization.</li>
+      <ul>
+        <li>Led digital transformation engagements for Fortune 500 clients across manufacturing, retail fuel, and aerospace, using Celonis and Power BI to unify fragmented data.</li>
+        <li>Delivered 15% efficiency gains, 10–15% faster cycle times, and 8% cost savings through process optimization.</li>
       </ul>
     </div>
 
-    <div class="role-block" style="border-color:var(--paper-rule);">
-      <div class="role-head"><div class="org" style="color:var(--ink);">Larsen &amp; Toubro (Defence)</div><div class="dates">Aug 2017 — Aug 2019</div></div>
+    <div class="role-block">
+      <div class="role-head"><div class="org">Larsen &amp; Toubro (Defence)</div><div class="dates">Aug 2017 — Aug 2019</div></div>
       <div class="role-title">Sr. Engineer, Data &amp; Delivery (PMG)</div>
-      <ul style="color:var(--ink);">
-        <li style="color:var(--ink);">Orchestrated delivery on a ₹50 Cr defence program, synchronizing milestones between manufacturing units and DRDO.</li>
-        <li style="color:var(--ink);">Digitized procurement and supplier evaluation, cutting operational costs by 10%.</li>
+      <ul>
+        <li>Orchestrated delivery on a ₹50 Cr defence program, synchronizing milestones between manufacturing units and DRDO.</li>
+        <li>Digitized procurement and supplier evaluation, cutting operational costs by 10%.</li>
       </ul>
     </div>
 
-    <div class="role-block" style="border-color:var(--paper-rule); margin-top:48px;">
-      <div class="role-head"><div class="org" style="color:var(--ink);">NMIMS</div><div class="dates">2020 — 2022</div></div>
+    <div class="role-block" style="margin-top:52px;">
+      <div class="role-head"><div class="org">NMIMS</div><div class="dates">2020 — 2022</div></div>
       <div class="role-title">MBA, Operations and Data Sciences</div>
     </div>
-    <div class="role-block" style="border-color:var(--paper-rule);">
-      <div class="role-head"><div class="org" style="color:var(--ink);">University of Petroleum and Energy Studies</div><div class="dates">2013 — 2017</div></div>
+    <div class="role-block">
+      <div class="role-head"><div class="org">University of Petroleum and Energy Studies</div><div class="dates">2013 — 2017</div></div>
       <div class="role-title">B.Tech, Mechatronics, Robotics and Automation Engineering</div>
     </div>
   </div>
 </section>
 
-<section class="band band-dark">
+<section class="band band-black reveal">
   <div class="wrap">
     <h2>Skills &amp; certifications</h2>
     <div class="skills-grid">
@@ -455,6 +475,7 @@
     btn.textContent = 'Hide dashboard';
   }
 
+  /* Stat counters */
   (function(){
     var stats = document.querySelectorAll('.stat .num');
     var done = false;
@@ -484,6 +505,35 @@
     }
     window.addEventListener('scroll', animate);
     animate();
+  })();
+
+  /* Whole-band reveal on scroll */
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+
+  /* Subtle hero parallax */
+  (function(){
+    var el = document.getElementById('hero-parallax');
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduced) return;
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if(y < 600){
+        el.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+        el.style.opacity = Math.max(1 - y / 500, 0);
+      }
+    });
   })();
 </script>
 
