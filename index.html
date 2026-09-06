@@ -63,7 +63,7 @@
   .hero-band{ padding:0; background:var(--paper); border-bottom:5px solid var(--ink); }
   .hero-inner{ position:relative; z-index:2; padding:80px 0 0; display:grid; grid-template-columns:1.15fr 0.85fr; gap:24px; align-items:end; }
   .hero-copy{ padding-bottom:56px; }
-  .hero-portrait{ position:relative; display:flex; justify-content:center; align-items:flex-end; }
+  .hero-portrait{ position:relative; display:flex; justify-content:center; align-items:flex-end; margin-top:-30px; }
   .hero-portrait img{ width:100%; max-width:420px; display:block; }
   .portrait-burst{
     position:absolute; top:8%; right:2%; width:96px; height:96px;
@@ -181,7 +181,7 @@
   .skills-grid{ display:flex; flex-wrap:wrap; gap:10px; }
   .skill-pill{
     border:3px solid var(--ink); padding:9px 16px; border-radius:999px; font-size:0.87rem; font-weight:700;
-    background:var(--paper); box-shadow:3px 3px 0 var(--ink);
+    background:var(--paper); box-shadow:3px 3px 0 var(--ink); color:var(--ink);
   }
 
   footer{ background:var(--ink); color:var(--paper); padding:50px 0; border-top:5px solid var(--red); }
@@ -232,7 +232,6 @@
       </div>
     </div>
     <div class="hero-portrait">
-      <div class="portrait-burst comic">86.7%<br>ACCURACY!</div>
       <img src="images/portrait.png" alt="Pop-art portrait of Shubham Narang">
     </div>
   </div>
@@ -319,9 +318,7 @@
           <p>Built a Power BI model across state and OEM-level sales and revenue data to break down growth and competitive share.</p>
           <h4>Outcome</h4>
           <p>Found a 156.9% revenue CAGR and 93.9% EV sales CAGR, with Ola Electric holding a 37.5% share — and the underlying adoption drivers behind it.</p>
-          <button class="embed-btn" onclick="loadEmbed(this, 'ev-embed', 'https://app.powerbi.com/reportEmbed?reportId=674f045b-ab4f-40b7-9b86-6afa6f809624&autoAuth=true&ctid=2e85bef9-d499-4f5a-a7c1-fd0f4ecfaea7')">VIEW LIVE</button>
-          <div class="embed-wrap" id="ev-embed"></div>
-          <div class="placeholder-shot">Dashboard screenshot pending</div>
+          <div class="shot-frame"><img src="images/ev-market.png" alt="Indian EV market analysis dashboard — revenue, sales, and state-level share"></div>
         </div>
       </div>
     </div>
