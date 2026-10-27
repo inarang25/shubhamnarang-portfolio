@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham Narang — Builder</title>
+<meta name="description" content="Shubham Narang — Independent products, built and shipped end to end.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Archivo:wght@400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFF3C4;color:#111;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+*{box-sizing:border-box}
+.bang{font-family:'Bangers','Impact',sans-serif;font-weight:400;letter-spacing:.02em}
+.marker{font-family:'Permanent Marker','Comic Sans MS',cursive}
+.dots{background-image:radial-gradient(rgba(17,17,17,.9) 1.6px,transparent 1.8px);background-size:11px 11px}
+.dots-red{background-image:radial-gradient(rgba(216,27,39,.55) 2.4px,transparent 2.6px);background-size:13px 13px}
+.dots-blue{background-image:radial-gradient(rgba(255,255,255,.35) 2.2px,transparent 2.4px);background-size:12px 12px}
+.panel{border:4px solid #111;box-shadow:8px 8px 0 #111;transition:transform .15s ease,box-shadow .15s ease}
+.panel:hover{transform:translate(-4px,-4px) rotate(-.4deg);box-shadow:13px 13px 0 #111}
+.btn{border:4px solid #111;box-shadow:5px 5px 0 #111;transition:transform .12s ease,box-shadow .12s ease;display:inline-flex;align-items:center;min-height:48px;padding:10px 24px}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 #111}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 #111}
+.burst{clip-path:polygon(50.0% 0.0%,58.5% 13.0%,71.7% 5.0%,73.7% 20.3%,89.1% 18.8%,84.2% 33.5%,98.7% 38.9%,88.0% 50.0%,98.7% 61.1%,84.2% 66.5%,89.1% 81.2%,73.7% 79.7%,71.7% 95.0%,58.5% 87.0%,50.0% 100.0%,41.5% 87.0%,28.3% 95.0%,26.3% 79.7%,10.9% 81.2%,15.8% 66.5%,1.3% 61.1%,12.0% 50.0%,1.3% 38.9%,15.8% 33.5%,10.9% 18.8%,26.3% 20.3%,28.3% 5.0%,41.5% 13.0%)}
+.burst2{clip-path:polygon(50.0% 0.0%,60.2% 18.6%,79.4% 9.5%,76.7% 30.6%,97.6% 34.5%,83.0% 50.0%,97.6% 65.5%,76.7% 69.4%,79.4% 90.5%,60.2% 81.4%,50.0% 100.0%,39.8% 81.4%,20.6% 90.5%,23.3% 69.4%,2.4% 65.5%,17.0% 50.0%,2.4% 34.5%,23.3% 30.6%,20.6% 9.5%,39.8% 18.6%)}
+.bubble{position:relative;background:#fff;border:4px solid #111;border-radius:28px;box-shadow:6px 6px 0 #111}
+.bubble::before{content:'';position:absolute;left:44px;bottom:-34px;width:0;height:0;border:18px solid transparent;border-top:30px solid #111;border-bottom:0;border-left-width:6px;border-right-width:30px}
+.bubble::after{content:'';position:absolute;left:48px;bottom:-24px;width:0;height:0;border:14px solid transparent;border-top:24px solid #fff;border-bottom:0;border-left-width:4px;border-right-width:24px}
+.ticker{display:flex;width:max-content;animation:tick 28s linear infinite}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.wob{animation:wob 3.2s ease-in-out infinite}
+@keyframes wob{0%,100%{transform:rotate(-6deg) scale(1)}50%{transform:rotate(4deg) scale(1.06)}}
+.pop{animation:pop .9s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes pop{from{transform:scale(.3) rotate(-12deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+@media (prefers-reduced-motion:reduce){.ticker,.wob,.pop{animation:none}}
+.nav a:hover{background:#111;color:#FFD60A}
+</style>
+</head>
+<body>
+<div style="background:#FFF3C4;color:#111;overflow:hidden">
+
+<!-- ================= COVER ================= -->
+<section id="top" class="dots-red" style="background-color:#FFD60A;border-bottom:6px solid #111">
+<div style="max-width:1280px;margin:0 auto;padding:20px 32px 0">
+
+<!-- masthead -->
+<header style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between">
+<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+<span class="bang" style="background:#111;color:#FFD60A;font-size:22px;padding:6px 16px;transform:rotate(-2deg);display:inline-block">ISSUE #01</span>
+<span style="font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase">The Digitizer · Chandigarh, India</span>
+</div>
+<nav class="nav bang" style="display:flex;flex-wrap:wrap;gap:8px;font-size:24px">
+<a href="#work" style="border:3px solid #111;background:#fff;padding:6px 18px;min-height:44px;display:inline-flex;align-items:center">Work</a>
+<a href="#career" style="border:3px solid #111;background:#fff;padding:6px 18px;min-height:44px;display:inline-flex;align-items:center">Career</a>
+<a href="#contact" style="border:3px solid #111;background:#fff;padding:6px 18px;min-height:44px;display:inline-flex;align-items:center">Contact</a>
+<a href="index.html" style="border:3px solid #111;background:#1B5FD6;color:#fff;padding:6px 18px;min-height:44px;display:inline-flex;align-items:center">Boardroom view &#8250;</a>
+</nav>
+</header>
+
+<!-- cover body -->
+<div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-end;padding:40px 0 0">
+
+<div style="flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:30px;padding-bottom:56px">
+
+<div class="bubble pop" style="align-self:flex-start;padding:16px 28px;margin-bottom:30px;transform:rotate(-2deg)">
+<span class="bang" style="font-size:clamp(28px,3.4vw,44px);line-height:1">Hi, I'm Shubham Narang!</span>
+</div>
+
+<h1 class="bang" style="margin:0;font-size:clamp(76px,13vw,200px);line-height:.82;color:#fff;-webkit-text-stroke:5px #111;paint-order:stroke fill;text-shadow:9px 9px 0 #111,16px 16px 0 #D81B27;text-wrap:balance">Shubham<br>Narang</h1>
+
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<span class="bang" style="background:#1B5FD6;color:#fff;border:4px solid #111;font-size:28px;padding:4px 20px;transform:rotate(-2deg);display:inline-block">Boardroom</span>
+<span class="bang" style="font-size:36px">+</span>
+<span class="bang" style="background:#D81B27;color:#fff;border:4px solid #111;font-size:28px;padding:4px 20px;transform:rotate(2deg);display:inline-block">Builder</span>
+</div>
+
+<div style="background:#fff;border:4px solid #111;box-shadow:7px 7px 0 #111;padding:20px 24px;max-width:640px;display:flex;flex-direction:column;gap:10px">
+<span style="font-weight:800;font-size:15px;letter-spacing:.1em;text-transform:uppercase">Digital Transformation Manager, Mahindra Group</span>
+<span style="font-size:18px;line-height:1.5;text-wrap:pretty">I run enterprise data and AI strategy for large organizations — and build and ship independent products end to end.</span>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:16px">
+<a class="btn bang" href="mailto:i.shubham25@gmail.com" style="background:#D81B27;color:#fff;font-size:26px">Email me</a>
+<a class="btn bang" href="https://linkedin.com/in/shubhamnarang25" style="background:#fff;font-size:26px">LinkedIn</a>
+<a class="btn bang" href="https://github.com/inarang25" style="background:#fff;font-size:26px">GitHub</a>
+</div>
+</div>
+
+<!-- portrait panel -->
+<div style="flex:1 1 360px;min-width:0;max-width:520px;position:relative;margin:0 auto;width:100%;align-self:flex-end">
+<div class="panel" style="background-color:#fff;aspect-ratio:4/5;overflow:hidden;transform:rotate(2deg);margin-bottom:56px;box-shadow:12px 12px 0 #111">
+<img src="images/portrait.png" alt="Pop-art portrait of Shubham Narang" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block">
+</div>
+<div class="wob" style="position:absolute;right:-12px;top:-30px;width:190px;height:190px">
+<div class="burst" style="position:absolute;inset:0;background:#111"></div>
+<div class="burst" style="position:absolute;inset:5px;background:#D81B27;display:flex;align-items:center;justify-content:center;text-align:center">
+<span class="bang" style="color:#fff;font-size:28px;line-height:.95;padding:0 28px;transform:rotate(-8deg)">Digitization!<br><span style="font-size:20px;color:#FFD60A">boardroom → build</span></span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= TICKER ================= -->
+<section aria-label="Organisations I have worked and studied with" style="background:#111;color:#FFD60A;border-bottom:6px solid #111;overflow:hidden">
+<div class="ticker bang" style="font-size:34px;padding:14px 0;white-space:nowrap">
+<span style="padding-right:36px">★ MAHINDRA GROUP ★ IBM ★ LARSEN &amp; TOUBRO ★ NMIMS ★ UPES </span>
+<span style="padding-right:36px" aria-hidden="true">★ MAHINDRA GROUP ★ IBM ★ LARSEN &amp; TOUBRO ★ NMIMS ★ UPES </span>
+<span style="padding-right:36px" aria-hidden="true">★ MAHINDRA GROUP ★ IBM ★ LARSEN &amp; TOUBRO ★ NMIMS ★ UPES </span>
+<span style="padding-right:36px" aria-hidden="true">★ MAHINDRA GROUP ★ IBM ★ LARSEN &amp; TOUBRO ★ NMIMS ★ UPES </span>
+</div>
+</section>
+
+<!-- ================= POWER STATS ================= -->
+<section class="dots" style="background-color:#FFF3C4;border-bottom:6px solid #111">
+<div style="max-width:1280px;margin:0 auto;padding:88px 32px">
+<h2 class="bang" style="margin:0 0 48px;font-size:clamp(48px,7vw,96px);line-height:.9;-webkit-text-stroke:3px #111;paint-order:stroke fill;color:#fff;text-shadow:6px 6px 0 #111">Power stats<span style="color:#D81B27">!</span></h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:36px">
+
+<div class="panel" style="background:#FFD60A;padding:28px 24px;transform:rotate(-1.5deg)">
+<div class="bang" style="font-size:clamp(72px,8vw,112px);line-height:.9">250+</div>
+<div style="font-weight:800;font-size:16px;margin-top:8px">KPIs in scope</div>
+<div class="marker" style="font-size:17px;margin-top:4px;color:#8F1018">Project Vihan</div>
+</div>
+
+<div class="panel" style="background:#1B5FD6;color:#fff;padding:28px 24px;transform:rotate(1.2deg)">
+<div class="bang" style="font-size:clamp(72px,8vw,112px);line-height:.9;color:#FFD60A">86.7%</div>
+<div style="font-weight:800;font-size:16px;margin-top:8px">Forecast accuracy</div>
+<div class="marker" style="font-size:17px;margin-top:4px">demand.ai</div>
+</div>
+
+<div class="panel" style="background:#D81B27;color:#fff;padding:28px 24px;transform:rotate(-1deg)">
+<div class="bang" style="font-size:clamp(72px,8vw,112px);line-height:.9;color:#FFD60A">₹50Cr</div>
+<div style="font-weight:800;font-size:16px;margin-top:8px">Defence program delivered</div>
+<div class="marker" style="font-size:17px;margin-top:4px">Larsen &amp; Toubro</div>
+</div>
+
+<div class="panel" style="background:#FF6FB5;padding:28px 24px;transform:rotate(1.6deg)">
+<div class="bang" style="font-size:clamp(72px,8vw,112px);line-height:.9">10+</div>
+<div style="font-weight:800;font-size:16px;margin-top:8px">Independent projects shipped</div>
+<div class="marker" style="font-size:17px;margin-top:4px">the builder side</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= CASE FILES ================= -->
+<section id="work" style="background:#FFF3C4;border-bottom:6px solid #111">
+<div style="max-width:1280px;margin:0 auto;padding:96px 32px">
+
+<div style="display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between;margin-bottom:56px">
+<h2 class="bang" style="margin:0;font-size:clamp(52px,8vw,120px);line-height:.88;-webkit-text-stroke:3px #111;paint-order:stroke fill;color:#FFD60A;text-shadow:7px 7px 0 #111">Case files</h2>
+<span class="marker" style="font-size:22px;background:#111;color:#FFD60A;padding:8px 16px;transform:rotate(-1.5deg);display:inline-block">3 missions. Data that ships.</span>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:44px">
+
+<!-- nurchur -->
+<a class="panel dots-red" href="https://nurchur.in" style="flex:1 1 100%;background-color:#FFD60A;padding:36px;display:flex;flex-wrap:wrap;gap:28px 48px;align-items:center;position:relative">
+<div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:18px">
+<span class="bang" style="align-self:flex-start;background:#111;color:#FFD60A;font-size:22px;padding:4px 14px">Case #01 · Builder</span>
+<h3 class="bang" style="margin:0;font-size:clamp(56px,8vw,112px);line-height:.88">nurchur.in</h3>
+</div>
+<div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<div style="background:#fff;border:4px solid #111;padding:16px 20px;font-size:18px;line-height:1.5;text-wrap:pretty"><b>The mission:</b> an independent product, built first on Lovable, then moved to a self-managed GitHub → Vercel pipeline with a Supabase backend.</div>
+<div class="bang" style="display:flex;flex-wrap:wrap;gap:10px;font-size:22px">
+<span style="background:#111;color:#fff;padding:4px 14px;transform:rotate(-2deg)">Vite</span>
+<span style="background:#111;color:#fff;padding:4px 14px;transform:rotate(1.5deg)">React</span>
+<span style="background:#111;color:#fff;padding:4px 14px;transform:rotate(-1deg)">Supabase</span>
+<span style="background:#111;color:#fff;padding:4px 14px;transform:rotate(2deg)">Vercel</span>
+<span style="background:#111;color:#fff;padding:4px 14px;transform:rotate(-1.5deg)">Razorpay</span>
+</div>
+</div>
+</a>
+
+<!-- demand.ai -->
+<div class="panel dots-blue" style="flex:1 1 440px;min-width:0;background-color:#1B5FD6;color:#fff;padding:36px;display:flex;flex-direction:column;gap:22px">
+<span class="bang" style="align-self:flex-start;background:#FFD60A;color:#111;font-size:22px;padding:4px 14px;border:3px solid #111">Case #02 · Boardroom</span>
+<h3 class="bang" style="margin:0;font-size:clamp(48px,6vw,84px);line-height:.9;-webkit-text-stroke:3px #111;paint-order:stroke fill;text-shadow:5px 5px 0 #111;text-wrap:balance">demand.ai &amp; Project Vihan</h3>
+<div style="background:#fff;color:#111;border:4px solid #111;padding:16px 20px;font-size:18px;line-height:1.5;text-wrap:pretty"><b>The mission:</b> a Mahindra ML forecasting engine that replaces Kinaxis — plus work to consolidate the KPIs of 10 business functions.</div>
+<div class="bang" style="display:flex;flex-wrap:wrap;gap:10px;font-size:22px;color:#111">
+<span style="background:#FFD60A;border:3px solid #111;padding:2px 12px">Power Query</span>
+<span style="background:#FFD60A;border:3px solid #111;padding:2px 12px">ML forecasting</span>
+<span style="background:#FFD60A;border:3px solid #111;padding:2px 12px">Executive dashboards</span>
+</div>
+</div>
+
+<!-- EV -->
+<div class="panel dots" style="flex:1 1 440px;min-width:0;background-color:#FF6FB5;padding:36px;display:flex;flex-direction:column;gap:22px">
+<span class="bang" style="align-self:flex-start;background:#111;color:#FF6FB5;font-size:22px;padding:4px 14px">Case #03 · Boardroom</span>
+<h3 class="bang" style="margin:0;font-size:clamp(48px,6vw,84px);line-height:.9;color:#fff;-webkit-text-stroke:3px #111;paint-order:stroke fill;text-shadow:5px 5px 0 #111;text-wrap:balance">Indian EV Market Analysis</h3>
+<div style="background:#fff;border:4px solid #111;padding:16px 20px;font-size:18px;line-height:1.5"><b>The mission:</b> a Power BI model of state-wise and OEM-wise sales.</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(120px,100%),1fr));gap:12px">
+<div style="background:#FFD60A;border:4px solid #111;padding:10px 12px"><div class="bang" style="font-size:44px;line-height:1">156.9%</div><div style="font-size:13px;font-weight:800">Revenue CAGR</div></div>
+<div style="background:#FFD60A;border:4px solid #111;padding:10px 12px"><div class="bang" style="font-size:44px;line-height:1">93.9%</div><div style="font-size:13px;font-weight:800">EV sales CAGR</div></div>
+<div style="background:#FFD60A;border:4px solid #111;padding:10px 12px"><div class="bang" style="font-size:44px;line-height:1">37.5%</div><div style="font-size:13px;font-weight:800">Ola Electric share</div></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= SIDE QUESTS ================= -->
+<section style="background:#1B5FD6;border-bottom:6px solid #111" class="dots-blue">
+<div style="max-width:1280px;margin:0 auto;padding:96px 32px">
+<h2 class="bang" style="margin:0 0 56px;font-size:clamp(48px,7vw,96px);line-height:.9;color:#FFD60A;-webkit-text-stroke:3px #111;paint-order:stroke fill;text-shadow:6px 6px 0 #111">Side quests</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:36px">
+
+<div class="panel" style="background:#fff;display:flex;flex-direction:column">
+<div class="bang" style="background:#FFD60A;border-bottom:4px solid #111;font-size:28px;padding:10px 20px;line-height:1.05">Business Performance &amp; Market Analysis</div>
+<ul style="margin:0;padding:20px 20px 24px 40px;display:flex;flex-direction:column;gap:10px;font-size:16px;font-weight:600">
+<li>Electronics demand-forecast analysis (26.8% deviation)</li>
+<li>Hospitality revenue and occupancy</li>
+<li>FMCG OTIF service-level dashboard</li>
+<li>20-site fuel retail dashboard</li>
+</ul>
+</div>
+
+<div class="panel" style="background:#fff;display:flex;flex-direction:column">
+<div class="bang" style="background:#FF6FB5;border-bottom:4px solid #111;font-size:28px;padding:10px 20px;line-height:1.05">Customer &amp; Market Intelligence</div>
+<ul style="margin:0;padding:20px 20px 24px 40px;display:flex;flex-direction:column;gap:10px;font-size:16px;font-weight:600">
+<li>British Airways review analysis (20,000+ reviews)</li>
+<li>SaaS subscription lifecycle study (892 users)</li>
+</ul>
+</div>
+
+<div class="panel" style="background:#fff;display:flex;flex-direction:column">
+<div class="bang" style="background:#D81B27;color:#fff;border-bottom:4px solid #111;font-size:28px;padding:10px 20px;line-height:1.05">Predictive &amp; Personalization</div>
+<ul style="margin:0;padding:20px 20px 24px 40px;display:flex;flex-direction:column;gap:10px;font-size:16px;font-weight:600">
+<li>Health insurance premium predictor, built with Streamlit</li>
+</ul>
+</div>
+
+<div class="panel" style="background:#fff;display:flex;flex-direction:column">
+<div class="bang" style="background:#FFD60A;border-bottom:4px solid #111;font-size:28px;padding:10px 20px;line-height:1.05">Product Strategy &amp; Experimentation</div>
+<ul style="margin:0;padding:20px 20px 24px 40px;display:flex;flex-direction:column;gap:10px;font-size:16px;font-weight:600">
+<li>Credit card target-market EDA</li>
+<li>Credit card A/B test at 0.05 significance</li>
+<li>eCommerce process mining with Celonis</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= ORIGIN STORY ================= -->
+<section id="career" style="background:#FFF3C4;border-bottom:6px solid #111">
+<div style="max-width:1280px;margin:0 auto;padding:96px 32px">
+<div style="display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between;margin-bottom:56px">
+<h2 class="bang" style="margin:0;font-size:clamp(52px,8vw,120px);line-height:.88;color:#fff;-webkit-text-stroke:3px #111;paint-order:stroke fill;text-shadow:7px 7px 0 #D81B27">Origin story</h2>
+<span class="marker" style="font-size:22px;background:#111;color:#FFD60A;padding:8px 16px;transform:rotate(1.5deg);display:inline-block">Read it newest first.</span>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:40px">
+
+<div class="panel" style="background:#fff;padding:0;transform:rotate(-1deg)">
+<div class="bang" style="background:#D81B27;color:#fff;border-bottom:4px solid #111;padding:8px 20px;font-size:26px">Feb 2026 — Now</div>
+<div style="padding:24px"><div class="bang" style="font-size:40px;line-height:1">Digital Transformation Manager</div><div style="font-weight:800;margin-top:8px;font-size:18px">Mahindra Group</div></div>
+</div>
+
+<div class="panel" style="background:#fff;transform:rotate(.8deg)">
+<div class="bang" style="background:#1B5FD6;color:#fff;border-bottom:4px solid #111;padding:8px 20px;font-size:26px">Jun 2022 — Jan 2026</div>
+<div style="padding:24px"><div class="bang" style="font-size:40px;line-height:1">Business Analytics Analyst</div><div style="font-weight:800;margin-top:8px;font-size:18px">IBM</div></div>
+</div>
+
+<div class="panel" style="background:#fff;transform:rotate(-.6deg)">
+<div class="bang" style="background:#FFD60A;border-bottom:4px solid #111;padding:8px 20px;font-size:26px">Aug 2017 — Aug 2019</div>
+<div style="padding:24px"><div class="bang" style="font-size:40px;line-height:1">Sr. Engineer, Data &amp; Delivery</div><div style="font-weight:800;margin-top:8px;font-size:18px">Larsen &amp; Toubro (Defence)</div></div>
+</div>
+
+<div class="panel" style="background:#fff;transform:rotate(1deg)">
+<div class="bang" style="background:#FF6FB5;border-bottom:4px solid #111;padding:8px 20px;font-size:26px">2020 — 2022</div>
+<div style="padding:24px"><div class="bang" style="font-size:40px;line-height:1">MBA, Operations &amp; Data Sciences</div><div style="font-weight:800;margin-top:8px;font-size:18px">NMIMS</div></div>
+</div>
+
+<div class="panel" style="background:#fff;transform:rotate(-1.2deg)">
+<div class="bang" style="background:#111;color:#FFD60A;border-bottom:4px solid #111;padding:8px 20px;font-size:26px">2013 — 2017</div>
+<div style="padding:24px"><div class="bang" style="font-size:40px;line-height:1">B.Tech, Mechatronics, Robotics &amp; Automation</div><div style="font-weight:800;margin-top:8px;font-size:18px">UPES</div></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= TOOLBELT ================= -->
+<section class="dots-red" style="background-color:#FFD60A;border-bottom:6px solid #111">
+<div style="max-width:1280px;margin:0 auto;padding:96px 32px;display:flex;flex-wrap:wrap;gap:56px">
+
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:28px">
+<h2 class="bang" style="margin:0;font-size:clamp(48px,7vw,96px);line-height:.9;color:#fff;-webkit-text-stroke:3px #111;paint-order:stroke fill;text-shadow:6px 6px 0 #111">Utility belt</h2>
+<div class="bang" style="display:flex;flex-wrap:wrap;gap:14px;font-size:26px">
+<span style="background:#D81B27;color:#fff;border:4px solid #111;box-shadow:4px 4px 0 #111;padding:4px 18px;transform:rotate(-2deg)">AI Strategy</span>
+<span style="background:#D81B27;color:#fff;border:4px solid #111;box-shadow:4px 4px 0 #111;padding:4px 18px;transform:rotate(1.5deg)">Business Transformation</span>
+<span style="background:#fff;border:4px solid #111;box-shadow:4px 4px 0 #111;padding:4px 18px;transform:rotate(1deg)">Power BI</span>
+<span style="background:#fff;border:4px solid #111;box-shadow:4px 4px 0 #111;padding:4px 18px;transform:rotate(-1.5deg)">Celonis</span>
+<span style="background:#fff;border:4px solid #111;box-shadow:4px 4px 0 #111;padding:4px 18px;transform:rotate(2deg)">Python / pandas</span>
+<span style="background:#fff;border:4px solid #111;box-shadow:4px 4px 0 #111;padding:4px 18px;transform:rotate(-1deg)">Tableau</span>
+<span style="background:#fff;border:4px solid #111;box-shadow:4px 4px 0 #111;padding:4px 18px;transform:rotate(1.5deg)">Streamlit</span>
+</div>
+</div>
+
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:28px">
+<h2 class="bang" style="margin:0;font-size:clamp(40px,5vw,72px);line-height:.9;background:#111;color:#FFD60A;padding:6px 20px;align-self:flex-start;transform:rotate(-1deg)">Badges earned</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:20px">
+<div class="panel" style="background:#fff;padding:18px 20px;font-weight:800;font-size:17px;line-height:1.3"><span class="bang" style="display:block;font-size:30px;color:#1B5FD6;line-height:1">★</span>Google Cloud Digital Leader</div>
+<div class="panel" style="background:#fff;padding:18px 20px;font-weight:800;font-size:17px;line-height:1.3"><span class="bang" style="display:block;font-size:30px;color:#D81B27;line-height:1">★</span>AWS Certified Cloud Practitioner</div>
+<div class="panel" style="background:#fff;padding:18px 20px;font-weight:800;font-size:17px;line-height:1.3"><span class="bang" style="display:block;font-size:30px;color:#1B5FD6;line-height:1">★</span>Power BI Data Analyst</div>
+<div class="panel" style="background:#fff;padding:18px 20px;font-weight:800;font-size:17px;line-height:1.3"><span class="bang" style="display:block;font-size:30px;color:#D81B27;line-height:1">★</span>Lean Six Sigma Green Belt</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ================= TO BE CONTINUED ================= -->
+<footer id="contact" class="dots" style="background-color:#D81B27;color:#fff;position:relative;overflow:hidden">
+<div style="max-width:1280px;margin:0 auto;padding:104px 32px 48px;display:flex;flex-direction:column;gap:48px">
+
+<div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between">
+<h2 class="bang" style="margin:0;font-size:clamp(60px,11vw,172px);line-height:.85;color:#FFD60A;-webkit-text-stroke:5px #111;paint-order:stroke fill;text-shadow:9px 9px 0 #111;text-wrap:balance">To be continued…</h2>
+<div class="wob" style="position:relative;width:min(300px,70vw);aspect-ratio:1;flex:0 0 auto">
+<div class="burst2" style="position:absolute;inset:0;background:#111"></div>
+<div class="burst2" style="position:absolute;inset:6px;background:#FFD60A;color:#111;display:flex;align-items:center;justify-content:center;text-align:center">
+<span class="bang" style="font-size:34px;line-height:.95;transform:rotate(-6deg)">Issue #02<br>needs a<br>co-author!</span>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+<a class="btn bang" href="mailto:i.shubham25@gmail.com" style="background:#FFD60A;color:#111;font-size:clamp(24px,3.4vw,40px);padding:12px 32px;word-break:break-word">i.shubham25@gmail.com</a>
+<a class="btn bang" href="https://linkedin.com/in/shubhamnarang25" style="background:#fff;color:#111;font-size:26px">LinkedIn</a>
+<a class="btn bang" href="https://github.com/inarang25" style="background:#fff;color:#111;font-size:26px">GitHub</a>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;border-top:4px solid #111;padding-top:24px;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase">
+<span>Shubham Narang · Chandigarh, India</span>
+<span>Issue #01 · The Digitizer</span>
+</div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
