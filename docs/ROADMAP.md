@@ -25,7 +25,7 @@ Both views share one header: name, section links (Work · Career · Lab · Conta
 ### Design language (Executive view)
 
 - Restrained and boardroom-grade; Indian character comes through craft details, not decoration.
-- Colour: deep bottle green-black `#0E1A16`, ivory `#EDE6D6`, antique gold `#C6A866` hairlines.
+- Colour: porcelain white `#F7F6F2`, ink green `#13201B` text, deep bottle green `#1E4535` buttons, antique gold `#7E5F1C` labels and `#A7853A` hairlines.
 - Type: Cormorant Garamond (headings), Hanken Grotesk (body), Tiro Devanagari Hindi for the name in Devanagari.
 - Detail: a fine gold Mughal jaali (eight-pointed star lattice) fading in behind the hero and contact; the portrait as a monochrome engraving set in an arched (jharokha) frame; an eight-pointed star as the only ornament.
 
