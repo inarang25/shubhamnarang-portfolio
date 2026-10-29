@@ -3,442 +3,395 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shubham Narang — Boardroom</title>
-<meta name="description" content="Shubham Narang — Digital transformation and enterprise data and AI strategy.">
-<meta name="theme-color" content="#fbfbfd">
+<title>Shubham Narang</title>
+<meta name="description" content="Shubham Narang — enterprise data and AI strategy at Mahindra Group, and small products built on the side.">
+<meta name="theme-color" content="#F5EFE3">
+<link rel="canonical" href="https://shubhamnarang.in/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/images/portrait.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Shubham Narang — Boardroom">
-<meta property="og:description" content="Digital transformation and enterprise data & AI strategy — from boardroom to build.">
-<meta property="og:image" content="/images/portrait.png">
+<meta property="og:url" content="https://shubhamnarang.in/">
+<meta property="og:title" content="Shubham Narang">
+<meta property="og:description" content="Enterprise data and AI strategy at Mahindra Group, and small products built on the side.">
+<meta property="og:image" content="https://shubhamnarang.in/images/portrait.png">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#fff;color:#1d1d1f;font-family:'Geist',system-ui,-apple-system,'Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased}
-*{box-sizing:border-box}
-a{color:inherit;text-decoration:none}
-.mono{font-family:'Geist Mono',ui-monospace,monospace;letter-spacing:.04em}
-.lnk{color:#0066cc;font-size:21px;display:inline-flex;align-items:center;min-height:44px}
-.lnk:hover{text-decoration:underline}
-.lnk-d{color:#2997ff}
-.pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 30px;border-radius:999px;background:#0071e3;color:#fff;font-size:17px;font-weight:500;box-shadow:0 0 0 0 rgba(0,113,227,.0),inset 0 1px 0 rgba(255,255,255,.25);transition:background .3s ease,transform .3s ease,box-shadow .3s ease}
-.pill:hover{background:#0077ed;transform:scale(1.04);box-shadow:0 10px 30px -8px rgba(0,113,227,.6),inset 0 1px 0 rgba(255,255,255,.25)}
-.tile{border-radius:36px;position:relative;overflow:hidden;transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s ease}
-.tile:hover{transform:scale(1.012);box-shadow:0 30px 60px -30px rgba(0,0,0,.35)}
-.tile-d{background:#0b0b0d;color:#f5f5f7;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),inset 0 0 0 1px rgba(255,255,255,.06)}
-.navl{font-size:13px;color:#1d1d1f;opacity:.8;min-height:44px;display:inline-flex;align-items:center;padding:0 10px;transition:opacity .2s ease}
-.navl:hover{opacity:1}
-.dotgrid-l{background-image:radial-gradient(rgba(29,29,31,.16) 1px,transparent 1.4px);background-size:22px 22px;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 35%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 60% 70% at 50% 35%,#000 20%,transparent 75%)}
-.dotgrid-d{background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1.4px);background-size:22px 22px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 40%,#000 15%,transparent 75%);mask-image:radial-gradient(ellipse 70% 80% at 50% 40%,#000 15%,transparent 75%)}
-.aurora{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
-.a1{background:rgba(0,113,227,.4);animation:drift1 18s ease-in-out infinite}
-.a2{background:rgba(142,98,255,.32);animation:drift2 22s ease-in-out infinite}
-.a3{background:rgba(255,159,10,.28);animation:drift1 26s ease-in-out infinite reverse}
-@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,40px) scale(1.15)}}
-@keyframes drift2{0%,100%{transform:translate(0,0) scale(1.1)}50%{transform:translate(-70px,30px) scale(.95)}}
-.spin1{transform-origin:400px 225px;animation:spin 60s linear infinite}
-.spin2{transform-origin:400px 225px;animation:spin 90s linear infinite reverse}
-@keyframes spin{to{transform:rotate(360deg)}}
-.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s .4s cubic-bezier(.3,.6,.2,1) forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.fade{opacity:0;animation:fade 1.6s 2.4s ease forwards}
-@keyframes fade{to{opacity:1}}
-.pulse{transform-origin:640px 80px;animation:pulse 2.4s ease-out infinite}
-@keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(3.2);opacity:0}}
-.flow{background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 6px,transparent 6px 12px);background-size:12px 1px;background-repeat:repeat-x;animation:flow 1.2s linear infinite}
-@keyframes flow{to{background-position:12px 0}}
-.rise{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
-.rise2{animation:rise 1.1s .15s cubic-bezier(.2,.7,.2,1) both}
-.rise3{animation:rise 1.1s .3s cubic-bezier(.2,.7,.2,1) both}
-@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
-.live{animation:livep 2s ease-out infinite}
-@keyframes livep{0%{box-shadow:0 0 0 0 rgba(48,209,88,.6)}100%{box-shadow:0 0 0 10px rgba(48,209,88,0)}}
-.row{transition:background .3s ease,padding .3s ease}
-.row:hover{background:rgba(255,255,255,.7)}
-.metal{background:linear-gradient(180deg,#fff 20%,#8e8e93 120%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-.swish{transform-box:fill-box;transform-origin:center;animation:sway 16s ease-in-out infinite alternate}
-@keyframes sway{from{transform:translateY(-8px) scaleY(.96)}to{transform:translateY(10px) scaleY(1.06)}}
-@media (prefers-reduced-motion:reduce){.swish,.aurora,.spin1,.spin2,.pulse,.flow,.rise,.rise2,.rise3,.live{animation:none}.draw{animation:none;stroke-dashoffset:0}.fade{animation:none;opacity:1}.tile,.pill{transition:none}}
+  :root{
+    --paper:#F5EFE3;
+    --paper-2:#EFE6D4;
+    --ink:#1F1A14;
+    --muted:#6A5E50;
+    --line:#D9CCB4;
+    --sindoor:#A8381F;
+    --indigo:#2B3A67;
+    --max:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--sindoor);color:var(--paper)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+  .deva{font-family:'Tiro Devanagari Hindi',serif}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .ulink{border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
+  .ulink:hover{color:var(--sindoor);border-color:var(--sindoor)}
+  .art{color:var(--sindoor)}
+
+  /* header */
+  header{padding:22px 0 0}
+  header .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between}
+  .mark{display:flex;align-items:baseline;gap:10px;min-height:44px;align-items:center}
+  .mark .serif{font-size:24px;line-height:1}
+  .mark .deva{font-size:15px;color:var(--muted)}
+  nav{display:flex;flex-wrap:wrap;gap:0 4px;font-size:14px;font-weight:500}
+  nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 10px;color:var(--muted);transition:color .2s}
+  nav a:hover{color:var(--ink)}
+  nav a.edition{color:var(--sindoor)}
+  .toran{display:block;width:100%;height:22px;margin-top:14px}
+
+  /* hero */
+  .hero{padding:72px 0 96px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:end}
+  .hero h1{margin:18px 0 0;font-size:clamp(44px,6.4vw,84px);line-height:1.02;letter-spacing:-.01em}
+  .hero h1 em{color:var(--sindoor)}
+  .hero p.lede{margin:28px 0 0;max-width:36em;font-size:19px;color:var(--muted)}
+  .hero .links{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;font-weight:500}
+  .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:500;transition:background .2s}
+  .btn:hover{background:var(--sindoor)}
+  .links .ulink{min-height:44px;display:inline-flex;align-items:center;border-bottom:0;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:6px}
+  .links .ulink:hover{text-decoration-color:var(--sindoor)}
+
+  .arch{position:relative;justify-self:end;width:100%;max-width:300px}
+  .arch::before{content:"";position:absolute;inset:-12px;border:1px solid var(--sindoor);border-radius:999px 999px 6px 6px;opacity:.55}
+  .arch-in{border-radius:999px 999px 4px 4px;overflow:hidden;background:var(--paper-2);aspect-ratio:3/4}
+  .arch-in img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+  .arch-cap{margin-top:26px;text-align:center;font-size:13px;color:var(--muted)}
+  .kolam-hero{position:absolute;width:120px;height:120px;left:-70px;bottom:-40px}
+
+  /* sections */
+  section.block{padding:88px 0;border-top:1px solid var(--line)}
+  .sec-head{display:grid;grid-template-columns:220px 1fr;gap:24px 56px;align-items:baseline}
+  .sec-title{display:flex;align-items:center;gap:12px}
+  .sec-title svg{flex:0 0 auto}
+  .sec-title h2{margin:0;font-size:34px;line-height:1.1}
+  .sec-intro{margin:0;color:var(--muted);max-width:40em}
+  .sec-body{margin-top:48px;margin-left:276px}
+
+  /* now */
+  .now{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .now li{background:var(--paper-2);border-radius:14px;padding:22px 22px 24px}
+  .now .k{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sindoor)}
+  .now p{margin:8px 0 0;font-size:16px}
+
+  /* work */
+  .work{display:flex;flex-direction:column}
+  .job{display:grid;grid-template-columns:1fr auto;gap:8px 32px;padding:32px 0;border-top:1px solid var(--line)}
+  .job:last-child{border-bottom:1px solid var(--line)}
+  .job h3{margin:0;font-size:32px;line-height:1.1}
+  .job .ctx{margin:6px 0 0;font-size:14px;color:var(--muted);font-weight:500}
+  .job p.d{margin:14px 0 0;max-width:38em}
+  .job .num{text-align:right;align-self:start}
+  .job .num b{display:block;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:48px;line-height:1;color:var(--sindoor)}
+  .job .num span{font-size:13px;color:var(--muted)}
+  .job .tags{grid-column:1/-1;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 16px}
+  .job .go{grid-column:1/-1;justify-self:start;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+
+  /* timeline */
+  .tl{list-style:none;margin:0;padding:0}
+  .tl li{display:grid;grid-template-columns:170px 1fr auto;gap:4px 32px;padding:18px 0;border-top:1px solid var(--line);align-items:baseline}
+  .tl li:last-child{border-bottom:1px solid var(--line)}
+  .tl .when{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .tl .what{font-weight:600}
+  .tl .where{color:var(--muted)}
+  .tl .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--sindoor);margin-right:8px;vertical-align:middle}
+  .certs{margin:28px 0 0;font-size:15px;color:var(--muted)}
+  .certs b{color:var(--ink);font-weight:600}
+
+  /* lab */
+  .lab{list-style:none;margin:0;padding:0;columns:2;column-gap:48px}
+  .lab li{break-inside:avoid;display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line)}
+  .lab .t{font-weight:500}
+  .lab .tool{display:block;font-size:13px;color:var(--muted);font-weight:400}
+  .lab a{font-size:14px;color:var(--sindoor);white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+  .lab a:hover{text-decoration:underline;text-underline-offset:4px}
+  .lab .soon{font-size:13px;color:var(--muted);white-space:nowrap}
+
+  /* writing */
+  .writing{background:var(--paper-2);border-radius:18px;padding:36px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+  .writing p{margin:0;max-width:34em}
+  .writing .serif{font-size:28px;line-height:1.2;margin-bottom:8px;display:block}
+
+  /* contact */
+  .contact{padding:112px 0 40px;border-top:1px solid var(--line);text-align:center}
+  .contact h2{margin:0;font-size:clamp(44px,7vw,88px);line-height:1}
+  .contact h2 em{color:var(--sindoor)}
+  .contact p{margin:18px auto 0;color:var(--muted);max-width:30em}
+  .contact .links{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center;align-items:center;font-weight:500}
+  .warli{display:block;width:100%;max-width:560px;height:auto;margin:80px auto 0;color:var(--ink)}
+  footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:13px;color:var(--muted)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .arch{justify-self:start;max-width:190px;margin-left:12px;order:-1}
+    .kolam-hero{display:none}
+    .sec-head{grid-template-columns:1fr}
+    .sec-body{margin-left:0;margin-top:36px}
+    .now{grid-template-columns:1fr}
+    .lab{columns:1}
+  }
+  @media (max-width:600px){
+    .hero{padding:48px 0 72px}
+    section.block{padding:64px 0}
+    .job{grid-template-columns:1fr}
+    .job .num{text-align:left}
+    .tl li{grid-template-columns:1fr;gap:2px}
+    .writing{padding:26px}
+  }
 </style>
 </head>
 <body>
-<div style="background:#fff;color:#1d1d1f">
 
-<!-- NAV -->
-<header style="background:rgba(245,245,247,.82);backdrop-filter:saturate(180%) blur(24px);-webkit-backdrop-filter:saturate(180%) blur(24px);border-bottom:1px solid rgba(0,0,0,.08)">
-<div style="max-width:1180px;margin:0 auto;padding:0 24px;min-height:48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 16px">
-<a href="#top" style="font-size:15px;font-weight:600;letter-spacing:-.01em;min-height:44px;display:inline-flex;align-items:center">Shubham Narang</a>
-<nav style="display:flex;flex-wrap:wrap;align-items:center">
-<a class="navl" href="#work">Work</a>
-<a class="navl" href="#experience">Experience</a>
-<a class="navl" href="#contact">Contact</a>
-<a href="/builder" style="font-size:13px;font-weight:500;color:#fff;background:#1d1d1f;border-radius:999px;padding:6px 14px;margin-left:8px;min-height:32px;display:inline-flex;align-items:center">Builder view &#8250;</a>
-</nav>
-</div>
+<!-- reusable line art -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- small kolam: 3x3 dot grid with looped strokes -->
+    <symbol id="kolam" viewBox="0 0 60 60">
+      <g fill="currentColor">
+        <circle cx="15" cy="15" r="1.6"/><circle cx="30" cy="15" r="1.6"/><circle cx="45" cy="15" r="1.6"/>
+        <circle cx="15" cy="30" r="1.6"/><circle cx="30" cy="30" r="1.6"/><circle cx="45" cy="30" r="1.6"/>
+        <circle cx="15" cy="45" r="1.6"/><circle cx="30" cy="45" r="1.6"/><circle cx="45" cy="45" r="1.6"/>
+      </g>
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M30 4 Q52 8 56 30 Q52 52 30 56 Q8 52 4 30 Q8 8 30 4Z"/>
+        <circle cx="30" cy="15" r="7.5"/><circle cx="30" cy="45" r="7.5"/>
+        <circle cx="15" cy="30" r="7.5"/><circle cx="45" cy="30" r="7.5"/>
+        <path d="M22.5 22.5 L37.5 37.5 M37.5 22.5 L22.5 37.5"/>
+      </g>
+    </symbol>
+    <!-- Warli figure -->
+    <symbol id="wf" viewBox="0 0 20 30">
+      <circle cx="10" cy="3.5" r="3" fill="currentColor"/>
+      <path d="M4.5 8 L15.5 8 L10 15 Z M10 15 L4.5 22 L15.5 22 Z" fill="currentColor"/>
+      <path d="M5 9 L1 15 M15 9 L19 15 M7 22 L5 29 M13 22 L15 29" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="mark" aria-label="Shubham Narang, home"><span class="serif">Shubham Narang</span><span class="deva" lang="hi">शुभम नारंग</span></a>
+    <nav aria-label="Main">
+      <a href="#now">Now</a>
+      <a href="#work">Work</a>
+      <a href="#lab">Lab</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+      <a class="edition" href="/builder">Comic edition &#8599;</a>
+    </nav>
+  </div>
+  <!-- toran: a thin hanging line of leaves and bells -->
+  <svg class="toran art" viewBox="0 0 1200 22" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <pattern id="toranp" width="40" height="22" patternUnits="userSpaceOnUse">
+        <path d="M14 1 Q20 14 26 1" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="20" cy="15" r="1.8" fill="currentColor"/>
+        <circle cx="0" cy="5" r="1" fill="currentColor"/><circle cx="40" cy="5" r="1" fill="currentColor"/>
+      </pattern>
+    </defs>
+    <line x1="0" y1="1" x2="1200" y2="1" stroke="currentColor" stroke-width="1"/>
+    <rect y="0" width="1200" height="22" fill="url(#toranp)"/>
+  </svg>
 </header>
 
-<!-- HERO -->
-<section id="top" style="position:relative;overflow:hidden;padding:112px 24px 0;text-align:center;background:linear-gradient(180deg,#eaf2ff 0%,#f6f3ff 55%,#fbfbfd 100%)">
-<div class="dotgrid-l" aria-hidden="true" style="position:absolute;inset:0"></div>
-<div class="aurora a1" aria-hidden="true" style="width:560px;height:560px;left:8%;top:-160px"></div>
-<div class="aurora a2" aria-hidden="true" style="width:520px;height:520px;right:6%;top:-120px"></div>
-<div class="aurora a3" aria-hidden="true" style="width:420px;height:420px;left:42%;top:120px"></div>
-<div class="aurora a1" aria-hidden="true" style="width:380px;height:380px;left:18%;top:300px;background:rgba(255,55,95,.2)"></div>
-<div class="aurora a2" aria-hidden="true" style="width:400px;height:400px;right:24%;top:280px;background:rgba(90,200,250,.32)"></div>
+<main>
 
-<div style="position:relative;max-width:1180px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px">
-<div class="rise" style="display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:#1d1d1f;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,.08);padding:8px 18px;border-radius:999px"><span class="live" aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#30d158"></span>Digital Transformation Manager · Mahindra Group</div>
-<h1 class="rise2" style="margin:0;font-size:clamp(68px,13vw,168px);font-weight:700;letter-spacing:-.055em;line-height:.96;text-wrap:balance">Shubham Narang.</h1>
-<p class="rise3" style="margin:8px 0 0;font-size:clamp(24px,3.2vw,40px);font-weight:500;letter-spacing:-.025em;color:#6e6e73;line-height:1.2;text-wrap:balance">Digitization, from boardroom to build.</p>
-<div class="rise3" style="display:flex;flex-wrap:wrap;gap:8px 32px;align-items:center;justify-content:center;margin-top:12px">
-<a class="pill" href="mailto:i.shubham25@gmail.com">Email me</a>
-<a class="lnk" href="https://linkedin.com/in/shubhamnarang25">LinkedIn &#8250;</a>
-<a class="lnk" href="https://github.com/inarang25">GitHub &#8250;</a>
-</div>
-</div>
-
-<!-- hero device card -->
-<div style="position:relative;max-width:1180px;margin:88px auto 0">
-<div class="tile tile-d" style="aspect-ratio:16/9;min-height:340px;border-bottom-left-radius:0;border-bottom-right-radius:0;border:1.5px solid transparent;border-bottom:0;background:linear-gradient(#0b0b0d,#0b0b0d) padding-box,linear-gradient(135deg,#5ac8fa,#bf5af2,#ff6bd6,#ff9f0a) border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px">
-<svg viewBox="0 0 1200 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%">
-<defs>
-<linearGradient id="sk1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="0"><stop offset="0" stop-color="#5ac8fa"/><stop offset=".3" stop-color="#2997ff"/><stop offset=".6" stop-color="#bf5af2"/><stop offset=".82" stop-color="#ff6bd6"/><stop offset="1" stop-color="#ff9f0a"/></linearGradient>
-<radialGradient id="hg1" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#2d5bff" stop-opacity=".45"/><stop offset="1" stop-color="#2d5bff" stop-opacity="0"/></radialGradient>
-<radialGradient id="hg2" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff4fd8" stop-opacity=".3"/><stop offset="1" stop-color="#ff4fd8" stop-opacity="0"/></radialGradient>
-</defs>
-<ellipse cx="380" cy="250" rx="420" ry="230" fill="url(#hg1)"/>
-<ellipse cx="900" cy="200" rx="360" ry="200" fill="url(#hg2)"/>
-<g class="swish" fill="none" stroke="url(#sk1)" stroke-width="1.1" style="filter:drop-shadow(0 0 5px rgba(150,120,255,.6))">
-<path d="M0,152C25,149 100,145 150,138C200,130 250,122 300,107C350,92 400,63 450,48C500,32 550,12 600,15C650,18 700,38 750,64C800,90 850,151 900,173C950,194 1000,199 1050,192C1100,185 1175,141 1200,131" stroke-opacity="0.22"/>
-<path d="M0,161C25,159 100,157 150,150C200,142 250,133 300,117C350,102 400,72 450,57C500,42 550,23 600,26C650,29 700,50 750,76C800,102 850,161 900,182C950,202 1000,207 1050,200C1100,193 1175,151 1200,141" stroke-opacity="0.27"/>
-<path d="M0,170C25,168 100,168 150,161C200,154 250,144 300,128C350,112 400,82 450,67C500,51 550,33 600,37C650,41 700,63 750,89C800,114 850,171 900,190C950,210 1000,214 1050,207C1100,201 1175,160 1200,150" stroke-opacity="0.32"/>
-<path d="M0,179C25,178 100,179 150,173C200,166 250,154 300,138C350,122 400,91 450,76C500,61 550,45 600,49C650,53 700,76 750,101C800,126 850,180 900,199C950,218 1000,221 1050,215C1100,208 1175,169 1200,159" stroke-opacity="0.39"/>
-<path d="M0,188C25,187 100,190 150,184C200,177 250,164 300,148C350,132 400,101 450,86C500,71 550,56 600,61C650,65 700,90 750,114C800,139 850,190 900,208C950,226 1000,228 1050,222C1100,215 1175,177 1200,169" stroke-opacity="0.45"/>
-<path d="M0,197C25,196 100,201 150,195C200,188 250,175 300,158C350,142 400,110 450,96C500,82 550,68 600,73C650,78 700,103 750,127C800,151 850,200 900,216C950,233 1000,235 1050,229C1100,222 1175,186 1200,178" stroke-opacity="0.51"/>
-<path d="M0,206C25,205 100,211 150,205C200,199 250,184 300,168C350,152 400,120 450,106C500,93 550,80 600,86C650,91 700,118 750,141C800,164 850,209 900,225C950,241 1000,242 1050,235C1100,229 1175,195 1200,186" stroke-opacity="0.56"/>
-<path d="M0,214C25,214 100,222 150,216C200,210 250,194 300,178C350,161 400,130 450,117C500,104 550,93 600,99C650,105 700,132 750,154C800,177 850,219 900,233C950,248 1000,248 1050,242C1100,235 1175,203 1200,195" stroke-opacity="0.61"/>
-<path d="M0,223C25,223 100,232 150,226C200,220 250,204 300,187C350,171 400,140 450,127C500,115 550,106 600,112C650,119 700,146 750,168C800,189 850,228 900,241C950,255 1000,254 1050,248C1100,242 1175,211 1200,204" stroke-opacity="0.65"/>
-<path d="M0,231C25,232 100,241 150,236C200,230 250,213 300,197C350,181 400,150 450,138C500,127 550,119 600,126C650,133 700,161 750,182C800,202 850,237 900,249C950,261 1000,260 1050,254C1100,248 1175,219 1200,213" stroke-opacity="0.69"/>
-<path d="M0,239C25,240 100,251 150,246C200,240 250,223 300,207C350,191 400,161 450,150C500,139 550,133 600,140C650,148 700,176 750,196C800,215 850,247 900,257C950,268 1000,265 1050,259C1100,253 1175,228 1200,221" stroke-opacity="0.71"/>
-<path d="M0,248C25,249 100,260 150,255C200,250 250,232 300,216C350,200 400,171 450,161C500,151 550,147 600,155C650,163 700,191 750,210C800,228 850,256 900,265C950,274 1000,271 1050,265C1100,259 1175,235 1200,230" stroke-opacity="0.72"/>
-<path d="M0,256C25,257 100,269 150,264C200,259 250,241 300,226C350,210 400,182 450,173C500,164 550,161 600,170C650,178 700,207 750,224C800,241 850,265 900,272C950,280 1000,276 1050,270C1100,264 1175,243 1200,238" stroke-opacity="0.72"/>
-<path d="M0,263C25,265 100,278 150,274C200,269 250,250 300,235C350,220 400,193 450,185C500,177 550,176 600,185C650,194 700,222 750,238C800,254 850,273 900,279C950,286 1000,281 1050,275C1100,270 1175,251 1200,246" stroke-opacity="0.71"/>
-<path d="M0,271C25,273 100,287 150,283C200,278 250,259 300,245C350,231 400,205 450,197C500,190 550,192 600,201C650,210 700,238 750,252C800,266 850,282 900,286C950,291 1000,285 1050,280C1100,275 1175,259 1200,255" stroke-opacity="0.69"/>
-<path d="M0,279C25,281 100,295 150,291C200,287 250,268 300,255C350,241 400,217 450,210C500,204 550,207 600,217C650,226 700,253 750,266C800,279 850,290 900,293C950,296 1000,289 1050,284C1100,279 1175,267 1200,263" stroke-opacity="0.65"/>
-<path d="M0,286C25,288 100,304 150,300C200,297 250,277 300,264C350,252 400,229 450,223C500,218 550,223 600,233C650,242 700,269 750,280C800,291 850,298 900,299C950,301 1000,293 1050,289C1100,284 1175,274 1200,271" stroke-opacity="0.61"/>
-<path d="M0,293C25,296 100,312 150,309C200,306 250,286 300,274C350,262 400,241 450,237C500,233 550,240 600,249C650,259 700,285 750,294C800,303 850,305 900,305C950,305 1000,297 1050,293C1100,289 1175,282 1200,280" stroke-opacity="0.56"/>
-<path d="M0,300C25,303 100,320 150,317C200,315 250,296 300,285C350,273 400,254 450,251C500,248 550,256 600,266C650,275 700,300 750,308C800,315 850,313 900,311C950,309 1000,301 1050,297C1100,293 1175,290 1200,288" stroke-opacity="0.51"/>
-<path d="M0,307C25,310 100,328 150,326C200,323 250,305 300,295C350,285 400,267 450,265C500,263 550,273 600,283C650,292 700,316 750,322C800,327 850,320 900,316C950,313 1000,304 1050,300C1100,297 1175,297 1200,296" stroke-opacity="0.45"/>
-<path d="M0,314C25,317 100,335 150,334C200,332 250,314 300,305C350,296 400,281 450,280C500,279 550,291 600,300C650,309 700,332 750,335C800,339 850,327 900,321C950,316 1000,307 1050,304C1100,301 1175,305 1200,305" stroke-opacity="0.39"/>
-<path d="M0,321C25,324 100,343 150,342C200,341 250,324 300,316C350,308 400,295 450,295C500,295 550,308 600,317C650,326 700,347 750,349C800,350 850,333 900,326C950,319 1000,310 1050,308C1100,305 1175,312 1200,313" stroke-opacity="0.32"/>
-<path d="M0,327C25,331 100,350 150,350C200,350 250,333 300,327C350,320 400,309 450,310C500,311 550,326 600,335C650,343 700,363 750,362C800,361 850,339 900,331C950,322 1000,312 1050,311C1100,309 1175,320 1200,322" stroke-opacity="0.27"/>
-<path d="M0,334C25,338 100,358 150,358C200,359 250,343 300,338C350,332 400,323 450,326C500,328 550,344 600,352C650,360 700,378 750,375C800,372 850,345 900,335C950,325 1000,315 1050,314C1100,313 1175,328 1200,330" stroke-opacity="0.22"/>
-</g>
-</svg>
-<img src="images/portrait.webp" width="800" height="800" alt="Pop-art portrait of Shubham Narang" style="position:relative;width:clamp(180px,26vw,320px);aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 0 8px rgba(255,255,255,.04),0 30px 80px -20px rgba(41,151,255,.55)">
-<span class="mono" style="position:absolute;left:28px;bottom:22px;font-size:11px;color:#6e6e73">30.7333° N · 76.7794° E</span>
-<span class="mono" style="position:absolute;right:28px;bottom:22px;font-size:11px;color:#6e6e73">Chandigarh, India</span>
-</div>
-</div>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Digital Transformation Manager · Mahindra Group · Chandigarh</div>
+      <h1 class="serif">I help large organisations <em>see themselves</em> through data — and build small products on the side.</h1>
+      <p class="lede">Close to a decade across defence delivery, consulting and enterprise strategy. Today I lead data and AI work that reaches the CEO's desk — and outside work, I ship things of my own.</p>
+      <div class="links">
+        <a class="btn" href="mailto:i.shubham25@gmail.com">Write to me</a>
+        <a class="ulink" href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="ulink" href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <figure class="arch" style="margin:0">
+      <svg class="kolam-hero art" aria-hidden="true"><use href="#kolam"/></svg>
+      <div class="arch-in"><img src="images/portrait.webp" width="800" height="800" alt="Illustrated portrait of Shubham Narang"></div>
+      <figcaption class="arch-cap">Chandigarh, India</figcaption>
+    </figure>
+  </div>
 </section>
 
-<!-- STATEMENT -->
-<section style="padding:148px 24px 128px;background:linear-gradient(180deg,#fbfbfd 0%,#f1f5ff 100%)">
-<div style="max-width:980px;margin:0 auto">
-<p style="margin:0;font-size:clamp(32px,5vw,64px);font-weight:600;letter-spacing:-.04em;line-height:1.1;text-wrap:balance">I run enterprise data and AI strategy for large organizations. <span style="color:#86868b">And I build and ship independent products, <span style="background:linear-gradient(90deg,#0071e3,#8e62ff 55%,#ff375f);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">end to end.</span></span></p>
-</div>
+<section class="block reveal" id="now">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title"><svg class="art" width="22" height="22" aria-hidden="true"><use href="#kolam"/></svg><h2 class="serif">Now</h2></div>
+      <p class="sec-intro">What has my attention this season.</p>
+    </div>
+    <div class="sec-body">
+      <ul class="now">
+        <li><div class="k">At work</div><p>Leading demand.ai, an ML forecasting engine, and helping unify 250+ KPIs across ten functions at Mahindra.</p></li>
+        <li><div class="k">On the side</div><p>Running nurchur.in — a baby-care tracker I built, launched and operate myself.</p></li>
+        <li><div class="k">Learning</div><p>Turning a set of capstone studies into proper, finished projects — one at a time.</p></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<!-- NUMBERS -->
-<section style="position:relative;overflow:hidden;background:#000;color:#f5f5f7;padding:136px 24px 120px">
-<div class="dotgrid-d" aria-hidden="true" style="position:absolute;inset:0"></div>
-<div class="aurora" aria-hidden="true" style="width:700px;height:420px;left:50%;top:-260px;margin-left:-350px;background:rgba(0,113,227,.35)"></div>
-<div style="position:relative;max-width:1180px;margin:0 auto">
-<h2 class="metal" style="margin:0 0 80px;font-size:clamp(40px,6vw,80px);font-weight:700;letter-spacing:-.045em;line-height:1.05">By the numbers.</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:56px 40px">
-<div style="border-top:1px solid rgba(255,255,255,.18);padding-top:28px"><div class="metal" style="font-size:clamp(72px,9vw,120px);font-weight:700;letter-spacing:-.055em;line-height:1;background-image:linear-gradient(180deg,#fff 10%,#7ac7ff 140%)">250+</div><div style="font-size:19px;margin-top:14px">KPIs in scope</div><div style="font-size:15px;color:#a1a1a6;margin-top:4px">Project Vihan</div></div>
-<div style="border-top:1px solid rgba(255,255,255,.18);padding-top:28px">
-<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap"><div class="metal" style="font-size:clamp(72px,9vw,120px);font-weight:700;letter-spacing:-.055em;line-height:1;background-image:linear-gradient(180deg,#fff 10%,#c4a4ff 140%)">86.7%</div>
-<svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="4"/><circle class="draw" pathLength="1" cx="28" cy="28" r="24" fill="none" stroke="#2997ff" stroke-width="4" stroke-linecap="round" transform="rotate(-90 28 28)" style="stroke-dasharray:.867 1;stroke-dashoffset:0"/></svg></div>
-<div style="font-size:19px;margin-top:14px">Forecast accuracy</div><div style="font-size:15px;color:#a1a1a6;margin-top:4px">demand.ai</div></div>
-<div style="border-top:1px solid rgba(255,255,255,.18);padding-top:28px"><div class="metal" style="font-size:clamp(72px,9vw,120px);font-weight:700;letter-spacing:-.055em;line-height:1;background-image:linear-gradient(180deg,#fff 10%,#ffb36b 140%)">₹50Cr</div><div style="font-size:19px;margin-top:14px">Defence program delivered</div><div style="font-size:15px;color:#a1a1a6;margin-top:4px">Larsen &amp; Toubro</div></div>
-<div style="border-top:1px solid rgba(255,255,255,.18);padding-top:28px"><div class="metal" style="font-size:clamp(72px,9vw,120px);font-weight:700;letter-spacing:-.055em;line-height:1;background-image:linear-gradient(180deg,#fff 10%,#ff8fb8 140%)">10+</div><div style="font-size:19px;margin-top:14px">Independent projects shipped</div><div style="font-size:15px;color:#a1a1a6;margin-top:4px">On the builder side</div></div>
-</div>
-
-<!-- silk art -->
-<div aria-hidden="true" style="margin-top:96px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)">
-<svg viewBox="0 0 1200 300" preserveAspectRatio="none" style="width:100%;height:clamp(200px,24vw,320px);display:block;overflow:visible">
-<defs>
-<linearGradient id="sk2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="0"><stop offset="0" stop-color="#ff9f0a"/><stop offset=".25" stop-color="#ff375f"/><stop offset=".55" stop-color="#bf5af2"/><stop offset=".8" stop-color="#2997ff"/><stop offset="1" stop-color="#5ac8fa"/></linearGradient>
-</defs>
-<g class="swish" fill="none" stroke="url(#sk2)" stroke-width="1.2" style="filter:drop-shadow(0 0 6px rgba(191,90,242,.65))">
-<path d="M0,53C25,52 100,54 150,51C200,48 250,30 300,34C350,38 400,59 450,74C500,89 550,116 600,122C650,129 700,128 750,115C800,102 850,66 900,47C950,27 1000,4 1050,0C1100,-4 1175,19 1200,23" stroke-opacity="0.22"/>
-<path d="M0,65C25,64 100,63 150,59C200,55 250,36 300,40C350,44 400,66 450,81C500,97 550,125 600,132C650,139 700,136 750,123C800,110 850,73 900,54C950,36 1000,14 1050,11C1100,8 1175,32 1200,36" stroke-opacity="0.28"/>
-<path d="M0,77C25,75 100,72 150,67C200,62 250,43 300,47C350,50 400,73 450,89C500,105 550,135 600,142C650,149 700,144 750,131C800,118 850,80 900,62C950,44 1000,24 1050,22C1100,20 1175,45 1200,50" stroke-opacity="0.35"/>
-<path d="M0,89C25,86 100,81 150,75C200,69 250,50 300,54C350,57 400,81 450,97C500,113 550,144 600,151C650,158 700,152 750,139C800,125 850,87 900,70C950,52 1000,35 1050,34C1100,33 1175,58 1200,63" stroke-opacity="0.43"/>
-<path d="M0,100C25,98 100,90 150,83C200,76 250,57 300,61C350,65 400,88 450,105C500,121 550,153 600,160C650,167 700,160 750,146C800,132 850,94 900,78C950,61 1000,46 1050,46C1100,46 1175,71 1200,76" stroke-opacity="0.50"/>
-<path d="M0,112C25,109 100,98 150,91C200,84 250,65 300,69C350,72 400,97 450,113C500,130 550,162 600,169C650,175 700,167 750,153C800,139 850,101 900,85C950,70 1000,58 1050,59C1100,59 1175,84 1200,90" stroke-opacity="0.57"/>
-<path d="M0,123C25,119 100,107 150,99C200,91 250,73 300,77C350,80 400,105 450,122C500,138 550,171 600,177C650,183 700,173 750,159C800,145 850,108 900,93C950,79 1000,70 1050,71C1100,73 1175,98 1200,103" stroke-opacity="0.62"/>
-<path d="M0,135C25,130 100,116 150,108C200,99 250,81 300,85C350,89 400,114 450,130C500,147 550,179 600,185C650,191 700,179 750,165C800,151 850,115 900,101C950,88 1000,81 1050,84C1100,87 1175,111 1200,117" stroke-opacity="0.67"/>
-<path d="M0,146C25,141 100,125 150,116C200,107 250,90 300,94C350,98 400,122 450,139C500,155 550,187 600,192C650,198 700,185 750,171C800,157 850,122 900,109C950,97 1000,94 1050,97C1100,101 1175,125 1200,130" stroke-opacity="0.70"/>
-<path d="M0,157C25,151 100,133 150,124C200,115 250,99 300,103C350,107 400,131 450,148C500,164 550,195 600,199C650,204 700,190 750,177C800,163 850,129 900,118C950,107 1000,106 1050,111C1100,115 1175,138 1200,144" stroke-opacity="0.72"/>
-<path d="M0,168C25,162 100,142 150,133C200,124 250,108 300,112C350,116 400,141 450,156C500,172 550,202 600,206C650,210 700,195 750,182C800,169 850,136 900,126C950,117 1000,119 1050,124C1100,130 1175,152 1200,158" stroke-opacity="0.72"/>
-<path d="M0,179C25,172 100,151 150,142C200,132 250,118 300,122C350,126 400,150 450,165C500,180 550,209 600,213C650,216 700,200 750,187C800,174 850,143 900,135C950,127 1000,132 1050,138C1100,144 1175,166 1200,171" stroke-opacity="0.70"/>
-<path d="M0,189C25,183 100,160 150,151C200,141 250,128 300,132C350,136 400,159 450,173C500,188 550,215 600,218C650,221 700,204 750,192C800,179 850,151 900,144C950,138 1000,146 1050,153C1100,159 1175,179 1200,185" stroke-opacity="0.67"/>
-<path d="M0,200C25,193 100,170 150,160C200,150 250,139 300,142C350,146 400,168 450,182C500,196 550,221 600,224C650,226 700,208 750,197C800,185 850,158 900,154C950,149 1000,159 1050,167C1100,174 1175,193 1200,198" stroke-opacity="0.62"/>
-<path d="M0,211C25,204 100,179 150,170C200,160 250,150 300,153C350,157 400,178 450,190C500,203 550,227 600,229C650,231 700,212 750,201C800,190 850,166 900,163C950,160 1000,173 1050,182C1100,190 1175,207 1200,212" stroke-opacity="0.57"/>
-<path d="M0,221C25,214 100,189 150,179C200,170 250,161 300,164C350,167 400,187 450,198C500,210 550,232 600,233C650,235 700,216 750,206C800,196 850,175 900,173C950,172 1000,188 1050,196C1100,205 1175,220 1200,225" stroke-opacity="0.50"/>
-<path d="M0,232C25,225 100,199 150,189C200,180 250,172 300,175C350,178 400,196 450,206C500,217 550,237 600,237C650,238 700,219 750,210C800,201 850,183 900,183C950,184 1000,202 1050,211C1100,221 1175,234 1200,239" stroke-opacity="0.43"/>
-<path d="M0,242C25,235 100,209 150,199C200,190 250,184 300,187C350,189 400,205 450,214C500,223 550,241 600,241C650,241 700,223 750,215C800,207 850,192 900,194C950,196 1000,217 1050,227C1100,236 1175,248 1200,252" stroke-opacity="0.35"/>
-<path d="M0,253C25,246 100,219 150,210C200,201 250,196 300,198C350,200 400,214 450,221C500,229 550,245 600,244C650,244 700,226 750,219C800,213 850,201 900,205C950,209 1000,232 1050,242C1100,252 1175,261 1200,265" stroke-opacity="0.28"/>
-<path d="M0,264C25,256 100,230 150,221C200,212 250,209 300,210C350,211 400,222 450,229C500,235 550,248 600,247C650,247 700,229 750,224C800,219 850,211 900,216C950,222 1000,247 1050,257C1100,268 1175,274 1200,278" stroke-opacity="0.22"/>
-</g>
-</svg>
-</div>
-</div>
+<section class="block reveal" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title"><svg class="art" width="22" height="22" aria-hidden="true"><use href="#kolam"/></svg><h2 class="serif">Selected work</h2></div>
+      <p class="sec-intro">The two things I'd point to first — one inside a large company, one entirely my own.</p>
+    </div>
+    <div class="sec-body work">
+      <article class="job">
+        <div>
+          <h3 class="serif">demand.ai &amp; Project Vihan</h3>
+          <p class="ctx">Mahindra Group · enterprise forecasting and data platform</p>
+          <p class="d">An ML forecasting engine replacing Kinaxis, folding in market, sentiment and environmental signals like rainfall and reservoir levels — alongside work to bring ten business functions onto one data platform, with a monthly CEO and weekly CIO cadence built on the numbers.</p>
+        </div>
+        <div class="num"><b>86.7%</b><span>forecast accuracy</span></div>
+        <div class="tags"><span>ML forecasting</span><span>Power Query</span><span>Executive dashboards</span></div>
+      </article>
+      <article class="job">
+        <div>
+          <h3 class="serif">nurchur.in</h3>
+          <p class="ctx">Independent product · built, shipped and self-managed</p>
+          <p class="d">Started on Lovable to move fast, then moved the whole stack — repo, hosting, domain — onto a GitHub → Vercel pipeline with a Supabase backend I control.</p>
+        </div>
+        <div class="num"><b>Live</b><span>own domain &amp; backend</span></div>
+        <div class="tags"><span>React</span><span>Supabase</span><span>Vercel</span><span>Razorpay</span></div>
+        <a class="go ulink" href="https://nurchur.in" target="_blank" rel="noopener">Visit nurchur.in &#8599;</a>
+      </article>
+    </div>
+  </div>
 </section>
 
-<!-- WORK -->
-<section id="work" style="background:#fff;padding:136px 24px 48px">
-<div style="max-width:1180px;margin:0 auto">
-<h2 style="margin:0 0 16px;font-size:clamp(40px,6vw,80px);font-weight:700;letter-spacing:-.045em;line-height:1.05">Flagship work.</h2>
-<p style="margin:0 0 72px;font-size:clamp(21px,2.4vw,28px);font-weight:500;letter-spacing:-.02em;color:#6e6e73">Three projects. One idea: data that ships.</p>
-
-<div style="display:flex;flex-wrap:wrap;gap:24px">
-
-<!-- nurchur -->
-<div class="tile tile-d" style="flex:1 1 100%;padding:clamp(32px,6vw,72px);display:flex;flex-wrap:wrap;gap:40px 56px;align-items:flex-end;min-height:500px">
-<div class="aurora" aria-hidden="true" style="width:480px;height:480px;right:-120px;top:-200px;background:rgba(0,113,227,.42)"></div>
-<div class="aurora a2" aria-hidden="true" style="width:420px;height:420px;left:-140px;bottom:-220px;background:rgba(142,98,255,.34)"></div>
-<div class="aurora a1" aria-hidden="true" style="width:320px;height:320px;right:22%;bottom:-200px;background:rgba(255,55,95,.22)"></div>
-<div style="position:relative;flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px">
-<div class="mono" style="font-size:13px;font-weight:500;color:#ff9f0a;text-transform:uppercase">Builder</div>
-<h3 class="metal" style="margin:0;font-size:clamp(56px,8.5vw,112px);font-weight:700;letter-spacing:-.055em;line-height:1">nurchur.in</h3>
-</div>
-<div style="position:relative;flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:24px">
-<div style="display:flex;align-items:center;gap:0;flex-wrap:nowrap" aria-hidden="true">
-<span class="mono" style="font-size:12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 14px;background:rgba(255,255,255,.05)">GitHub</span>
-<span class="flow" style="flex:1 1 20px;height:1px"></span>
-<span class="mono" style="font-size:12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 14px;background:rgba(255,255,255,.05)">Vercel</span>
-<span class="flow" style="flex:1 1 20px;height:1px"></span>
-<span class="mono" style="font-size:12px;border:1px solid rgba(41,151,255,.6);border-radius:999px;padding:8px 14px;background:rgba(41,151,255,.14);color:#8ac4ff">Supabase</span>
-</div>
-<p style="margin:0;font-size:clamp(19px,2vw,24px);line-height:1.4;letter-spacing:-.012em;text-wrap:pretty">An independent product. Built first on Lovable, then moved to a self-managed GitHub → Vercel pipeline with a Supabase backend.</p>
-<div class="mono" style="font-size:12px;color:#a1a1a6;display:flex;flex-wrap:wrap;gap:6px 18px;text-transform:uppercase"><span>Vite</span><span>React</span><span>Supabase</span><span>Vercel</span><span>Razorpay</span></div>
-<a class="lnk lnk-d" href="https://nurchur.in" style="align-self:flex-start">Visit nurchur.in &#8250;</a>
-</div>
-</div>
-
-<!-- demand.ai -->
-<div class="tile" style="flex:1 1 480px;min-width:0;background:linear-gradient(165deg,#e3eeff 0%,#efeaff 55%,#f5f5f7 100%);padding:clamp(32px,5vw,56px);display:flex;flex-direction:column;gap:20px;min-height:560px">
-<div class="mono" style="font-size:13px;font-weight:500;color:#bf4800;text-transform:uppercase">Boardroom</div>
-<h3 style="margin:0;font-size:clamp(44px,5.5vw,72px);font-weight:700;letter-spacing:-.05em;line-height:1.02;text-wrap:balance">demand.ai &amp; Project Vihan</h3>
-<p style="margin:0;font-size:21px;line-height:1.4;letter-spacing:-.012em;color:#424245;text-wrap:pretty">A Mahindra ML forecasting engine that replaces Kinaxis, plus work to consolidate the KPIs of 10 business functions.</p>
-<svg viewBox="0 -10 580 260" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin-top:auto;width:100%;height:220px;overflow:visible">
-<defs>
-<linearGradient id="cg" gradientUnits="userSpaceOnUse" x1="90" y1="0" x2="490" y2="240"><stop offset="0" stop-color="#0071e3"/><stop offset=".55" stop-color="#6e5bff"/><stop offset="1" stop-color="#bf5af2"/></linearGradient>
-<radialGradient id="cc" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#0071e3" stop-opacity=".55"/><stop offset="1" stop-color="#0071e3" stop-opacity="0"/></radialGradient>
-</defs>
-<circle cx="290" cy="120" r="70" fill="url(#cc)"/>
-<g class="swish" fill="none" stroke="url(#cg)" stroke-width="1.3">
-<path d="M316.0,120.0C317,122 319,124 318,126C318,128 316,131 314,132C312,134 309,135 307,136C304,137 301,137 298,138C295,138 293,138 290,138C287,137 285,136 283,135C281,135 279,134 277,133C274,132 272,131 270,130C268,129 266,127 265,126C264,124 264,122 264,120C264,118 265,116 266,115C266,113 267,111 268,109C269,107 271,105 273,104C275,102 278,102 281,101C284,101 287,101 290,102C293,102 295,103 298,103C300,104 302,105 304,107C306,108 306,110 308,111C309,113 310,114 311,115C312,117 315,118 316,120Z" stroke-opacity="0.85"/>
-<path d="M336.8,120.0C339,123 340,127 339,131C337,134 333,137 329,139C326,142 320,143 316,144C311,145 307,146 303,147C299,147 294,148 290,148C286,147 282,146 278,145C274,144 271,143 267,141C263,140 259,139 256,137C253,135 250,132 248,129C247,126 247,123 247,120C247,117 248,114 249,111C250,108 250,104 252,101C254,98 257,95 261,93C265,91 271,90 276,90C280,90 286,91 290,92C294,93 298,94 302,95C306,96 309,98 312,100C315,101 317,103 320,105C322,107 325,109 328,112C331,114 335,117 337,120Z" stroke-opacity="0.78"/>
-<path d="M358.9,120.0C360,125 360,130 357,135C354,139 348,142 342,145C336,148 330,149 324,151C318,153 313,155 308,156C302,157 296,158 290,158C284,158 278,157 273,155C267,154 262,152 257,150C252,148 247,146 242,143C238,140 234,136 232,133C230,129 230,124 230,120C230,116 230,112 231,107C232,103 232,97 235,93C238,89 244,85 250,83C256,81 264,81 271,81C278,81 284,83 290,84C296,85 301,86 306,87C311,89 316,90 321,92C326,94 330,96 334,99C339,101 344,104 348,107C352,111 357,115 359,120Z" stroke-opacity="0.70"/>
-<path d="M379.7,120.0C380,126 377,133 373,138C368,143 359,147 353,150C346,154 339,156 332,158C325,161 320,164 313,166C306,168 297,170 290,169C283,169 275,167 268,165C261,163 255,161 248,158C242,156 234,153 229,149C223,146 218,141 215,136C212,131 211,126 210,120C210,114 209,109 211,103C212,97 214,90 219,86C224,81 232,77 240,75C248,73 259,74 268,74C276,75 283,77 290,78C297,78 303,78 310,79C317,79 325,80 332,82C339,84 346,87 352,90C358,94 365,98 369,103C374,108 379,114 380,120Z" stroke-opacity="0.62"/>
-<path d="M397.2,120.0C397,127 392,135 386,141C380,146 370,151 363,155C355,159 348,163 341,166C333,170 327,175 318,177C310,179 299,181 290,180C281,180 272,177 263,174C255,172 247,169 239,166C231,163 221,161 214,156C207,152 200,146 195,140C191,134 189,127 189,120C188,113 188,106 191,99C193,92 198,84 205,79C212,74 224,70 234,69C244,67 256,69 265,69C274,69 282,70 290,70C298,70 307,67 316,67C325,67 336,68 345,70C354,72 363,77 371,81C378,86 385,92 389,99C394,105 398,113 397,120Z" stroke-opacity="0.55"/>
-<path d="M411.6,120.0C410,128 404,136 398,143C392,150 382,155 374,160C366,166 359,170 351,175C343,180 334,186 324,188C313,191 301,191 290,190C279,189 269,185 259,183C249,180 240,178 229,175C219,172 206,170 197,165C187,160 178,152 173,145C168,138 166,128 167,120C167,112 169,103 174,95C178,88 186,80 195,74C204,69 218,67 229,65C240,63 252,65 262,64C272,63 280,61 290,60C300,58 312,53 323,53C335,52 349,53 360,57C371,60 381,67 388,73C396,79 402,87 406,95C410,103 413,112 412,120Z" stroke-opacity="0.47"/>
-<path d="M425.2,120.0C424,129 418,138 411,146C405,154 395,160 387,166C378,173 371,179 361,184C351,190 340,195 329,198C317,200 302,200 290,199C278,198 267,194 254,192C242,190 230,189 217,186C204,183 187,180 176,174C165,168 155,159 150,150C145,141 146,130 148,120C150,110 155,101 162,93C169,85 178,77 189,72C199,66 213,64 225,61C236,58 247,58 258,56C269,53 278,48 290,45C302,42 317,36 331,36C345,36 362,39 374,44C386,49 395,58 403,66C410,74 416,83 420,92C424,101 427,111 425,120Z" stroke-opacity="0.40"/>
-<path d="M440.2,120.0C439,130 433,140 427,149C420,158 409,165 400,172C390,180 381,187 370,192C359,198 346,204 333,206C319,209 304,208 290,208C276,207 263,205 249,203C234,202 218,202 202,199C186,196 166,192 154,185C142,177 133,165 130,154C126,143 131,130 135,120C140,110 147,100 155,91C163,83 173,75 183,69C194,63 207,60 218,55C230,51 240,48 252,43C264,39 275,31 290,27C305,23 324,19 340,20C356,21 373,27 386,34C398,41 406,52 414,61C422,70 428,80 433,90C437,99 441,110 440,120Z" stroke-opacity="0.32"/>
-<path d="M457.5,120.0C457,131 450,143 442,152C434,162 422,170 411,178C400,185 390,193 378,199C365,205 352,211 337,214C322,218 306,218 290,219C274,219 259,219 241,218C224,218 203,219 185,215C167,211 145,204 133,194C122,185 117,169 116,157C115,145 124,131 130,120C136,109 143,100 151,90C159,81 166,73 175,66C185,58 196,52 208,46C219,40 230,34 244,28C258,21 273,13 290,9C307,5 329,3 347,6C364,8 382,18 394,26C407,34 415,46 424,56C432,67 441,76 447,87C452,97 458,109 458,120Z" stroke-opacity="0.25"/>
-</g>
-<circle cx="290" cy="120" r="3.5" fill="#0071e3"/>
-<circle cx="411" cy="143" r="3" fill="#8e62ff"/><circle cx="168" cy="95" r="3" fill="#bf5af2"/><circle cx="352" cy="42" r="2.5" fill="#0071e3"/>
-</svg>
-<div class="mono" style="font-size:12px;color:#6e6e73;display:flex;flex-wrap:wrap;gap:6px 18px;text-transform:uppercase"><span>Power Query</span><span>ML forecasting</span><span>Executive dashboards</span></div>
-</div>
-
-<!-- EV -->
-<div class="tile" style="flex:1 1 480px;min-width:0;background:linear-gradient(165deg,#fff0e4 0%,#ffe9f1 55%,#f5f5f7 100%);padding:clamp(32px,5vw,56px);display:flex;flex-direction:column;gap:20px;min-height:560px">
-<div class="mono" style="font-size:13px;font-weight:500;color:#bf4800;text-transform:uppercase">Boardroom</div>
-<h3 style="margin:0;font-size:clamp(44px,5.5vw,72px);font-weight:700;letter-spacing:-.05em;line-height:1.02;text-wrap:balance">Indian EV Market Analysis</h3>
-<p style="margin:0;font-size:21px;line-height:1.4;letter-spacing:-.012em;color:#424245">A Power BI model of state-wise and OEM-wise sales.</p>
-<svg viewBox="0 0 520 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin-top:auto;width:100%;height:170px;overflow:visible">
-<defs>
-<linearGradient id="sw" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="520" y2="0"><stop offset="0" stop-color="#ff9f0a"/><stop offset=".5" stop-color="#ff375f"/><stop offset="1" stop-color="#bf5af2"/></linearGradient>
-<filter id="swb" x="-10%" y="-40%" width="120%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
-</defs>
-<g class="swish" fill="none" stroke="url(#sw)" stroke-linecap="round">
-<path d="M0,170C110,170 150,40 260,60S420,150 520,30" stroke-width="12" opacity=".45" filter="url(#swb)"/>
-<path d="M0,170C110,170 150,40 260,60S420,150 520,30" stroke-width="4"/>
-<path d="M0,185C120,190 170,70 270,90S430,170 520,60" stroke-width="2.4" opacity=".8"/>
-<path d="M0,150C100,150 140,20 250,38S410,126 520,10" stroke-width="1.4" opacity=".7"/>
-<path d="M0,196C130,200 180,96 280,116S440,184 520,92" stroke-width="1" opacity=".5"/>
-</g>
-<circle cx="520" cy="30" r="5" fill="#ff375f"/><circle cx="520" cy="30" r="12" fill="none" stroke="#ff375f" stroke-opacity=".4"/>
-<circle cx="260" cy="60" r="3" fill="#ff9f0a"/><circle cx="150" cy="118" r="2.5" fill="#bf5af2"/>
-</svg>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(120px,100%),1fr));gap:20px">
-<div><div style="font-size:clamp(40px,4.4vw,56px);font-weight:700;letter-spacing:-.045em;line-height:1">156.9%</div><div style="font-size:14px;color:#6e6e73;margin-top:6px">Revenue CAGR</div></div>
-<div><div style="font-size:clamp(40px,4.4vw,56px);font-weight:700;letter-spacing:-.045em;line-height:1">93.9%</div><div style="font-size:14px;color:#6e6e73;margin-top:6px">EV sales CAGR</div></div>
-<div><div style="font-size:clamp(40px,4.4vw,56px);font-weight:700;letter-spacing:-.045em;line-height:1">37.5%</div><div style="font-size:14px;color:#6e6e73;margin-top:6px">Ola Electric share</div></div>
-</div>
-</div>
-
-</div>
-</div>
+<section class="block reveal" id="path">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title"><svg class="art" width="22" height="22" aria-hidden="true"><use href="#kolam"/></svg><h2 class="serif">The path</h2></div>
+      <p class="sec-intro">Engineering, then operations, then data — newest first.</p>
+    </div>
+    <div class="sec-body">
+      <ol class="tl">
+        <li><span class="when"><span class="dot" aria-hidden="true"></span>2026 — now</span><span class="what">Digital Transformation Manager</span><span class="where">Mahindra Group</span></li>
+        <li><span class="when">2022 — 2026</span><span class="what">Business Analytics Analyst · 15% efficiency gains for Fortune 500 clients</span><span class="where">IBM</span></li>
+        <li><span class="when">2020 — 2022</span><span class="what">MBA, Operations &amp; Data Sciences</span><span class="where">NMIMS</span></li>
+        <li><span class="when">2017 — 2019</span><span class="what">Sr. Engineer, Data &amp; Delivery · ₹50 Cr defence program</span><span class="where">Larsen &amp; Toubro</span></li>
+        <li><span class="when">2013 — 2017</span><span class="what">B.Tech, Mechatronics, Robotics &amp; Automation</span><span class="where">UPES</span></li>
+      </ol>
+      <p class="certs"><b>Certified:</b> Google Cloud Digital Leader · AWS Cloud Practitioner · Power BI Data Analyst · Lean Six Sigma Green Belt</p>
+    </div>
+  </div>
 </section>
 
-<!-- MORE -->
-<section style="padding:104px 24px 136px">
-<div style="max-width:1180px;margin:0 auto">
-<h2 style="margin:0 0 56px;font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.045em;line-height:1.05">And more.</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:48px 40px">
-
-<div style="border-top:1px solid #d2d2d7;padding-top:20px;display:flex;flex-direction:column;gap:14px">
-<span class="mono" style="font-size:11px;color:#86868b;display:inline-flex;align-items:center;gap:8px"><i aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#0071e3;display:inline-block"></i>01</span>
-<h3 style="margin:0;font-size:21px;font-weight:600;letter-spacing:-.018em">Business Performance &amp; Market Analysis</h3>
-<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:17px;line-height:1.4;color:#424245">
-<li>Electronics demand-forecast analysis (26.8% deviation)</li><li>Hospitality revenue and occupancy</li><li>FMCG OTIF service-level dashboard</li><li>20-site fuel retail dashboard</li></ul>
-</div>
-
-<div style="border-top:1px solid #d2d2d7;padding-top:20px;display:flex;flex-direction:column;gap:14px">
-<span class="mono" style="font-size:11px;color:#86868b;display:inline-flex;align-items:center;gap:8px"><i aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#8e62ff;display:inline-block"></i>02</span>
-<h3 style="margin:0;font-size:21px;font-weight:600;letter-spacing:-.018em">Customer &amp; Market Intelligence</h3>
-<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:17px;line-height:1.4;color:#424245">
-<li>British Airways review analysis (20,000+ reviews)</li><li>SaaS subscription lifecycle study (892 users)</li></ul>
-</div>
-
-<div style="border-top:1px solid #d2d2d7;padding-top:20px;display:flex;flex-direction:column;gap:14px">
-<span class="mono" style="font-size:11px;color:#86868b;display:inline-flex;align-items:center;gap:8px"><i aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#ff9f0a;display:inline-block"></i>03</span>
-<h3 style="margin:0;font-size:21px;font-weight:600;letter-spacing:-.018em">Predictive &amp; Personalization</h3>
-<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:17px;line-height:1.4;color:#424245">
-<li>Health insurance premium predictor, built with Streamlit</li></ul>
-</div>
-
-<div style="border-top:1px solid #d2d2d7;padding-top:20px;display:flex;flex-direction:column;gap:14px">
-<span class="mono" style="font-size:11px;color:#86868b;display:inline-flex;align-items:center;gap:8px"><i aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#30d158;display:inline-block"></i>04</span>
-<h3 style="margin:0;font-size:21px;font-weight:600;letter-spacing:-.018em">Product Strategy &amp; Experimentation</h3>
-<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:17px;line-height:1.4;color:#424245">
-<li>Credit card target-market EDA</li><li>Credit card A/B test at 0.05 significance</li><li>eCommerce process mining with Celonis</li></ul>
-</div>
-
-</div>
-</div>
+<section class="block reveal" id="lab">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title"><svg class="art" width="22" height="22" aria-hidden="true"><use href="#kolam"/></svg><h2 class="serif">Lab</h2></div>
+      <p class="sec-intro">Small capstone studies — learning in public. Most are early; I'm growing them into fuller projects.</p>
+    </div>
+    <div class="sec-body">
+      <ul class="lab">
+        <li><span class="t">Indian EV market<span class="tool">Power BI · state &amp; OEM sales</span></span><span class="soon">Write-up soon</span></li>
+        <li><span class="t">Electronics demand forecast<span class="tool">Power BI</span></span><a href="https://app.powerbi.com/view?r=eyJrIjoiZjM3NjVlYjAtMjFkMi00MGFjLWExYjQtOTdkODg2MzY5OTEzIiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9" target="_blank" rel="noopener">View &#8599;</a></li>
+        <li><span class="t">Hospitality revenue &amp; occupancy<span class="tool">Power BI</span></span><a href="https://app.powerbi.com/view?r=eyJrIjoiYzY0NmY0Y2ItMTlhYS00NjhlLTg0MzgtMTNkNmVhNGU5OTczIiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9" target="_blank" rel="noopener">View &#8599;</a></li>
+        <li><span class="t">British Airways reviews<span class="tool">Tableau · 20,000+ reviews</span></span><a href="https://public.tableau.com/views/BritishAirwaysReviewAnalysis_17263136404000/BritishAirwaysReview" target="_blank" rel="noopener">View &#8599;</a></li>
+        <li><span class="t">SaaS subscription lifecycle<span class="tool">Power BI</span></span><a href="https://app.powerbi.com/view?r=eyJrIjoiM2IxNjNkOTUtNTAyYS00Yjg0LTg1Y2UtNTVhM2Y3NWUxNGE3IiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9" target="_blank" rel="noopener">View &#8599;</a></li>
+        <li><span class="t">Health insurance premium predictor<span class="tool">Python · Streamlit</span></span><a href="https://inarang25-ml-project-premium-prediction.streamlit.app/" target="_blank" rel="noopener">Try it &#8599;</a></li>
+        <li><span class="t">Credit card target market<span class="tool">Python · pandas</span></span><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/EDA_%26_Target_Market_Identification.ipynb" target="_blank" rel="noopener">Notebook &#8599;</a></li>
+        <li><span class="t">Credit card A/B test<span class="tool">Python · statistics</span></span><a href="https://github.com/inarang25/my-collab-notebooks/blob/main/AB_Testing.ipynb" target="_blank" rel="noopener">Notebook &#8599;</a></li>
+        <li><span class="t">eCommerce process mining<span class="tool">Celonis</span></span><a href="https://www.linkedin.com/posts/shubhamnarang25_bigquery-sql-celonis-activity-7245681577702146048-G3sR" target="_blank" rel="noopener">Post &#8599;</a></li>
+        <li><span class="t">FMCG &amp; fuel retail dashboards<span class="tool">Power BI</span></span><span class="soon">Write-up soon</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" style="position:relative;overflow:hidden;background:#f5f5f7;padding:136px 24px">
-<div class="dotgrid-l" aria-hidden="true" style="position:absolute;inset:0;opacity:.7"></div>
-<div class="aurora" aria-hidden="true" style="width:520px;height:520px;right:-120px;top:-120px;background:rgba(142,98,255,.18)"></div>
-<div class="aurora" aria-hidden="true" style="width:520px;height:520px;left:-180px;bottom:-180px;background:rgba(0,113,227,.16)"></div>
-<div style="position:relative;max-width:1180px;margin:0 auto">
-<h2 style="margin:0 0 64px;font-size:clamp(40px,6vw,80px);font-weight:700;letter-spacing:-.045em;line-height:1.05">Experience &amp; education.</h2>
-<div style="display:flex;flex-direction:column">
-
-<div class="row" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:8px 40px;padding:32px 12px;border-top:1px solid #d2d2d7;align-items:baseline">
-<span class="mono" style="font-size:13px;color:#6e6e73;display:inline-flex;align-items:center;gap:10px"><span class="live" aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#30d158;display:inline-block"></span>Feb 2026 – Present</span>
-<span style="font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-.03em;line-height:1.15">Digital Transformation Manager</span>
-<span style="font-size:19px;color:#424245">Mahindra Group</span></div>
-
-<div class="row" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:8px 40px;padding:32px 12px;border-top:1px solid #d2d2d7;align-items:baseline">
-<span class="mono" style="font-size:13px;color:#6e6e73">Jun 2022 – Jan 2026</span>
-<span style="font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-.03em;line-height:1.15">Business Analytics Analyst</span>
-<span style="font-size:19px;color:#424245">IBM</span></div>
-
-<div class="row" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:8px 40px;padding:32px 12px;border-top:1px solid #d2d2d7;align-items:baseline">
-<span class="mono" style="font-size:13px;color:#6e6e73">2020 – 2022</span>
-<span style="font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-.03em;line-height:1.15">MBA, Operations and Data Sciences</span>
-<span style="font-size:19px;color:#424245">NMIMS</span></div>
-
-<div class="row" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:8px 40px;padding:32px 12px;border-top:1px solid #d2d2d7;align-items:baseline">
-<span class="mono" style="font-size:13px;color:#6e6e73">Aug 2017 – Aug 2019</span>
-<span style="font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-.03em;line-height:1.15">Sr. Engineer, Data &amp; Delivery</span>
-<span style="font-size:19px;color:#424245">Larsen &amp; Toubro (Defence)</span></div>
-
-<div class="row" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:8px 40px;padding:32px 12px;border-top:1px solid #d2d2d7;border-bottom:1px solid #d2d2d7;align-items:baseline">
-<span class="mono" style="font-size:13px;color:#6e6e73">2013 – 2017</span>
-<span style="font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-.03em;line-height:1.15">B.Tech, Mechatronics, Robotics and Automation Engineering</span>
-<span style="font-size:19px;color:#424245">UPES</span></div>
-
-</div>
-</div>
+<section class="block reveal" id="writing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title"><svg class="art" width="22" height="22" aria-hidden="true"><use href="#kolam"/></svg><h2 class="serif">Writing</h2></div>
+      <p class="sec-intro">Notes on data, AI and building — coming to this site.</p>
+    </div>
+    <div class="sec-body">
+      <div class="writing">
+        <p><span class="serif">The first essays are being written.</span>On making data useful at the top of an organisation, and on building small products alone. Write to me if you'd like a note when they're up.</p>
+        <a class="btn" href="mailto:i.shubham25@gmail.com?subject=Let%20me%20know%20when%20you%20publish">Tell me when</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- TOOLS -->
-<section style="padding:136px 24px">
-<div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:64px 80px">
-<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:28px">
-<h2 style="margin:0;font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.045em;line-height:1.05">Tools of the trade.</h2>
-<div style="display:flex;flex-wrap:wrap;gap:10px;font-size:17px;font-weight:500">
-<span style="background:#1d1d1f;color:#f5f5f7;padding:10px 20px;border-radius:999px">AI Strategy</span>
-<span style="background:#1d1d1f;color:#f5f5f7;padding:10px 20px;border-radius:999px">Business Transformation</span>
-<span style="background:#fff1cf;color:#6b4500;padding:10px 20px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)">Power BI</span>
-<span style="background:#dff5e6;color:#0d652d;padding:10px 20px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)">Celonis</span>
-<span style="background:#e1edff;color:#0a3d91;padding:10px 20px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)">Python / pandas</span>
-<span style="background:#ece4ff;color:#4a2a99;padding:10px 20px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)">Tableau</span>
-<span style="background:#ffe3ec;color:#8a1c3c;padding:10px 20px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)">Streamlit</span>
-</div>
-</div>
-<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:28px">
-<h2 style="margin:0;font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.045em;line-height:1.05">Certified.</h2>
-<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;font-size:21px;font-weight:500;letter-spacing:-.012em">
-<li style="padding:16px 0;border-top:1px solid #d2d2d7;display:flex;gap:14px;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066cc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Google Cloud Digital Leader</li>
-<li style="padding:16px 0;border-top:1px solid #d2d2d7;display:flex;gap:14px;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066cc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>AWS Certified Cloud Practitioner</li>
-<li style="padding:16px 0;border-top:1px solid #d2d2d7;display:flex;gap:14px;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066cc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Power BI Data Analyst</li>
-<li style="padding:16px 0;border-top:1px solid #d2d2d7;border-bottom:1px solid #d2d2d7;display:flex;gap:14px;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066cc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Lean Six Sigma Green Belt</li>
-</ul>
-</div>
-</div>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="serif">Let's <em>talk.</em></h2>
+    <p>About data, AI, products — or a problem you're trying to see clearly.</p>
+    <div class="links">
+      <a class="btn" href="mailto:i.shubham25@gmail.com">i.shubham25@gmail.com</a>
+      <a class="ulink" href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="ulink" href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <!-- Warli scene: sun, tree and a ring of dancers -->
+    <svg class="warli" viewBox="0 0 560 120" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <circle cx="70" cy="34" r="12" fill="currentColor" stroke="none" opacity=".9"/>
+        <path d="M70 14v-6M70 60v-6M50 34h-6M96 34h-6M56 20l-4-4M88 52l-4-4M84 20l4-4M52 52l4-4"/>
+        <path d="M490 116V36M490 70l-18-14M490 62l18-16M490 86l-16-10M490 80l20-12M490 52l-10-12M490 50l12-12"/>
+        <line x1="20" y1="116" x2="540" y2="116"/>
+      </g>
+      <g fill="currentColor">
+        <use href="#wf" x="150" y="74" width="28" height="42"/>
+        <use href="#wf" x="186" y="74" width="28" height="42"/>
+        <use href="#wf" x="222" y="74" width="28" height="42"/>
+        <use href="#wf" x="258" y="74" width="28" height="42"/>
+        <use href="#wf" x="294" y="74" width="28" height="42"/>
+        <use href="#wf" x="330" y="74" width="28" height="42"/>
+        <use href="#wf" x="366" y="74" width="28" height="42"/>
+      </g>
+    </svg>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" style="position:relative;overflow:hidden;background:#000;color:#f5f5f7;padding:160px 24px 64px;text-align:center">
-<div class="dotgrid-d" aria-hidden="true" style="position:absolute;inset:0"></div>
-<div class="aurora" aria-hidden="true" style="width:760px;height:420px;left:50%;bottom:-240px;margin-left:-380px;background:rgba(0,113,227,.4)"></div>
-<div class="aurora a2" aria-hidden="true" style="width:380px;height:380px;right:4%;top:20px"></div>
-<div class="aurora a3" aria-hidden="true" style="width:360px;height:360px;left:6%;top:120px;background:rgba(255,55,95,.22)"></div>
-<div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:70px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)">
-<svg viewBox="0 0 1200 300" preserveAspectRatio="none" style="width:100%;height:300px;display:block;overflow:visible">
-<defs>
-<linearGradient id="sk3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="0"><stop offset="0" stop-color="#5ac8fa"/><stop offset=".35" stop-color="#2997ff"/><stop offset=".65" stop-color="#bf5af2"/><stop offset="1" stop-color="#ff6bd6"/></linearGradient>
-</defs>
-<g class="swish" fill="none" stroke="url(#sk3)" stroke-width="1.1" style="filter:drop-shadow(0 0 6px rgba(41,151,255,.6))">
-<path d="M0,122C25,116 100,101 150,86C200,72 250,46 300,36C350,26 400,23 450,26C500,30 550,47 600,59C650,71 700,89 750,99C800,109 850,114 900,118C950,122 1000,123 1050,121C1100,119 1175,109 1200,107" stroke-opacity="0.22"/>
-<path d="M0,123C25,118 100,102 150,89C200,77 250,54 300,46C350,38 400,38 450,43C500,48 550,66 600,77C650,89 700,106 750,114C800,122 850,124 900,126C950,127 1000,126 1050,123C1100,120 1175,112 1200,109" stroke-opacity="0.30"/>
-<path d="M0,125C25,120 100,104 150,93C200,81 250,62 300,57C350,51 400,54 450,60C500,67 550,85 600,96C650,107 700,122 750,128C800,134 850,133 900,133C950,132 1000,128 1050,125C1100,122 1175,114 1200,112" stroke-opacity="0.39"/>
-<path d="M0,127C25,122 100,107 150,97C200,87 250,71 300,68C350,64 400,70 450,78C500,85 550,104 600,115C650,125 700,137 750,142C800,146 850,142 900,140C950,137 1000,131 1050,127C1100,123 1175,117 1200,115" stroke-opacity="0.48"/>
-<path d="M0,129C25,125 100,109 150,101C200,93 250,80 300,79C350,78 400,86 450,95C500,104 550,123 600,133C650,143 700,152 750,155C800,157 850,150 900,146C950,142 1000,133 1050,129C1100,124 1175,120 1200,118" stroke-opacity="0.57"/>
-<path d="M0,131C25,127 100,112 150,105C200,99 250,90 300,91C350,93 400,103 450,113C500,123 550,141 600,150C650,159 700,167 750,167C800,167 850,158 900,152C950,146 1000,136 1050,131C1100,125 1175,123 1200,121" stroke-opacity="0.64"/>
-<path d="M0,133C25,130 100,115 150,110C200,105 250,100 300,104C350,107 400,120 450,131C500,141 550,160 600,168C650,176 700,180 750,179C800,177 850,165 900,158C950,150 1000,138 1050,133C1100,127 1175,126 1200,125" stroke-opacity="0.69"/>
-<path d="M0,136C25,132 100,119 150,116C200,113 250,111 300,117C350,122 400,137 450,149C500,160 550,178 600,184C650,191 700,194 750,190C800,186 850,172 900,163C950,154 1000,140 1050,135C1100,129 1175,130 1200,129" stroke-opacity="0.72"/>
-<path d="M0,138C25,135 100,123 150,121C200,120 250,122 300,130C350,137 400,155 450,166C500,178 550,195 600,201C650,206 700,206 750,201C800,195 850,179 900,168C950,158 1000,143 1050,137C1100,131 1175,133 1200,133" stroke-opacity="0.72"/>
-<path d="M0,141C25,139 100,127 150,128C200,128 250,134 300,144C350,153 400,172 450,184C500,196 550,212 600,216C650,221 700,218 750,211C800,203 850,185 900,173C950,161 1000,145 1050,139C1100,133 1175,137 1200,137" stroke-opacity="0.69"/>
-<path d="M0,144C25,142 100,132 150,134C200,136 250,146 300,157C350,169 400,189 450,201C500,214 550,228 600,232C650,235 700,229 750,220C800,211 850,191 900,178C950,165 1000,148 1050,142C1100,136 1175,141 1200,141" stroke-opacity="0.64"/>
-<path d="M0,147C25,146 100,137 150,141C200,145 250,159 300,171C350,184 400,206 450,219C500,231 550,244 600,246C650,248 700,240 750,229C800,219 850,197 900,183C950,169 1000,151 1050,145C1100,139 1175,146 1200,146" stroke-opacity="0.57"/>
-<path d="M0,150C25,150 100,142 150,148C200,154 250,171 300,186C350,200 400,223 450,235C500,248 550,260 600,260C650,260 700,250 750,238C800,226 850,203 900,188C950,173 1000,154 1050,148C1100,142 1175,151 1200,151" stroke-opacity="0.48"/>
-<path d="M0,154C25,154 100,148 150,156C200,164 250,184 300,200C350,216 400,240 450,252C500,264 550,274 600,273C650,272 700,259 750,246C800,232 850,208 900,193C950,177 1000,158 1050,152C1100,146 1175,155 1200,156" stroke-opacity="0.39"/>
-<path d="M0,157C25,158 100,154 150,164C200,173 250,197 300,214C350,232 400,256 450,268C500,280 550,288 600,286C650,283 700,268 750,253C800,239 850,214 900,198C950,181 1000,162 1050,156C1100,150 1175,161 1200,162" stroke-opacity="0.30"/>
-<path d="M0,161C25,163 100,161 150,172C200,183 250,210 300,229C350,247 400,272 450,284C500,295 550,301 600,298C650,294 700,277 750,261C800,245 850,220 900,203C950,186 1000,166 1050,160C1100,154 1175,166 1200,167" stroke-opacity="0.22"/>
-</g>
-</svg>
-</div>
-<div style="position:relative;max-width:1180px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px">
-<h2 class="metal" style="margin:0;font-size:clamp(68px,13vw,168px);font-weight:700;letter-spacing:-.06em;line-height:.96">Let's talk.</h2>
-<p style="margin:0;font-size:clamp(21px,2.4vw,28px);color:#a1a1a6;letter-spacing:-.018em">From the boardroom to the build.</p>
-<div style="display:flex;flex-wrap:wrap;gap:8px 32px;align-items:center;justify-content:center;margin-top:12px">
-<a class="pill" href="mailto:i.shubham25@gmail.com" style="word-break:break-word">i.shubham25@gmail.com</a>
-<a class="lnk lnk-d" href="https://linkedin.com/in/shubhamnarang25">LinkedIn &#8250;</a>
-<a class="lnk lnk-d" href="https://github.com/inarang25">GitHub &#8250;</a>
-</div>
-<div class="mono" style="width:100%;margin-top:112px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:11px;color:#86868b;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;text-align:left;text-transform:uppercase">
-<span>Shubham Narang · Chandigarh, India</span>
-<span>Digital Transformation Manager, Mahindra Group</span>
-</div>
-</div>
-</section>
+</main>
 
-</div>
+<footer>
+  <div class="wrap">
+    <span>Shubham Narang · Chandigarh, India</span>
+    <span>shubhamnarang.in · a personal site, slowly growing</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    els.forEach(function(e){ io.observe(e); });
+    setTimeout(function(){ els.forEach(function(e){ e.classList.add('in'); }); }, 2500);
+  })();
+</script>
+
 </body>
 </html>
