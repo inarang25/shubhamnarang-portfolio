@@ -6,7 +6,7 @@ Working notes for growing this site from a portfolio into a full personal home (
 
 | URL | File | What it is |
 |---|---|---|
-| `/` | `index.html` | Main site. Minimal, warm-paper design with small Indian line-art touches (kolam, toran, jharokha arch, Warli figures). |
+| `/` | `index.html` | Main site. Indigo, haldi and rani-pink design rooted in Indian textiles and folk art. |
 | `/builder` | `builder.html` | "Comic edition" — the pop-art take, kept as a playful second view. |
 | anything else | `404.html` | Not-found page. |
 
@@ -22,9 +22,10 @@ Working notes for growing this site from a portfolio into a full personal home (
 
 ### Design language
 
-- Ground: handmade-paper cream `#F5EFE3`; ink `#1F1A14`; muted `#6A5E50`; one accent, sindoor `#A8381F`.
-- Type: Instrument Serif (headings), Manrope (body), Tiro Devanagari Hindi (name in Devanagari).
-- Art, used sparingly: kolam dot motif (section markers, hero), toran line under the header, jharokha arch around the portrait, a Warli scene above the footer.
+- Ground: deep indigo `#141C44` (like dabu indigo prints); text in kora (unbleached cotton) `#F6EEDF`.
+- Accents: haldi `#F2B124`, rani pink `#F5679F`, marigold `#F28A2E`; geru red `#8E3A1F` for the Warli footer band.
+- Type, both by Indian Type Foundry: Rozha One (headings, English and Devanagari), Mukta (body). Every section has a Hindi label above its title.
+- Art: marigold garland along the top, block-print borders between sections, the pop-art portrait in front of a rani-pink sun, a slowly turning rangoli mandala and a Mughal arch; paisley (keri) section markers, lotus card corners, jaali lattice behind Contact, and a Warli village scene in white on geru as the footer.
 
 ## The bigger picture: a personal twin
 
