@@ -6,11 +6,13 @@ Working notes for growing this site from a portfolio into a full personal home (
 
 | URL | File | What it is |
 |---|---|---|
-| `/` | `index.html` | Main site. Indigo, haldi and rani-pink design rooted in Indian textiles and folk art. |
-| `/builder` | `builder.html` | "Comic edition" — the pop-art take, kept as a playful second view. |
+| `/` | `index.html` | **Executive view** — the main site, built for a boardroom audience. |
+| `/builder` | `builder.html` | **Builder view** — the pop-art take on the same story. |
 | anything else | `404.html` | Not-found page. |
 
-### Information structure (main site)
+Both views share one header: name, section links (Work · Career · Lab · Contact) and an **Executive view / Builder view** switch.
+
+### Information structure (Executive view)
 
 1. **Intro** — one sentence on what I do, one on the background.
 2. **Now** — what has my attention this season (work, side project, learning).
@@ -20,12 +22,12 @@ Working notes for growing this site from a portfolio into a full personal home (
 6. **Writing** — placeholder until the first essays exist.
 7. **Contact.**
 
-### Design language
+### Design language (Executive view)
 
-- Ground: deep indigo `#141C44` (like dabu indigo prints); text in kora (unbleached cotton) `#F6EEDF`.
-- Accents: haldi `#F2B124`, rani pink `#F5679F`, marigold `#F28A2E`; geru red `#8E3A1F` for the Warli footer band.
-- Type, both by Indian Type Foundry: Rozha One (headings, English and Devanagari), Mukta (body). Every section has a Hindi label above its title.
-- Art: marigold garland along the top, block-print borders between sections, the pop-art portrait in front of a rani-pink sun, a slowly turning rangoli mandala and a Mughal arch; paisley (keri) section markers, lotus card corners, jaali lattice behind Contact, and a Warli village scene in white on geru as the footer.
+- Restrained and boardroom-grade; Indian character comes through craft details, not decoration.
+- Colour: deep bottle green-black `#0E1A16`, ivory `#EDE6D6`, antique gold `#C6A866` hairlines.
+- Type: Cormorant Garamond (headings), Hanken Grotesk (body), Tiro Devanagari Hindi for the name in Devanagari.
+- Detail: a fine gold Mughal jaali (eight-pointed star lattice) fading in behind the hero and contact; the portrait as a monochrome engraving set in an arched (jharokha) frame; an eight-pointed star as the only ornament.
 
 ## The bigger picture: a personal twin
 
