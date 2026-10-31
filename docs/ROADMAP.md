@@ -12,15 +12,22 @@ Working notes for growing this site from a portfolio into a full personal home (
 
 Both views share one header: name, section links (Work · Career · Lab · Contact) and an **Executive view / Builder view** switch.
 
-### Information structure (Executive view)
+### Information structure (both views, same order and facts)
 
-1. **Intro** — one sentence on what I do, one on the background.
-2. **Now** — what has my attention this season (work, side project, learning).
-3. **Selected work** — only two: demand.ai & Project Vihan (enterprise), nurchur.in (my own product).
-4. **The path** — career and education, one line each, plus certifications.
-5. **Lab** — capstone studies as a compact list, honestly labelled as early work in progress.
-6. **Writing** — placeholder until the first essays exist.
-7. **Contact.**
+1. **Intro** — name, one-line positioning, four highlight figures (250+ KPIs, 86.7%, ₹50 Cr, 15%).
+2. **Work** — demand.ai & Project Vihan (Mahindra), then nurchur.in (independent).
+3. **Career** — roles and education, newest first, plus certifications.
+4. **Lab** — the same eleven capstone studies, labelled as work in progress.
+5. **Contact** — click-to-copy email, LinkedIn, GitHub; writing announced as coming soon.
+
+### Executive view: a guided tour
+
+Inspired by sebg.ch. The page is a scroll-told story with a guide:
+- **The guide** — the portrait redrawn live as halftone dots on a canvas. Dots assemble on load, push away from the cursor, scatter on click and re-form; the dot sizing inverts on dark chapters so the face never reads as a negative.
+- **Narration** — a speech bubble beside the guide changes with each "beat" of the story.
+- **Chapter colours** — the whole page shifts between porcelain, bottle green (Mahindra), ochre (nurchur.in) and ink (contact).
+- **Beat visuals** — ten functions converging onto one platform; an illustrative forecast line drawing itself next to the 86.7% figure; nurchur.in in three phone mockups; the stack as a pipeline; the Lab as a thumbnail grid.
+- On phones the guide sits at the top and the story flows normally. Reduced-motion settings turn the animation off.
 
 ### Design language (Executive view)
 
