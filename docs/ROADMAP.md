@@ -6,25 +6,36 @@ Working notes for growing this site from a portfolio into a full personal home (
 
 | URL | File | What it is |
 |---|---|---|
-| `/` | `index.html` | Main site. Minimal, warm-paper design with small Indian line-art touches (kolam, toran, jharokha arch, Warli figures). |
-| `/builder` | `builder.html` | "Comic edition" — the pop-art take, kept as a playful second view. |
+| `/` | `index.html` | **Executive view** — the main site, built for a boardroom audience. |
+| `/builder` | `builder.html` | **Builder view** — the pop-art take on the same story. |
 | anything else | `404.html` | Not-found page. |
 
-### Information structure (main site)
+Both views share one header: name, section links (Work · Career · Lab · Contact) and an **Executive view / Builder view** switch.
 
-1. **Intro** — one sentence on what I do, one on the background.
-2. **Now** — what has my attention this season (work, side project, learning).
-3. **Selected work** — only two: demand.ai & Project Vihan (enterprise), nurchur.in (my own product).
-4. **The path** — career and education, one line each, plus certifications.
-5. **Lab** — capstone studies as a compact list, honestly labelled as early work in progress.
-6. **Writing** — placeholder until the first essays exist.
-7. **Contact.**
+### Information structure (both views, same order and facts)
 
-### Design language
+1. **Intro** — name, one-line positioning, four highlight figures (250+ KPIs, 15% at IBM, ₹50 Cr and 10% cost cut at L&T). demand.ai is a pilot, so its accuracy figure is not featured.
+2. **Work** — Project Vihan & the demand.ai pilot (Mahindra), then nurchur.in (independent).
+3. **Career** — roles and education, newest first, plus certifications.
+4. **Lab** — the same eleven capstone studies, labelled as work in progress.
+5. **Contact** — click-to-copy email, LinkedIn, GitHub; writing announced as coming soon.
 
-- Ground: handmade-paper cream `#F5EFE3`; ink `#1F1A14`; muted `#6A5E50`; one accent, sindoor `#A8381F`.
-- Type: Instrument Serif (headings), Manrope (body), Tiro Devanagari Hindi (name in Devanagari).
-- Art, used sparingly: kolam dot motif (section markers, hero), toran line under the header, jharokha arch around the portrait, a Warli scene above the footer.
+### Executive view: a guided tour
+
+Inspired by sebg.ch. The page is a scroll-told story with a guide:
+- **The guide** — a small bobblehead of the real pop-art portrait (head slightly enlarged, in its own layer). It stands at the bottom of the screen, walks to the left or right edge with each beat, bobbles its head while idle and walking, and wiggles when clicked. Images: `images/tour/mascot-body.webp`, `mascot-head.webp`, `mascot.webp` (composite used as the morph target).
+- **Hero portrait → mascot** — the photo portrait is drawn as a fine dot matrix inside a jaali-filled arch. As you scroll, the same dots fly to the guide's spot and take on the mascot's colours, then the crisp mascot takes over (reverses when scrolling up). The dot targets are sampled from the same mascot image the guide shows, so the dots land exactly on it.
+- **Narration** — a high-contrast speech bubble travels with the guide and changes with each "beat"; on phones it steps aside after a few seconds.
+- **Chapter colours** — the page shifts between four moods: light (intro, career, lab), deep (Mahindra), soft (nurchur.in) and night (contact).
+- **Beat visuals** — a KPI matrix of ten functions lighting up; ten functions converging onto one platform; an illustrative forecast line for the demand.ai pilot; nurchur.in in three phone mockups; the stack as a pipeline; the Lab as a thumbnail grid.
+- On phones the guide sits at the top and the story flows normally. Reduced-motion settings turn the animation off.
+
+### Design language (Executive view)
+
+- Restrained and boardroom-grade; Indian character comes through craft details, not decoration.
+- Colour: three palettes, each with the four moods. **Neel** (default): cool white `#F6F7FB`, indigo `#1C2563`/`#26338A`, saffron `#F2A341`. **Peacock**: white, peacock teal `#0B4F55`, brass. **Maroon**: marble white, maroon `#5E0F25`, antique gold. Compare with `?palette=neel|peacock|maroon`.
+- Type: Cormorant Garamond (headings), Hanken Grotesk (body), Tiro Devanagari Hindi for the name in Devanagari.
+- Detail: a fine Mughal jaali (eight-pointed star lattice) behind the portrait arch and chapters; the arched (jharokha) frame; dot matrices in the portrait and the KPI visual; an eight-pointed star as the only ornament.
 
 ## The bigger picture: a personal twin
 
