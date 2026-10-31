@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="porcelain">
+<html lang="en" data-palette="neel" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shubham Narang — Executive view</title>
 <meta name="description" content="Shubham Narang — Digital Transformation Manager at Mahindra Group. Enterprise data and AI strategy, from boardroom to build.">
-<meta name="theme-color" content="#F7F6F2">
+<meta name="theme-color" content="#F6F7FB">
+<script>(function(){var m=location.search.match(/palette=(\w+)/),p=m&&m[1];if(/^(neel|peacock|maroon)$/.test(p))document.documentElement.setAttribute('data-palette',p);})();</script>
 <link rel="canonical" href="https://shubhamnarang.in/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/images/portrait.png">
@@ -25,10 +26,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <style>
   /* chapter themes: the page changes colour as the story moves */
-  :root,[data-theme="porcelain"]{--bg:#F7F6F2;--fg:#13201B;--muted:#56625B;--accent:#7E5F1C;--line:#A7853A;--rule:#DCD7CB;--dot:#13201B;--btn-bg:#1E4535;--btn-fg:#F7F6F2;--card:#EFEDE6;--say-bg:#13201B;--say-fg:#F7F6F2;--say-em:#D9BC74}
-  [data-theme="green"]{--bg:#1E4535;--fg:#F7F6F2;--muted:#C9D3CB;--accent:#D9BC74;--line:#D9BC74;--rule:rgba(247,246,242,.2);--dot:#F7F6F2;--btn-bg:#D9BC74;--btn-fg:#13201B;--card:rgba(255,255,255,.07);--say-bg:#F7F6F2;--say-fg:#13201B;--say-em:#1E4535}
-  [data-theme="ochre"]{--bg:#ECE2C8;--fg:#13201B;--muted:#4E5A53;--accent:#6E5218;--line:#A7853A;--rule:#D3C6A6;--dot:#13201B;--btn-bg:#1E4535;--btn-fg:#F7F6F2;--card:#F3EBD7;--say-bg:#13201B;--say-fg:#F7F6F2;--say-em:#D9BC74}
-  [data-theme="ink"]{--bg:#13201B;--fg:#F7F6F2;--muted:#AEB8B0;--accent:#D9BC74;--line:#D9BC74;--rule:rgba(247,246,242,.16);--dot:#D9BC74;--btn-bg:#D9BC74;--btn-fg:#13201B;--card:rgba(255,255,255,.05);--say-bg:#F7F6F2;--say-fg:#13201B;--say-em:#1E4535}
+  /* three palettes x four chapter moods; ?palette=neel|peacock|maroon to compare */
+  :root,[data-palette="neel"][data-theme="light"],[data-palette="neel"]:not([data-theme]){--bg:#F6F7FB;--fg:#111733;--muted:#4A5272;--accent:#A24F0C;--line:#D08B3C;--rule:#DADFEC;--dot:#111733;--btn-bg:#26338A;--btn-fg:#FFFFFF;--card:#ECEFF7;--say-bg:#111733;--say-fg:#FFFFFF;--say-em:#F2A341}
+  [data-palette="neel"][data-theme="deep"]{--bg:#1C2563;--fg:#F6F7FB;--muted:#C3C9E6;--accent:#F2A341;--line:#F2A341;--rule:rgba(255,255,255,.18);--dot:#F6F7FB;--btn-bg:#F2A341;--btn-fg:#111733;--card:rgba(255,255,255,.07);--say-bg:#FFFFFF;--say-fg:#111733;--say-em:#26338A}
+  [data-palette="neel"][data-theme="soft"]{--bg:#FBE9D2;--fg:#111733;--muted:#4B475C;--accent:#8F4409;--line:#C98A3A;--rule:#EBCFAA;--dot:#111733;--btn-bg:#26338A;--btn-fg:#FFFFFF;--card:#FFF4E6;--say-bg:#111733;--say-fg:#FFFFFF;--say-em:#F2A341}
+  [data-palette="neel"][data-theme="night"]{--bg:#0D1226;--fg:#F6F7FB;--muted:#AEB4CF;--accent:#F2A341;--line:#F2A341;--rule:rgba(255,255,255,.14);--dot:#F2A341;--btn-bg:#F2A341;--btn-fg:#0D1226;--card:rgba(255,255,255,.05);--say-bg:#FFFFFF;--say-fg:#0D1226;--say-em:#26338A}
+  [data-palette="peacock"][data-theme="light"],[data-palette="peacock"]:not([data-theme]){--bg:#F6FAFA;--fg:#0E1F24;--muted:#485B5F;--accent:#0A6469;--line:#B08A3E;--rule:#D5E1E1;--dot:#0E1F24;--btn-bg:#0B5D63;--btn-fg:#FFFFFF;--card:#E9F1F1;--say-bg:#0E1F24;--say-fg:#FFFFFF;--say-em:#E0B860}
+  [data-palette="peacock"][data-theme="deep"]{--bg:#0B4F55;--fg:#F6FAFA;--muted:#BFD6D6;--accent:#E8C46E;--line:#E0B860;--rule:rgba(255,255,255,.18);--dot:#F6FAFA;--btn-bg:#E8C46E;--btn-fg:#0E1F24;--card:rgba(255,255,255,.07);--say-bg:#FFFFFF;--say-fg:#0E1F24;--say-em:#0B5D63}
+  [data-palette="peacock"][data-theme="soft"]{--bg:#DCEBE7;--fg:#0E1F24;--muted:#3D5155;--accent:#6F5112;--line:#B08A3E;--rule:#BDD5D0;--dot:#0E1F24;--btn-bg:#0B5D63;--btn-fg:#FFFFFF;--card:#EAF4F1;--say-bg:#0E1F24;--say-fg:#FFFFFF;--say-em:#E0B860}
+  [data-palette="peacock"][data-theme="night"]{--bg:#081A1D;--fg:#F6FAFA;--muted:#A6BABC;--accent:#E8C46E;--line:#E0B860;--rule:rgba(255,255,255,.14);--dot:#E8C46E;--btn-bg:#E8C46E;--btn-fg:#081A1D;--card:rgba(255,255,255,.05);--say-bg:#FFFFFF;--say-fg:#081A1D;--say-em:#0B5D63}
+  [data-palette="maroon"][data-theme="light"],[data-palette="maroon"]:not([data-theme]){--bg:#FAF9F9;--fg:#1E1416;--muted:#5B4C50;--accent:#8E1B3A;--line:#B8955A;--rule:#E4DCDD;--dot:#1E1416;--btn-bg:#7A1631;--btn-fg:#FFFFFF;--card:#F2EDEE;--say-bg:#1E1416;--say-fg:#FFFFFF;--say-em:#E3B868}
+  [data-palette="maroon"][data-theme="deep"]{--bg:#5E0F25;--fg:#FAF9F9;--muted:#E2C9CF;--accent:#E9C77E;--line:#E3B868;--rule:rgba(255,255,255,.2);--dot:#FAF9F9;--btn-bg:#E9C77E;--btn-fg:#1E1416;--card:rgba(255,255,255,.08);--say-bg:#FFFFFF;--say-fg:#1E1416;--say-em:#7A1631}
+  [data-palette="maroon"][data-theme="soft"]{--bg:#F1E3E2;--fg:#1E1416;--muted:#54454A;--accent:#7A1631;--line:#B8955A;--rule:#DECACB;--dot:#1E1416;--btn-bg:#7A1631;--btn-fg:#FFFFFF;--card:#F8EFEE;--say-bg:#1E1416;--say-fg:#FFFFFF;--say-em:#E3B868}
+  [data-palette="maroon"][data-theme="night"]{--bg:#170D10;--fg:#FAF9F9;--muted:#BBADB1;--accent:#E9C77E;--line:#E3B868;--rule:rgba(255,255,255,.14);--dot:#E9C77E;--btn-bg:#E9C77E;--btn-fg:#170D10;--card:rgba(255,255,255,.05);--say-bg:#FFFFFF;--say-fg:#170D10;--say-em:#7A1631}
 
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -78,8 +88,8 @@
   .arch{position:relative;width:100%;max-width:420px;justify-self:end}
   .arch svg.frame{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
   .arch .inner{position:absolute;left:4.2%;right:4.2%;top:4.2%;bottom:0;border-radius:999px 999px 0 0;overflow:hidden;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23A7853A' stroke-width='.8'%3E%3Crect x='14' y='14' width='28' height='28'/%3E%3Crect x='14' y='14' width='28' height='28' transform='rotate%2845 28 28%29'/%3E%3Cpath d='M0 0L14 14M56 0L42 14M0 56L14 42M56 56L42 42M28 0V8.2M28 56V47.8M0 28H8.2M56 28H47.8'/%3E%3Ccircle cx='28' cy='28' r='4'/%3E%3C/g%3E%3C/svg%3E") repeat,var(--card);background-size:42px 42px}
-  .arch canvas{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;aspect-ratio:1;cursor:pointer;touch-action:manipulation}
-  .arch .tip{position:absolute;left:8%;bottom:12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);background:var(--bg);padding:4px 10px;white-space:nowrap}
+  .arch .pbox{position:absolute;left:0;right:0;bottom:0;aspect-ratio:1;cursor:pointer;touch-action:manipulation}
+  .morph{position:fixed;inset:0;width:100vw;height:100vh;z-index:25;pointer-events:none}
 
   /* story */
   .chapter{position:relative;border-top:1px solid var(--rule)}
@@ -141,7 +151,9 @@
   footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-top:22px;padding-bottom:30px;font-size:13px;color:var(--muted)}
 
   /* ---------- the guide: a small illustrated Shubham who walks along the bottom ---------- */
-  .guide{position:fixed;left:0;bottom:0;z-index:40;width:108px;pointer-events:none;transform:translateX(var(--gx,24px));transition:transform 1.3s cubic-bezier(.45,.05,.3,1)}
+  .guide{position:fixed;left:0;bottom:0;z-index:40;width:108px;pointer-events:none;transform:translateX(var(--gx,24px));transition:transform 1.3s cubic-bezier(.45,.05,.3,1),opacity .2s}
+  .guide.pending{opacity:0}
+  .guide.pending *{pointer-events:none!important}
   .guide .who{position:relative;width:108px;height:144px;pointer-events:auto;cursor:pointer;background:none;border:0;padding:0}
   .guide svg{width:100%;height:100%;display:block;overflow:visible;transform:scaleX(var(--face,1));transition:transform .3s ease}
   .guide.walking .bob{animation:walk .32s ease-in-out infinite}
@@ -208,7 +220,7 @@
 
 <main>
 
-<section class="hero chapter" data-theme="porcelain" id="top" style="border-top:0">
+<section class="hero chapter" data-theme="light" id="top" style="border-top:0">
   <div class="wrap">
     <div class="beat on solo" data-say="Hi, I'm <b>Shubham</b>. Scroll — I'll walk you through it." data-pos="right" data-pose="wave" style="min-height:0;padding:0;display:flex;flex-direction:column;gap:22px;align-items:flex-start">
       <div class="label">Digital Transformation Manager · Mahindra Group</div>
@@ -229,18 +241,17 @@
     </div>
     <div class="arch">
       <div style="padding-top:128%"></div>
-      <div class="inner"><canvas id="matrix" role="img" aria-label="Portrait of Shubham Narang drawn as a fine dot matrix"></canvas></div>
+      <div class="inner"><div class="pbox" id="pbox" role="img" aria-label="Portrait of Shubham Narang drawn as a fine dot matrix"></div></div>
       <svg class="frame" viewBox="0 0 420 538" preserveAspectRatio="none" aria-hidden="true">
         <path d="M2 538V210A208 208 0 0 1 418 210V538" fill="none" stroke="var(--line)" stroke-width="1"/>
         <path d="M17.6 538V210A192.4 192.4 0 0 1 402.4 210V538" fill="none" stroke="var(--line)" stroke-width="1.5"/>
         <g transform="translate(196 -12)" fill="none" stroke="var(--line)" stroke-width="1"><rect x="6" y="6" width="16" height="16"/><rect x="6" y="6" width="16" height="16" transform="rotate(45 14 14)"/><circle cx="14" cy="14" r="3"/></g>
       </svg>
-      <span class="tip">Move over me</span>
     </div>
   </div>
 </section>
 
-<section class="chapter jaali" data-theme="green" id="work">
+<section class="chapter jaali" data-theme="deep" id="work">
   <div class="wrap">
     <div class="beat" data-say="First, my day job at <b>Mahindra</b>." data-pos="right" data-pose="point">
       <div class="txt">
@@ -376,7 +387,7 @@
   </div>
 </section>
 
-<section class="chapter" data-theme="ochre">
+<section class="chapter" data-theme="soft">
   <div class="wrap">
     <div class="beat" data-say="Outside work, I build. This is <b>nurchur.in</b>." data-pos="left" data-pose="point">
       <div class="txt">
@@ -402,7 +413,7 @@
   </div>
 </section>
 
-<section class="chapter jaali" data-theme="porcelain" id="career">
+<section class="chapter jaali" data-theme="light" id="career">
   <div class="wrap">
     <div class="beat" data-say="How I got here: <b>engineering</b>, operations, then data." data-pos="right" data-pose="cross">
       <div class="txt">
@@ -421,7 +432,7 @@
   </div>
 </section>
 
-<section class="chapter" data-theme="porcelain" id="lab">
+<section class="chapter" data-theme="light" id="lab">
   <div class="wrap">
     <div class="beat solo" data-say="Smaller studies. I'm <b>growing them</b>, one by one." data-pos="left" data-pose="point">
       <div class="txt">
@@ -446,7 +457,7 @@
   </div>
 </section>
 
-<section class="chapter jaali" data-theme="ink" id="contact">
+<section class="chapter jaali" data-theme="night" id="contact">
   <div class="wrap">
     <div class="beat solo" data-say="Write anytime. Click the email — it's <b>copied</b>." data-pos="right" data-pose="wave">
       <div class="txt">
@@ -472,7 +483,8 @@
 </footer>
 
 <!-- the guide -->
-<div class="guide at-right" id="guide" data-pose="wave" aria-hidden="true" style="--face:-1">
+<canvas class="morph" id="morph" aria-hidden="true"></canvas>
+<div class="guide at-right pending" id="guide" data-pose="wave" aria-hidden="true" style="--face:-1">
   <p class="bubble" id="bubble">Hi, I'm <b>Shubham</b>. Scroll — I'll walk you through it.</p>
   <button class="who" type="button" id="who" tabindex="-1">
     <svg viewBox="0 0 132 176" role="presentation">
@@ -491,30 +503,30 @@
         <ellipse cx="42" cy="75" rx="4" ry="6" fill="#C98F68"/>
         <ellipse cx="90" cy="75" rx="4" ry="6" fill="#C98F68"/>
         <ellipse cx="66" cy="72" rx="24" ry="28" fill="#D8A27C"/>
-        <path d="M43 78C45 96 56 102 66 102C76 102 87 96 89 78C86 90 77 96 66 96C55 96 46 90 43 78Z" fill="url(#stub)"/>
         <path d="M41 70C38 44 50 34 68 35C84 35 94 46 91 66C89 56 82 50 70 50C58 50 48 56 41 70Z" fill="#231A15"/>
         <path d="M48 44C55 29 78 27 88 41C78 35 63 35 48 44Z" fill="#231A15"/>
-        <path d="M53 64L61 62.5M71 62.5L79 64" stroke="#231A15" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M53 64L61 62.5M71 62.5L79 64" fill="none" stroke="#231A15" stroke-width="2.4" stroke-linecap="round"/>
         <ellipse class="eye" cx="57" cy="71" rx="2.3" ry="2.5" fill="#1A1410"/>
         <ellipse class="eye" cx="75" cy="71" rx="2.3" ry="2.5" fill="#1A1410"/>
         <path d="M66 73Q63 80 66.5 81.5" fill="none" stroke="#B07A55" stroke-width="1.4" stroke-linecap="round"/>
         <path d="M55 87C59 83 63 84 66 86C69 84 73 83 77 87C73 89 69 88 66 88C63 88 59 89 55 87Z" fill="#231A15"/>
         <path d="M61 92Q66 94.5 71 92" fill="none" stroke="#8A4E3A" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M43 78C45 96 56 102 66 102C76 102 87 96 89 78C86 90 77 96 66 96C55 96 46 90 43 78Z" fill="url(#stub)"/>
         <g class="pose cross">
-          <path d="M34 146C46 138 86 138 98 146L98 160C86 152 46 152 34 160Z" fill="#234AA6"/>
-          <ellipse cx="41" cy="151" rx="6" ry="5" fill="#D8A27C"/>
-          <ellipse cx="91" cy="151" rx="6" ry="5" fill="#D8A27C"/>
+            <path d="M34 146C46 138 86 138 98 146L98 160C86 152 46 152 34 160Z" fill="#234AA6"/>
+            <ellipse cx="41" cy="151" rx="6" ry="5" fill="#D8A27C"/>
+            <ellipse cx="91" cy="151" rx="6" ry="5" fill="#D8A27C"/>
         </g>
         <g class="pose point">
-          <path d="M99 130L121 106" stroke="#2E5CC9" stroke-width="13" stroke-linecap="round"/>
-          <circle cx="123" cy="103" r="6" fill="#D8A27C"/>
-          <path d="M126 99L131 93" stroke="#D8A27C" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M99 130L121 106" fill="none" stroke="#2E5CC9" stroke-width="13" stroke-linecap="round"/>
+            <circle cx="123" cy="103" r="6" fill="#D8A27C"/>
+            <path d="M126 99L131 93" fill="none" stroke="#D8A27C" stroke-width="3.2" stroke-linecap="round"/>
         </g>
         <g class="pose wave">
-          <g class="arm">
-            <path d="M99 130L111 94" stroke="#2E5CC9" stroke-width="13" stroke-linecap="round"/>
+            <g class="arm">
+            <path d="M99 130L111 94" fill="none" stroke="#2E5CC9" stroke-width="13" stroke-linecap="round"/>
             <ellipse cx="112" cy="86" rx="6.5" ry="8" fill="#D8A27C"/>
-          </g>
+            </g>
         </g>
       </g>
     </svg>
@@ -593,53 +605,114 @@
     else { location.href = 'mailto:' + email; }
   });
 
-  /* ---------- hero portrait as a fine dot matrix ---------- */
-  var cv = document.getElementById('matrix'), ctx = cv.getContext('2d');
-  var dots = [], W = 0, mouse = null, running = false, scattered = false;
-  function layout(){ var r = cv.getBoundingClientRect(), d = Math.min(window.devicePixelRatio || 1, 2); W = r.width; cv.width = W*d; cv.height = W*d; ctx.setTransform(d,0,0,d,0,0); }
-  function build(img){
-    var N = 132, off = document.createElement('canvas'); off.width = N; off.height = N;
+  /* ---------- one set of dots: the portrait in the arch becomes the mascot as you scroll ---------- */
+  var fx = document.getElementById('morph'), fc = fx.getContext('2d');
+  var pbox = document.getElementById('pbox'), who = document.getElementById('who'), hero = document.getElementById('top');
+  var SHAPES = [["path","M22 176C22 140 34 118 66 114C98 118 110 140 110 176Z","#2E5CC9"],["rect",[59,98,14,20,4],"#C98F68"],["path","M54 115L66 142L78 115Z","#8FE3DF"],["path","M54 115L66 142L58 150L44 122Z","#234AA6"],["path","M78 115L66 142L74 150L88 122Z","#234AA6"],["ellipse",[42,75,4,6],"#C98F68"],["ellipse",[90,75,4,6],"#C98F68"],["ellipse",[66,72,24,28],"#D8A27C"],["path","M41 70C38 44 50 34 68 35C84 35 94 46 91 66C89 56 82 50 70 50C58 50 48 56 41 70Z","#231A15"],["path","M48 44C55 29 78 27 88 41C78 35 63 35 48 44Z","#231A15"],["stroke","M53 64L61 62.5M71 62.5L79 64","#231A15",2.4],["eye",[57,71,2.3,2.5],"#1A1410"],["eye",[75,71,2.3,2.5],"#1A1410"],["stroke","M66 73Q63 80 66.5 81.5","#B07A55",1.4],["path","M55 87C59 83 63 84 66 86C69 84 73 83 77 87C73 89 69 88 66 88C63 88 59 89 55 87Z","#231A15"],["stroke","M61 92Q66 94.5 71 92","#8A4E3A",1.4],["stroke","M99 130L111 94","#2E5CC9",13],["ellipse",[112,86,6.5,8],"#D8A27C"]];
+  var dots = [], marks = [], VW = 0, VH = 0, mouse = null, scattered = false, born = 0, running = false, shown = false;
+  var STEPS = 20;
+  function size(){ var d = Math.min(window.devicePixelRatio || 1, 2); VW = window.innerWidth; VH = window.innerHeight; fx.width = VW*d; fx.height = VH*d; fc.setTransform(d,0,0,d,0,0); }
+  function rgb(h){ h = h.trim().replace('#',''); return [parseInt(h.substr(0,2),16), parseInt(h.substr(2,2),16), parseInt(h.substr(4,2),16)]; }
+
+  /* rasterise the mascot exactly as the SVG draws it (mirrored: he stands at the right edge facing left) */
+  function sampleMascot(){
+    var w = 132, h = 176, s = 3, c = document.createElement('canvas'); c.width = w*s; c.height = h*s;
+    var g = c.getContext('2d'); g.scale(s,s); g.translate(w,0); g.scale(-1,1);
+    SHAPES.forEach(function(sh){
+      var k = sh[0]; g.beginPath();
+      if(k === 'path'){ g.fillStyle = sh[2]; g.fill(new Path2D(sh[1])); }
+      else if(k === 'stroke'){ g.strokeStyle = sh[2]; g.lineWidth = sh[3]; g.lineCap = 'round'; g.stroke(new Path2D(sh[1])); }
+      else if(k === 'rect'){ var r = sh[1]; g.fillStyle = sh[2]; g.rect(r[0], r[1], r[2], r[3]); g.fill(); }
+      else if(k === 'ellipse' || k === 'eye'){ var e = sh[1]; g.fillStyle = sh[2]; g.ellipse(e[0], e[1], e[2], e[3], 0, 0, 6.2832); g.fill(); }
+      else if(k === 'circle'){ var q = sh[1]; g.fillStyle = sh[2]; g.arc(q[0], q[1], q[2], 0, 6.2832); g.fill(); }
+    });
+    var px = g.getImageData(0, 0, w*s, h*s).data, out = [], step = 2.2;
+    for(var v = step/2; v < h; v += step) for(var u = step/2; u < w; u += step){
+      var i = (Math.floor(v*s)*w*s + Math.floor(u*s))*4;
+      if(px[i+3] > 160) out.push({ u: u/w, v: v/h, c: [px[i], px[i+1], px[i+2]], cs: [] });
+    }
+    return out;
+  }
+  function samplePortrait(img){
+    var N = window.innerWidth < 700 ? 96 : 132, off = document.createElement('canvas'); off.width = N; off.height = N;
     var o = off.getContext('2d'); o.drawImage(img, 0, 0, N, N);
-    var px; try { px = o.getImageData(0,0,N,N).data; } catch(e){ return; }
-    var cell = W / N; dots = [];
-    for(var y=0;y<N;y++) for(var x=0;x<N;x++){
+    var px = o.getImageData(0, 0, N, N).data, out = [];
+    for(var y = 0; y < N; y++) for(var x = 0; x < N; x++){
       var i = (y*N + x)*4, a = px[i+3]/255; if(a < .25) continue;
       var lum = (0.299*px[i] + 0.587*px[i+1] + 0.114*px[i+2]) / 255;
-      var r = (1 - lum) * cell * .62 * a + cell * .1;
-      var tx = (x+.5)*cell, ty = (y+.5)*cell, ang = Math.random()*6.283, d = W*(.3+Math.random()*.6);
-      dots.push({ tx:tx, ty:ty, r:r, x: reduce ? tx : W/2 + Math.cos(ang)*d, y: reduce ? ty : W/2 + Math.sin(ang)*d, ox:0, oy:0 });
+      out.push({ u: (x+.5)/N, v: (y+.5)/N, r: ((1 - lum) * .62 * a + .1) / N });
     }
+    return out;
+  }
+  function build(img){
+    marks = sampleMascot();
+    var src = samplePortrait(img);
+    /* pair dots top-to-bottom so the face melts into the face, the blazer into the blazer */
+    var key = function(a){ return a.v*1000 + a.u; };
+    src.sort(function(a,b){ return key(a) - key(b); });
+    marks.sort(function(a,b){ return key(a) - key(b); });
+    var P = pbox.getBoundingClientRect();
+    dots = src.map(function(p, i){
+      var ang = Math.random()*6.283, d = P.width*(.3 + Math.random()*.7);
+      return { u: p.u, v: p.v, r: p.r, m: marks[Math.floor(i * marks.length / src.length)],
+               x: P.left + P.width/2 + Math.cos(ang)*d, y: P.top + P.height/2 + Math.sin(ang)*d, ox: 0, oy: 0, sx: 0, sy: 0 };
+    });
+    born = performance.now();
     kick();
   }
-  function draw(){
-    var col = getComputedStyle(root).getPropertyValue('--dot').trim() || '#13201B';
-    if(root.getAttribute('data-theme') !== 'porcelain') col = '#13201B';
-    ctx.clearRect(0,0,W,W); ctx.fillStyle = col;
-    var moving = false;
-    for(var k=0;k<dots.length;k++){
-      var p = dots[k], gx = scattered ? p.sx : p.tx, gy = scattered ? p.sy : p.ty;
-      var dx = gx - p.x, dy = gy - p.y; p.x += dx*.09; p.y += dy*.09;
+  function ease(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2; }
+  function frame(now){
+    running = false;
+    if(!dots.length) return;
+    /* the morph starts once the portrait has risen to the upper third of the screen */
+    var P0 = pbox.getBoundingClientRect();
+    var t = Math.min(1, Math.max(0, (VH * .3 - P0.top) / (P0.height * .9)));
+    var e = reduce ? (t >= 1 ? 1 : 0) : ease(t);
+    var landed = e >= .999;
+    if(landed !== shown){ shown = landed; guide.classList.toggle('pending', !landed); }
+    var P = pbox.getBoundingClientRect(), M = who.getBoundingClientRect();
+    var settling = !reduce && now - born < 1800;
+    fc.clearRect(0, 0, VW, VH);
+    if(landed && !settling){ fx.style.visibility = 'hidden'; return; }
+    fx.style.visibility = 'visible';
+    var base = rgb(getComputedStyle(root).getPropertyValue('--dot') || '#111733');
+    var cellM = M.width * 2.2 / 132, bucket = Math.round(e * STEPS), follow = settling ? .09 : .55, moving = false, last = '';
+    for(var k = 0; k < dots.length; k++){
+      var p = dots[k], m = p.m;
+      var sx = P.left + p.u*P.width + (scattered ? p.sx : 0), sy = P.top + p.v*P.height + (scattered ? p.sy : 0);
+      var tx = M.left + m.u*M.width, ty = M.top + m.v*M.height;
+      var gx = sx + (tx - sx)*e, gy = sy + (ty - sy)*e;
       var qx = 0, qy = 0;
-      if(mouse && !reduce){ var mx = p.x - mouse.x, my = p.y - mouse.y, dist = Math.sqrt(mx*mx+my*my), R = W*.12;
-        if(dist < R && dist > .01){ var f = (1 - dist/R) * W*.04; qx = mx/dist*f; qy = my/dist*f; } }
+      if(mouse && e < .02 && !reduce){
+        var mx = gx - mouse.x, my = gy - mouse.y, dist = Math.sqrt(mx*mx + my*my), R = P.width*.12;
+        if(dist < R && dist > .01){ var f = (1 - dist/R) * P.width*.04; qx = mx/dist*f; qy = my/dist*f; }
+      }
       p.ox += (qx - p.ox)*.2; p.oy += (qy - p.oy)*.2;
-      if(Math.abs(dx) > .25 || Math.abs(dy) > .25 || Math.abs(p.ox-qx) > .15 || Math.abs(p.oy-qy) > .15) moving = true;
-      ctx.beginPath(); ctx.arc(p.x+p.ox, p.y+p.oy, p.r, 0, 6.2832); ctx.fill();
+      var dx = gx - p.x, dy = gy - p.y; p.x += dx*follow; p.y += dy*follow;
+      if(Math.abs(dx) > .3 || Math.abs(dy) > .3 || Math.abs(p.ox - qx) > .2) moving = true;
+      var r = p.r*P.width + (cellM*.62 - p.r*P.width)*e;
+      var col = m.cs[bucket] || (m.cs[bucket] = (function(f){ return 'rgb(' + Math.round(base[0] + (m.c[0]-base[0])*f) + ',' + Math.round(base[1] + (m.c[1]-base[1])*f) + ',' + Math.round(base[2] + (m.c[2]-base[2])*f) + ')'; })(bucket/STEPS));
+      if(col !== last){ fc.fillStyle = col; last = col; }
+      fc.beginPath(); fc.arc(p.x + p.ox, p.y + p.oy, Math.max(.2, r), 0, 6.2832); fc.fill();
     }
-    if(moving || mouse) requestAnimationFrame(draw); else running = false;
+    if(moving || mouse || settling || scattered) kick();
   }
-  function kick(){ if(!running){ running = true; requestAnimationFrame(draw); } }
-  cv.addEventListener('pointermove', function(e){ var r = cv.getBoundingClientRect(); mouse = { x:e.clientX-r.left, y:e.clientY-r.top }; kick(); });
-  cv.addEventListener('pointerleave', function(){ mouse = null; kick(); });
-  cv.addEventListener('click', function(){
-    if(reduce || !dots.length) return; scattered = true;
-    dots.forEach(function(p){ var a = Math.random()*6.283, d = W*(.15+Math.random()*.35); p.sx = p.tx+Math.cos(a)*d; p.sy = p.ty+Math.sin(a)*d; });
+  function kick(){ if(!running){ running = true; requestAnimationFrame(frame); } }
+  window.addEventListener('scroll', kick, { passive: true });
+  window.addEventListener('resize', function(){ size(); kick(); });
+  new MutationObserver(function(){ dots.forEach(function(p){ p.m.cs = []; }); kick(); }).observe(root, { attributes: true, attributeFilter: ['data-theme','data-palette'] });
+  pbox.addEventListener('pointermove', function(e){ mouse = { x: e.clientX, y: e.clientY }; kick(); });
+  pbox.addEventListener('pointerleave', function(){ mouse = null; kick(); });
+  pbox.addEventListener('click', function(){
+    if(reduce || !dots.length) return;
+    var P = pbox.getBoundingClientRect(); scattered = true;
+    dots.forEach(function(p){ var a = Math.random()*6.283, d = P.width*(.15 + Math.random()*.35); p.sx = Math.cos(a)*d; p.sy = Math.sin(a)*d; });
     kick(); setTimeout(function(){ scattered = false; kick(); }, 600);
   });
+  size();
   var img = new Image();
-  img.onload = function(){ layout(); build(img); };
+  img.onload = function(){ build(img); };
   img.src = 'images/portrait.webp';
-  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ if(img.complete){ layout(); build(img); } }, 200); });
 })();
 </script>
 

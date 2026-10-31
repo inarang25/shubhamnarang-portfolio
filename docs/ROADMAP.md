@@ -24,18 +24,18 @@ Both views share one header: name, section links (Work · Career · Lab · Conta
 
 Inspired by sebg.ch. The page is a scroll-told story with a guide:
 - **The guide** — a small illustrated Shubham (blue blazer, cyan shirt, quiff, moustache) who stands at the bottom of the screen, walks to the left or right edge with each beat, switches pose (arms crossed, pointing, waving), blinks, and waves when clicked.
-- **Hero portrait** — the photo portrait redrawn live as a fine dot matrix inside a jaali-filled arch; dots move away from the cursor and scatter on click.
+- **Hero portrait → mascot** — the photo portrait is drawn as a fine dot matrix inside a jaali-filled arch. As you scroll, the same dots fly to the guide's spot and take on the mascot's colours, then the crisp mascot takes over (reverses when scrolling up). The mascot is defined once (`mascot.py` in the build) so the dots land exactly on the drawing.
 - **Narration** — a high-contrast speech bubble travels with the guide and changes with each "beat"; on phones it steps aside after a few seconds.
-- **Chapter colours** — the whole page shifts between porcelain, bottle green (Mahindra), ochre (nurchur.in) and ink (contact).
+- **Chapter colours** — the page shifts between four moods: light (intro, career, lab), deep (Mahindra), soft (nurchur.in) and night (contact).
 - **Beat visuals** — a KPI matrix of ten functions lighting up; ten functions converging onto one platform; an illustrative forecast line for the demand.ai pilot; nurchur.in in three phone mockups; the stack as a pipeline; the Lab as a thumbnail grid.
 - On phones the guide sits at the top and the story flows normally. Reduced-motion settings turn the animation off.
 
 ### Design language (Executive view)
 
 - Restrained and boardroom-grade; Indian character comes through craft details, not decoration.
-- Colour: porcelain white `#F7F6F2`, ink green `#13201B` text, deep bottle green `#1E4535` buttons, antique gold `#7E5F1C` labels and `#A7853A` hairlines.
+- Colour: three palettes, each with the four moods. **Neel** (default): cool white `#F6F7FB`, indigo `#1C2563`/`#26338A`, saffron `#F2A341`. **Peacock**: white, peacock teal `#0B4F55`, brass. **Maroon**: marble white, maroon `#5E0F25`, antique gold. Compare with `?palette=neel|peacock|maroon`.
 - Type: Cormorant Garamond (headings), Hanken Grotesk (body), Tiro Devanagari Hindi for the name in Devanagari.
-- Detail: a fine gold Mughal jaali (eight-pointed star lattice) fading in behind the hero and contact; the portrait as a monochrome engraving set in an arched (jharokha) frame; an eight-pointed star as the only ornament.
+- Detail: a fine Mughal jaali (eight-pointed star lattice) behind the portrait arch and chapters; the arched (jharokha) frame; dot matrices in the portrait and the KPI visual; an eight-pointed star as the only ornament.
 
 ## The bigger picture: a personal twin
 
