@@ -151,20 +151,20 @@
   footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-top:22px;padding-bottom:30px;font-size:13px;color:var(--muted)}
 
   /* ---------- the guide: a small illustrated Shubham who walks along the bottom ---------- */
-  .guide{position:fixed;left:0;bottom:0;z-index:40;width:108px;pointer-events:none;transform:translateX(var(--gx,24px));transition:transform 1.3s cubic-bezier(.45,.05,.3,1),opacity .2s}
+  .guide{position:fixed;left:0;bottom:6px;z-index:40;width:112px;pointer-events:none;transform:translateX(var(--gx,24px));transition:transform 1.3s cubic-bezier(.45,.05,.3,1),opacity .2s}
   .guide.pending{opacity:0}
   .guide.pending *{pointer-events:none!important}
-  .guide .who{position:relative;width:108px;height:144px;pointer-events:auto;cursor:pointer;background:none;border:0;padding:0}
-  .guide svg{width:100%;height:100%;display:block;overflow:visible;transform:scaleX(var(--face,1));transition:transform .3s ease}
-  .guide.walking .bob{animation:walk .32s ease-in-out infinite}
+  .guide .who{position:relative;display:block;width:112px;height:135px;pointer-events:auto;cursor:pointer;background:none;border:0;padding:0}
+  .guide .who img{position:absolute;inset:0;width:100%;height:100%}
+  .guide .head{transform-origin:53.3% 56.1%;animation:bobble 3.2s ease-in-out infinite}
+  @keyframes bobble{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2.5deg)}}
+  .guide.walking .who{animation:walk .32s ease-in-out infinite}
+  .guide.walking .head{animation-duration:.64s}
   @keyframes walk{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-  .guide .eye{transform-box:fill-box;transform-origin:center;animation:blink 5s infinite}
-  @keyframes blink{0%,94%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
-  .guide .pose{display:none}
-  .guide[data-pose="cross"] .pose.cross,.guide[data-pose="point"] .pose.point,.guide[data-pose="wave"] .pose.wave{display:inline}
-  .guide[data-pose="wave"] .wave .arm{transform-box:fill-box;transform-origin:10% 90%;animation:wave .5s ease-in-out 3}
-  @keyframes wave{0%,100%{transform:rotate(0)}50%{transform:rotate(-16deg)}}
-  .bubble{position:absolute;bottom:138px;left:14px;width:max-content;max-width:250px;margin:0;padding:11px 15px;border-radius:16px;background:var(--say-bg);color:var(--say-fg);font-size:14.5px;line-height:1.45;box-shadow:0 14px 34px -14px rgba(0,0,0,.45);transition:opacity .3s ease,transform .3s ease,background-color .8s,color .8s;pointer-events:auto}
+  .guide.hello .head{animation:hello .5s ease-in-out 3}
+  @keyframes hello{0%,100%{transform:rotate(0)}25%{transform:rotate(-9deg)}75%{transform:rotate(9deg)}}
+  .guide .shadow{position:absolute;left:18%;right:18%;bottom:-3px;height:6px;border-radius:50%;background:#000;opacity:.14;filter:blur(2px)}
+  .bubble{position:absolute;bottom:142px;left:14px;width:max-content;max-width:250px;margin:0;padding:11px 15px;border-radius:16px;background:var(--say-bg);color:var(--say-fg);font-size:14.5px;line-height:1.45;box-shadow:0 14px 34px -14px rgba(0,0,0,.45);transition:opacity .3s ease,transform .3s ease,background-color .8s,color .8s;pointer-events:auto}
   .bubble::after{content:"";position:absolute;left:40px;bottom:-7px;width:14px;height:14px;background:inherit;transform:rotate(45deg);border-radius:0 0 3px 0}
   .bubble b{color:var(--say-em);font-weight:700}
   .bubble.swap{opacity:0;transform:translateY(6px)}
@@ -175,7 +175,7 @@
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     body,.beat,.node,.spoke,.hub,.draw,.phone,.bubble,.guide,.cell{transition:none!important}
-    .guide .bob,.guide .eye,.guide .arm{animation:none!important}
+    .guide .who,.guide .head{animation:none!important}
     .beat{opacity:1;transform:none}
   }
   @media (max-width:960px){
@@ -187,9 +187,9 @@
     .figs{grid-template-columns:repeat(2,1fr)}
     .beat{grid-template-columns:1fr;min-height:0;padding:56px 0;opacity:1;transform:none}
     .lab{grid-template-columns:repeat(2,1fr);gap:12px}
-    .guide{width:76px}
-    .guide .who{width:76px;height:101px}
-    .bubble{bottom:98px;max-width:220px;font-size:14px;padding:10px 13px}
+    .guide{width:84px}
+    .guide .who{width:84px;height:101px}
+    .bubble{bottom:106px;max-width:220px;font-size:14px;padding:10px 13px}
   }
   @media (max-width:560px){
     .path li{grid-template-columns:1fr}
@@ -222,7 +222,7 @@
 
 <section class="hero chapter" data-theme="light" id="top" style="border-top:0">
   <div class="wrap">
-    <div class="beat on solo" data-say="Hi, I'm <b>Shubham</b>. Scroll — I'll walk you through it." data-pos="right" data-pose="wave" style="min-height:0;padding:0;display:flex;flex-direction:column;gap:22px;align-items:flex-start">
+    <div class="beat on solo" data-say="Hi, I'm <b>Shubham</b>. Scroll — I'll walk you through it." data-pos="right" style="min-height:0;padding:0;display:flex;flex-direction:column;gap:22px;align-items:flex-start">
       <div class="label">Digital Transformation Manager · Mahindra Group</div>
       <h1 class="serif">Shubham Narang</h1>
       <div class="deva" lang="hi" style="font-size:22px;color:var(--accent)">शुभम नारंग</div>
@@ -253,7 +253,7 @@
 
 <section class="chapter jaali" data-theme="deep" id="work">
   <div class="wrap">
-    <div class="beat" data-say="First, my day job at <b>Mahindra</b>." data-pos="right" data-pose="point">
+    <div class="beat" data-say="First, my day job at <b>Mahindra</b>." data-pos="right">
       <div class="txt">
         <div class="label">Chapter one · Mahindra Group</div>
         <h2 class="serif">Project Vihan &amp; demand.ai</h2>
@@ -331,7 +331,7 @@
         <rect class="cell" style="--o:0.75;transition-delay:1.068s" x="542" y="292" width="48" height="26" rx="3" fill="currentColor"/>
       </svg>
     </div>
-    <div class="beat" data-say="So we're bringing them onto <b>one platform</b>." data-pos="left" data-pose="point">
+    <div class="beat" data-say="So we're bringing them onto <b>one platform</b>." data-pos="left">
       <div class="txt">
         <p class="say">We're bringing them onto one platform — <em>250+ KPIs</em>, defined once.</p>
         <p class="body">Project Vihan consolidates the data of ten business functions and standardises how the business measures itself.</p>
@@ -365,13 +365,13 @@
         </g>
       </svg>
     </div>
-    <div class="beat solo" data-say="Those numbers reach the <b>CEO every month</b>, the CIO every week." data-pos="right" data-pose="cross">
+    <div class="beat solo" data-say="Those numbers reach the <b>CEO every month</b>, the CIO every week." data-pos="right">
       <div class="txt">
         <p class="say">One set of numbers, read by the <em>CEO every month</em> and the <em>CIO every week</em>.</p>
         <p class="body">I own the C-suite dashboards end to end — the information architecture, the visual hierarchy, and how insight is represented at the top of the organisation.</p>
       </div>
     </div>
-    <div class="beat" data-say="We're also piloting <b>demand.ai</b> — forecasting from rain and reservoirs." data-pos="left" data-pose="point">
+    <div class="beat" data-say="We're also piloting <b>demand.ai</b> — forecasting from rain and reservoirs." data-pos="left">
       <div class="txt">
         <p class="say">And a pilot: <em>demand.ai</em>, an ML engine that forecasts demand from market data, sentiment, rainfall and reservoir levels.</p>
         <p class="note">Chart is illustrative.</p>
@@ -389,7 +389,7 @@
 
 <section class="chapter" data-theme="soft">
   <div class="wrap">
-    <div class="beat" data-say="Outside work, I build. This is <b>nurchur.in</b>." data-pos="left" data-pose="point">
+    <div class="beat" data-say="Outside work, I build. This is <b>nurchur.in</b>." data-pos="left">
       <div class="txt">
         <div class="label">Chapter two · Independent</div>
         <h2 class="serif">nurchur.in</h2>
@@ -401,7 +401,7 @@
         <div class="phone p1"><img src="images/tour/nurchur-1.webp" width="404" height="858" alt="nurchur.in home screen with feeding, growth and medicine logging" loading="lazy"></div>
       </div>
     </div>
-    <div class="beat solo" data-say="I outgrew the no-code tool, so I moved to <b>a stack I own</b>." data-pos="right" data-pose="cross">
+    <div class="beat solo" data-say="I outgrew the no-code tool, so I moved to <b>a stack I own</b>." data-pos="right">
       <div class="txt">
         <p class="say">Prototyped on Lovable to move fast — then moved to <em>a stack I own</em>.</p>
         <div class="pipe" aria-label="Stack: Lovable, then GitHub, Vercel, Supabase and Razorpay">
@@ -415,7 +415,7 @@
 
 <section class="chapter jaali" data-theme="light" id="career">
   <div class="wrap">
-    <div class="beat" data-say="How I got here: <b>engineering</b>, operations, then data." data-pos="right" data-pose="cross">
+    <div class="beat" data-say="How I got here: <b>engineering</b>, operations, then data." data-pos="right">
       <div class="txt">
         <div class="label">The path</div>
         <h2 class="serif">Engineering, operations, data.</h2>
@@ -434,7 +434,7 @@
 
 <section class="chapter" data-theme="light" id="lab">
   <div class="wrap">
-    <div class="beat solo" data-say="Smaller studies. I'm <b>growing them</b>, one by one." data-pos="left" data-pose="point">
+    <div class="beat solo" data-say="Smaller studies. I'm <b>growing them</b>, one by one." data-pos="left">
       <div class="txt">
         <div class="label">Lab</div>
         <h2 class="serif">Studies in progress.</h2>
@@ -459,7 +459,7 @@
 
 <section class="chapter jaali" data-theme="night" id="contact">
   <div class="wrap">
-    <div class="beat solo" data-say="Write anytime. Click the email — it's <b>copied</b>." data-pos="right" data-pose="wave">
+    <div class="beat solo" data-say="Write anytime. Click the email — it's <b>copied</b>." data-pos="right">
       <div class="txt">
         <div class="label">Contact</div>
         <h2 class="serif">Got a problem worth seeing clearly?</h2>
@@ -484,52 +484,12 @@
 
 <!-- the guide -->
 <canvas class="morph" id="morph" aria-hidden="true"></canvas>
-<div class="guide at-right pending" id="guide" data-pose="wave" aria-hidden="true" style="--face:-1">
+<div class="guide at-right pending" id="guide" aria-hidden="true">
   <p class="bubble" id="bubble">Hi, I'm <b>Shubham</b>. Scroll — I'll walk you through it.</p>
   <button class="who" type="button" id="who" tabindex="-1">
-    <svg viewBox="0 0 132 176" role="presentation">
-      <defs>
-        <pattern id="tone" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".9" fill="#1C3F93"/></pattern>
-        <pattern id="stub" width="3" height="3" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r=".7" fill="#3A2A22" opacity=".7"/></pattern>
-      </defs>
-      <ellipse cx="66" cy="173" rx="38" ry="3.5" fill="#000" opacity=".16"/>
-      <g class="bob">
-        <path d="M22 176C22 140 34 118 66 114C98 118 110 140 110 176Z" fill="#2E5CC9"/>
-        <path d="M22 176C22 140 34 118 66 114C98 118 110 140 110 176Z" fill="url(#tone)" opacity=".55"/>
-        <rect x="59" y="98" width="14" height="20" rx="4" fill="#C98F68"/>
-        <path d="M54 115L66 142L78 115Z" fill="#8FE3DF"/>
-        <path d="M54 115L66 142L58 150L44 122Z" fill="#234AA6"/>
-        <path d="M78 115L66 142L74 150L88 122Z" fill="#234AA6"/>
-        <ellipse cx="42" cy="75" rx="4" ry="6" fill="#C98F68"/>
-        <ellipse cx="90" cy="75" rx="4" ry="6" fill="#C98F68"/>
-        <ellipse cx="66" cy="72" rx="24" ry="28" fill="#D8A27C"/>
-        <path d="M41 70C38 44 50 34 68 35C84 35 94 46 91 66C89 56 82 50 70 50C58 50 48 56 41 70Z" fill="#231A15"/>
-        <path d="M48 44C55 29 78 27 88 41C78 35 63 35 48 44Z" fill="#231A15"/>
-        <path d="M53 64L61 62.5M71 62.5L79 64" fill="none" stroke="#231A15" stroke-width="2.4" stroke-linecap="round"/>
-        <ellipse class="eye" cx="57" cy="71" rx="2.3" ry="2.5" fill="#1A1410"/>
-        <ellipse class="eye" cx="75" cy="71" rx="2.3" ry="2.5" fill="#1A1410"/>
-        <path d="M66 73Q63 80 66.5 81.5" fill="none" stroke="#B07A55" stroke-width="1.4" stroke-linecap="round"/>
-        <path d="M55 87C59 83 63 84 66 86C69 84 73 83 77 87C73 89 69 88 66 88C63 88 59 89 55 87Z" fill="#231A15"/>
-        <path d="M61 92Q66 94.5 71 92" fill="none" stroke="#8A4E3A" stroke-width="1.4" stroke-linecap="round"/>
-        <path d="M43 78C45 96 56 102 66 102C76 102 87 96 89 78C86 90 77 96 66 96C55 96 46 90 43 78Z" fill="url(#stub)"/>
-        <g class="pose cross">
-            <path d="M34 146C46 138 86 138 98 146L98 160C86 152 46 152 34 160Z" fill="#234AA6"/>
-            <ellipse cx="41" cy="151" rx="6" ry="5" fill="#D8A27C"/>
-            <ellipse cx="91" cy="151" rx="6" ry="5" fill="#D8A27C"/>
-        </g>
-        <g class="pose point">
-            <path d="M99 130L121 106" fill="none" stroke="#2E5CC9" stroke-width="13" stroke-linecap="round"/>
-            <circle cx="123" cy="103" r="6" fill="#D8A27C"/>
-            <path d="M126 99L131 93" fill="none" stroke="#D8A27C" stroke-width="3.2" stroke-linecap="round"/>
-        </g>
-        <g class="pose wave">
-            <g class="arm">
-            <path d="M99 130L111 94" fill="none" stroke="#2E5CC9" stroke-width="13" stroke-linecap="round"/>
-            <ellipse cx="112" cy="86" rx="6.5" ry="8" fill="#D8A27C"/>
-            </g>
-        </g>
-      </g>
-    </svg>
+    <span class="shadow"></span>
+    <img class="body" src="images/tour/mascot-body.webp" alt="" width="330" height="397">
+    <img class="head" src="images/tour/mascot-head.webp" alt="" width="330" height="397">
   </button>
 </div>
 
@@ -552,18 +512,12 @@
     if(small.matches) hideT = setTimeout(function(){ bubble.classList.add('hide'); }, 4500);
   }
 
-  /* walk the guide to the left or right edge, facing the content */
+  /* walk the guide to the left or right edge */
   var side = 'left', walkT;
   function place(pos){
     var w = guide.offsetWidth, x = pos === 'right' ? window.innerWidth - w - 16 : 16;
     var cur = parseFloat(getComputedStyle(guide).getPropertyValue('--gx')) || 16;
-    if(Math.abs(cur - x) > 4 && !reduce){
-      guide.style.setProperty('--face', x > cur ? '1' : '-1');
-      guide.classList.add('walking'); clearTimeout(walkT);
-      walkT = setTimeout(function(){ guide.classList.remove('walking'); guide.style.setProperty('--face', pos === 'right' ? '-1' : '1'); }, 1300);
-    } else {
-      guide.style.setProperty('--face', pos === 'right' ? '-1' : '1');
-    }
+    if(Math.abs(cur - x) > 4 && !reduce){ guide.classList.add('walking'); clearTimeout(walkT); walkT = setTimeout(function(){ guide.classList.remove('walking'); }, 1300); }
     guide.style.setProperty('--gx', x + 'px');
     guide.classList.toggle('at-right', pos === 'right');
     side = pos;
@@ -580,7 +534,6 @@
         var b = e.target; b.classList.add('on','seen');
         root.setAttribute('data-theme', b.closest('.chapter').getAttribute('data-theme'));
         meta.setAttribute('content', getComputedStyle(document.body).backgroundColor);
-        guide.setAttribute('data-pose', b.getAttribute('data-pose') || 'cross');
         place(b.getAttribute('data-pos') || 'left');
         say(b.getAttribute('data-say'));
       });
@@ -589,7 +542,7 @@
   } else { beats.forEach(function(b){ b.classList.add('seen'); }); }
 
   document.getElementById('who').addEventListener('click', function(){
-    guide.setAttribute('data-pose','wave');
+    guide.classList.remove('hello'); void guide.offsetWidth; guide.classList.add('hello');
     say('Namaste! <b>Good to meet you.</b>');
   });
 
@@ -608,28 +561,19 @@
   /* ---------- one set of dots: the portrait in the arch becomes the mascot as you scroll ---------- */
   var fx = document.getElementById('morph'), fc = fx.getContext('2d');
   var pbox = document.getElementById('pbox'), who = document.getElementById('who'), hero = document.getElementById('top');
-  var SHAPES = [["path","M22 176C22 140 34 118 66 114C98 118 110 140 110 176Z","#2E5CC9"],["rect",[59,98,14,20,4],"#C98F68"],["path","M54 115L66 142L78 115Z","#8FE3DF"],["path","M54 115L66 142L58 150L44 122Z","#234AA6"],["path","M78 115L66 142L74 150L88 122Z","#234AA6"],["ellipse",[42,75,4,6],"#C98F68"],["ellipse",[90,75,4,6],"#C98F68"],["ellipse",[66,72,24,28],"#D8A27C"],["path","M41 70C38 44 50 34 68 35C84 35 94 46 91 66C89 56 82 50 70 50C58 50 48 56 41 70Z","#231A15"],["path","M48 44C55 29 78 27 88 41C78 35 63 35 48 44Z","#231A15"],["stroke","M53 64L61 62.5M71 62.5L79 64","#231A15",2.4],["eye",[57,71,2.3,2.5],"#1A1410"],["eye",[75,71,2.3,2.5],"#1A1410"],["stroke","M66 73Q63 80 66.5 81.5","#B07A55",1.4],["path","M55 87C59 83 63 84 66 86C69 84 73 83 77 87C73 89 69 88 66 88C63 88 59 89 55 87Z","#231A15"],["stroke","M61 92Q66 94.5 71 92","#8A4E3A",1.4],["stroke","M99 130L111 94","#2E5CC9",13],["ellipse",[112,86,6.5,8],"#D8A27C"]];
   var dots = [], marks = [], VW = 0, VH = 0, mouse = null, scattered = false, born = 0, running = false, shown = false;
   var STEPS = 20;
   function size(){ var d = Math.min(window.devicePixelRatio || 1, 2); VW = window.innerWidth; VH = window.innerHeight; fx.width = VW*d; fx.height = VH*d; fc.setTransform(d,0,0,d,0,0); }
   function rgb(h){ h = h.trim().replace('#',''); return [parseInt(h.substr(0,2),16), parseInt(h.substr(2,2),16), parseInt(h.substr(4,2),16)]; }
 
-  /* rasterise the mascot exactly as the SVG draws it (mirrored: he stands at the right edge facing left) */
-  function sampleMascot(){
-    var w = 132, h = 176, s = 3, c = document.createElement('canvas'); c.width = w*s; c.height = h*s;
-    var g = c.getContext('2d'); g.scale(s,s); g.translate(w,0); g.scale(-1,1);
-    SHAPES.forEach(function(sh){
-      var k = sh[0]; g.beginPath();
-      if(k === 'path'){ g.fillStyle = sh[2]; g.fill(new Path2D(sh[1])); }
-      else if(k === 'stroke'){ g.strokeStyle = sh[2]; g.lineWidth = sh[3]; g.lineCap = 'round'; g.stroke(new Path2D(sh[1])); }
-      else if(k === 'rect'){ var r = sh[1]; g.fillStyle = sh[2]; g.rect(r[0], r[1], r[2], r[3]); g.fill(); }
-      else if(k === 'ellipse' || k === 'eye'){ var e = sh[1]; g.fillStyle = sh[2]; g.ellipse(e[0], e[1], e[2], e[3], 0, 0, 6.2832); g.fill(); }
-      else if(k === 'circle'){ var q = sh[1]; g.fillStyle = sh[2]; g.arc(q[0], q[1], q[2], 0, 6.2832); g.fill(); }
-    });
-    var px = g.getImageData(0, 0, w*s, h*s).data, out = [], step = 2.2;
-    for(var v = step/2; v < h; v += step) for(var u = step/2; u < w; u += step){
-      var i = (Math.floor(v*s)*w*s + Math.floor(u*s))*4;
-      if(px[i+3] > 160) out.push({ u: u/w, v: v/h, c: [px[i], px[i+1], px[i+2]], cs: [] });
+  /* sample the mascot image (the same picture the guide shows) as dot targets with their real colours */
+  function sampleMascot(m){
+    var w = 132, h = Math.round(132 * m.naturalHeight / m.naturalWidth), c = document.createElement('canvas'); c.width = w; c.height = h;
+    var g = c.getContext('2d'); g.drawImage(m, 0, 0, w, h);
+    var px = g.getImageData(0, 0, w, h).data, out = [], step = 2;
+    for(var v = 1; v < h; v += step) for(var u = 1; u < w; u += step){
+      var i = (v*w + u)*4;
+      if(px[i+3] > 140) out.push({ u: u/w, v: v/h, c: [px[i], px[i+1], px[i+2]], cs: [] });
     }
     return out;
   }
@@ -644,8 +588,8 @@
     }
     return out;
   }
-  function build(img){
-    marks = sampleMascot();
+  function build(img, mimg){
+    marks = sampleMascot(mimg);
     var src = samplePortrait(img);
     /* pair dots top-to-bottom so the face melts into the face, the blazer into the blazer */
     var key = function(a){ return a.v*1000 + a.u; };
@@ -676,7 +620,7 @@
     if(landed && !settling){ fx.style.visibility = 'hidden'; return; }
     fx.style.visibility = 'visible';
     var base = rgb(getComputedStyle(root).getPropertyValue('--dot') || '#111733');
-    var cellM = M.width * 2.2 / 132, bucket = Math.round(e * STEPS), follow = settling ? .09 : .55, moving = false, last = '';
+    var cellM = M.width * 2 / 132, bucket = Math.round(e * STEPS), follow = settling ? .09 : .55, moving = false, last = '';
     for(var k = 0; k < dots.length; k++){
       var p = dots[k], m = p.m;
       var sx = P.left + p.u*P.width + (scattered ? p.sx : 0), sy = P.top + p.v*P.height + (scattered ? p.sy : 0);
@@ -710,9 +654,10 @@
     kick(); setTimeout(function(){ scattered = false; kick(); }, 600);
   });
   size();
-  var img = new Image();
-  img.onload = function(){ build(img); };
-  img.src = 'images/portrait.webp';
+  var img = new Image(), mimg = new Image(), loaded = 0;
+  function ready(){ if(++loaded === 2) build(img, mimg); }
+  img.onload = ready; mimg.onload = ready;
+  img.src = 'images/portrait.webp'; mimg.src = 'images/tour/mascot.webp';
 })();
 </script>
 

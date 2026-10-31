@@ -23,8 +23,8 @@ Both views share one header: name, section links (Work · Career · Lab · Conta
 ### Executive view: a guided tour
 
 Inspired by sebg.ch. The page is a scroll-told story with a guide:
-- **The guide** — a small illustrated Shubham (blue blazer, cyan shirt, quiff, moustache) who stands at the bottom of the screen, walks to the left or right edge with each beat, switches pose (arms crossed, pointing, waving), blinks, and waves when clicked.
-- **Hero portrait → mascot** — the photo portrait is drawn as a fine dot matrix inside a jaali-filled arch. As you scroll, the same dots fly to the guide's spot and take on the mascot's colours, then the crisp mascot takes over (reverses when scrolling up). The mascot is defined once (`mascot.py` in the build) so the dots land exactly on the drawing.
+- **The guide** — a small bobblehead of the real pop-art portrait (head slightly enlarged, in its own layer). It stands at the bottom of the screen, walks to the left or right edge with each beat, bobbles its head while idle and walking, and wiggles when clicked. Images: `images/tour/mascot-body.webp`, `mascot-head.webp`, `mascot.webp` (composite used as the morph target).
+- **Hero portrait → mascot** — the photo portrait is drawn as a fine dot matrix inside a jaali-filled arch. As you scroll, the same dots fly to the guide's spot and take on the mascot's colours, then the crisp mascot takes over (reverses when scrolling up). The dot targets are sampled from the same mascot image the guide shows, so the dots land exactly on it.
 - **Narration** — a high-contrast speech bubble travels with the guide and changes with each "beat"; on phones it steps aside after a few seconds.
 - **Chapter colours** — the page shifts between four moods: light (intro, career, lab), deep (Mahindra), soft (nurchur.in) and night (contact).
 - **Beat visuals** — a KPI matrix of ten functions lighting up; ten functions converging onto one platform; an illustrative forecast line for the demand.ai pilot; nurchur.in in three phone mockups; the stack as a pipeline; the Lab as a thumbnail grid.
