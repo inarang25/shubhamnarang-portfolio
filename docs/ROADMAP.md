@@ -14,8 +14,8 @@ Both views share one header: name, section links (Work · Career · Lab · Conta
 
 ### Information structure (both views, same order and facts)
 
-1. **Intro** — name, one-line positioning, four highlight figures (250+ KPIs, 86.7%, ₹50 Cr, 15%).
-2. **Work** — demand.ai & Project Vihan (Mahindra), then nurchur.in (independent).
+1. **Intro** — name, one-line positioning, four highlight figures (250+ KPIs, 15% at IBM, ₹50 Cr and 10% cost cut at L&T). demand.ai is a pilot, so its accuracy figure is not featured.
+2. **Work** — Project Vihan & the demand.ai pilot (Mahindra), then nurchur.in (independent).
 3. **Career** — roles and education, newest first, plus certifications.
 4. **Lab** — the same eleven capstone studies, labelled as work in progress.
 5. **Contact** — click-to-copy email, LinkedIn, GitHub; writing announced as coming soon.
@@ -23,10 +23,11 @@ Both views share one header: name, section links (Work · Career · Lab · Conta
 ### Executive view: a guided tour
 
 Inspired by sebg.ch. The page is a scroll-told story with a guide:
-- **The guide** — the portrait redrawn live as halftone dots on a canvas. Dots assemble on load, push away from the cursor, scatter on click and re-form; the dot sizing inverts on dark chapters so the face never reads as a negative.
-- **Narration** — a speech bubble beside the guide changes with each "beat" of the story.
+- **The guide** — a small illustrated Shubham (blue blazer, cyan shirt, quiff, moustache) who stands at the bottom of the screen, walks to the left or right edge with each beat, switches pose (arms crossed, pointing, waving), blinks, and waves when clicked.
+- **Hero portrait** — the photo portrait redrawn live as a fine dot matrix inside a jaali-filled arch; dots move away from the cursor and scatter on click.
+- **Narration** — a high-contrast speech bubble travels with the guide and changes with each "beat"; on phones it steps aside after a few seconds.
 - **Chapter colours** — the whole page shifts between porcelain, bottle green (Mahindra), ochre (nurchur.in) and ink (contact).
-- **Beat visuals** — ten functions converging onto one platform; an illustrative forecast line drawing itself next to the 86.7% figure; nurchur.in in three phone mockups; the stack as a pipeline; the Lab as a thumbnail grid.
+- **Beat visuals** — a KPI matrix of ten functions lighting up; ten functions converging onto one platform; an illustrative forecast line for the demand.ai pilot; nurchur.in in three phone mockups; the stack as a pipeline; the Lab as a thumbnail grid.
 - On phones the guide sits at the top and the story flows normally. Reduced-motion settings turn the animation off.
 
 ### Design language (Executive view)
