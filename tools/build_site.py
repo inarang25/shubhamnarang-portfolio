@@ -433,6 +433,81 @@ NF = head('Page not found — Shubham Narang','This page does not exist.','/404'
 </main>
 ''' + FOOT
 
-for path,content in [('index.html',INDEX),('writing.html',WRITING),('work/processpro.html',PP),('404.html',NF)]:
+def tl(when, what, where, detail=''):
+    return f'<li><span class="when">{when}</span><span class="what"><b>{what}</b><span class="org">{where}</span>' + (f'<span class="det">{detail}</span>' if detail else '') + '</span></li>'
+
+ABOUT = head('About — Shubham Narang','About Shubham Narang: background, career, education, skills and certifications.','/about').replace('<link rel="stylesheet" href="/assets/site.css">','<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="/assets/site.css">') + header('about') + f"""
+<main>
+
+<section class="about-head">
+  <div class="wrap">
+    <div>
+      <div class="mono rise">About</div>
+      <h1 class="rise d1">Engineer by training, operations by study, <mark>data by choice.</mark></h1>
+      <p class="rise d2">I'm Shubham, a Digital Transformation Manager at Mahindra Group, based in Chandigarh. I started as a mechatronics engineer delivering a defence programme, studied operations and data science, then spent four years in process mining and analytics at IBM.</p>
+      <p class="rise d2">Today I work on enterprise data and AI: getting a large business to agree on its numbers and putting them in front of the people who decide. Outside work I build products of my own, end to end.</p>
+      <div class="row rise d3">
+        <a class="btn" href="/#work">See the work</a>
+        <a class="lnk" href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="lnk" href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+    <figure class="pop rise d1">
+      <span class="bubble" aria-hidden="true">Hi, I'm Shubham!</span>
+      <div class="panel"><img src="/images/portrait.webp" width="800" height="800" alt="Pop-art portrait of Shubham Narang"></div>
+    </figure>
+  </div>
+</section>
+
+<div class="wrap">
+
+<section class="part">
+  <div class="mono">Career</div>
+  <div>
+    <ol class="tl">
+      {tl('2026 — now','Digital Transformation Manager','Mahindra Group · Chandigarh','Enterprise data and AI: unifying 250+ KPIs across ten business functions, C-suite dashboards, and a demand-forecasting pilot.')}
+      {tl('2022 — 2026','Business Analytics Analyst','IBM · Noida','Process mining with Celonis and analytics with Power BI for Fortune 500 clients in manufacturing, retail fuel and aerospace. 15% efficiency gains.')}
+      {tl('2017 — 2019','Sr. Engineer, Data &amp; Delivery','Larsen &amp; Toubro, Defence','Delivery of a ₹50 Cr defence programme with DRDO. Digitised procurement and supplier evaluation, cutting operating cost by 10%.')}
+    </ol>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">Education</div>
+  <div>
+    <ol class="tl">
+      {tl('2020 — 2022','MBA, Operations &amp; Data Sciences','NMIMS, Mumbai')}
+      {tl('2013 — 2017','B.Tech, Mechatronics, Robotics &amp; Automation','UPES, Dehradun')}
+    </ol>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">Skills</div>
+  <div>
+    <div class="chips">
+      <span class="hot">AI strategy</span><span class="hot">Business transformation</span><span class="hot">Process mining</span>
+      <span>Celonis</span><span>Power BI</span><span>Tableau</span><span>Python · pandas</span><span>SQL</span><span>Streamlit</span>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">Certifications</div>
+  <div>
+    <ul class="list compact" style="border-top:1px solid var(--rule)">
+      <li><div class="item"><span class="t">Google Cloud Digital Leader</span><span class="d">Google Cloud</span><span class="m"></span></div></li>
+      <li><div class="item"><span class="t">AWS Certified Cloud Practitioner</span><span class="d">Amazon Web Services</span><span class="m"></span></div></li>
+      <li><div class="item"><span class="t">Power BI Data Analyst</span><span class="d">Microsoft</span><span class="m"></span></div></li>
+      <li><div class="item"><span class="t">Lean Six Sigma Green Belt</span><span class="d"></span><span class="m"></span></div></li>
+    </ul>
+  </div>
+</section>
+
+</div>
+</main>
+""" + FOOT
+
+for path,content in [('about.html',ABOUT),('index.html',INDEX),('writing.html',WRITING),('work/processpro.html',PP),('404.html',NF)]:
     open(f'{ROOT}/{path}','w',encoding='utf-8').write(content)
     print(path,len(content))
