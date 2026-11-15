@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProcessPro — case study · Shubham Narang</title>
+<title>ProcessPro case study | Shubham Narang</title>
 <meta name="description" content="ProcessPro is a process-mining tool for procurement: it rebuilds every purchase order from the ERP, checks it against the ideal process, and shows where buying breaks the rules and what it costs.">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E0F12" media="(prefers-color-scheme: dark)">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shubham Narang">
 <meta property="og:url" content="https://www.shubhamnarang.in/work/processpro">
-<meta property="og:title" content="ProcessPro — case study · Shubham Narang">
+<meta property="og:title" content="ProcessPro case study | Shubham Narang">
 <meta property="og:description" content="ProcessPro is a process-mining tool for procurement: it rebuilds every purchase order from the ERP, checks it against the ideal process, and shows where buying breaks the rules and what it costs.">
 <meta property="og:image" content="https://www.shubhamnarang.in/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -44,7 +44,7 @@
     <a class="back" href="/#work">← All work</a>
     <div class="mono rise" style="margin-top:20px">Case study · Product · Purchase-to-pay, pharma manufacturing</div>
     <h1 class="rise d1">ProcessPro</h1>
-    <p class="lede rise d2">Every order looked fine. The sequence told the truth. ProcessPro connects to an ERP, rebuilds every purchase order step by step, checks it against the ideal process, and shows where buying breaks the rules and what it costs.</p>
+    <p class="lede rise d2">ProcessPro connects to an ERP, rebuilds every purchase order step by step, checks it against the ideal process, and shows where buying breaks the rules and what it costs.</p>
     <div class="row rise d3">
       <a class="btn" href="https://p2p-processpro.streamlit.app/" target="_blank" rel="noopener">Open the live app ↗</a>
       <a class="lnk" href="#findings">Jump to the findings</a>
@@ -124,7 +124,7 @@
 <section class="part" id="findings">
   <div class="mono">The findings</div>
   <div>
-    <h2>₹102.2 crore spent. Only 42% of orders followed every rule.</h2>
+    <h2>What a year of buying revealed.</h2>
     <p>76.5% of orders follow the ideal order of steps, across 122 distinct paths with a 77-day median cycle time. All amounts are before GST. The planted mistake rates are deliberately higher than a real company's, so every pattern appears within one year; the shape of the findings is what matters.</p>
     <div class="loss">
       <div><b class="big">₹3.6 Cr</b><span class="h">Money lost</span><dl>
@@ -147,11 +147,11 @@
 <section class="part">
   <div class="mono">What I learned</div>
   <div>
-    <h2>Three insights from the build.</h2>
+    <h2>What the build taught me.</h2>
     <div class="cards">
-      <div><b>A process map can't see money</b>A ₹69 lakh order with no approval follows a perfectly normal path. That is why ProcessPro pairs the process model with business rules: together they explain why 76.5% conform to the model but only 42% follow every rule.</div>
+      <div><b>A process map can't see money</b>A ₹69 lakh order with no approval follows a perfectly normal path. That is why ProcessPro pairs the process model with business rules that check amounts, roles and dates.</div>
       <div><b>Exact-match controls fail on human typing</b>The ERP blocked 12 duplicate invoices and missed 17 that were retyped, <code>INV/25-26/0652</code> against <code>INV-25-26-0652</code>.</div>
-      <div><b>Mistakes cascade</b>An invoice dated before its order starts the due-date clock early, so payment ends up late — with nobody planting it.</div>
+      <div><b>Mistakes cascade</b>An invoice dated before its order starts the due-date clock early, so payment ends up late, with nobody planting it.</div>
       <div><b>Three fixes close most of it</b>Match the order and delivery before posting an invoice; hold payment on price or quantity differences; let Quality block unapproved suppliers and unreleased batches.</div>
     </div>
   </div>
@@ -190,14 +190,13 @@
 <section class="part">
   <div class="mono">What it shows</div>
   <div>
-    <h2>Five things this project demonstrates.</h2>
+    <h2>What this project demonstrates.</h2>
     <div class="cards">
       <div><b>ERP implementation</b>Configured approvals, quarantine, batches and roles, and mapped every object to SAP.</div>
       <div><b>Pharma purchasing</b>Quality co-owns the process: approved suppliers per material, release before use, GMP.</div>
       <div><b>Process mining</b>Event-log design, discovery, conformance and reconciliation.</div>
       <div><b>Product</b>An interactive tool in a clean corporate style, built for walkthroughs.</div>
       <div><b>End-to-end ownership</b>From raw database tables to a live product.</div>
-      <div><b>Stack</b>Odoo 17 Community · PostgreSQL · Docker · Python · pandas · PM4Py · Streamlit · Graphviz</div>
     </div>
     <div class="row" style="margin-top:28px">
       <a class="btn" href="https://p2p-processpro.streamlit.app/" target="_blank" rel="noopener">Open the live app ↗</a>
@@ -217,7 +216,7 @@
       <a class="lnk" href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a class="lnk" href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
-    <div class="base"><span>© 2026 Shubham Narang · Chandigarh, India</span><span><a href="/">Work</a> · <a href="/writing">Writing</a> · <a href="/about">About</a></span></div>
+    <div class="base"><span>© 2026 Shubham Narang</span><span><a href="/">Work</a> · <a href="/writing">Writing</a> · <a href="/about">About</a></span></div>
   </div>
 </footer>
 <script>
@@ -227,7 +226,7 @@
   var c=document.getElementById('copy'); if(!c) return;
   c.addEventListener('click', function(){
     var e=c.getAttribute('data-email');
-    function done(){ c.textContent='Copied — talk soon'; setTimeout(function(){ c.textContent=e; }, 2200); }
+    function done(){ c.textContent='Copied. Talk soon.'; setTimeout(function(){ c.textContent=e; }, 2200); }
     if(navigator.clipboard){ navigator.clipboard.writeText(e).then(done, function(){ location.href='mailto:'+e; }); } else { location.href='mailto:'+e; }
   });
 })();

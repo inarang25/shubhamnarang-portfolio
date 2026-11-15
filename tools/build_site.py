@@ -57,7 +57,7 @@ FOOT='''<footer class="site-foot" id="contact">
       <a class="lnk" href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a class="lnk" href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
-    <div class="base"><span>© 2026 Shubham Narang · Chandigarh, India</span><span><a href="/">Work</a> · <a href="/writing">Writing</a> · <a href="/about">About</a></span></div>
+    <div class="base"><span>© 2026 Shubham Narang</span><span><a href="/">Work</a> · <a href="/writing">Writing</a> · <a href="/about">About</a></span></div>
   </div>
 </footer>
 <script>
@@ -67,7 +67,7 @@ FOOT='''<footer class="site-foot" id="contact">
   var c=document.getElementById('copy'); if(!c) return;
   c.addEventListener('click', function(){
     var e=c.getAttribute('data-email');
-    function done(){ c.textContent='Copied — talk soon'; setTimeout(function(){ c.textContent=e; }, 2200); }
+    function done(){ c.textContent='Copied. Talk soon.'; setTimeout(function(){ c.textContent=e; }, 2200); }
     if(navigator.clipboard){ navigator.clipboard.writeText(e).then(done, function(){ location.href='mailto:'+e; }); } else { location.href='mailto:'+e; }
   });
 })();
@@ -83,10 +83,10 @@ def item(t, sub, d, m, msub='', href=None):
 
 PBI='https://app.powerbi.com/view?r='
 enterprise=[
- ('Project Vihan','Mahindra Group · 2026 — now','Bringing ten business functions onto one data platform, with the C-suite dashboards read by the CEO every month and the CIO every week.','250+','KPIs being unified'),
- ('demand.ai','Mahindra Group · pilot','An ML engine that forecasts demand from market data, sentiment, rainfall and reservoir levels.','Pilot','in progress'),
- ('Process &amp; analytics transformation','IBM · 2022 — 2026','Celonis process mining and Power BI for Fortune 500 clients in manufacturing, retail fuel and aerospace.','15%','efficiency gains'),
- ('Defence programme delivery','Larsen &amp; Toubro · 2017 — 2019','Delivery of a defence programme with DRDO, and digitised procurement and supplier evaluation that cut operating cost by 10%.','₹50 Cr','programme delivered'),
+ ('Project Vihan','Mahindra Group · 2026 to now','Bringing ten business functions onto one data platform, with the C-suite dashboards read by the CEO every month and the CIO every week.','250+','KPIs being unified'),
+ ('demand.ai','Mahindra Group','An ML engine that forecasts demand from market data, sentiment, rainfall and reservoir levels.','Pilot','in progress'),
+ ('Process &amp; analytics transformation','IBM · 2022 to 2026','Celonis process mining and Power BI for Fortune 500 clients in manufacturing, retail fuel and aerospace.','15%','efficiency gains'),
+ ('Defence programme delivery','Larsen &amp; Toubro · 2017 to 2019','Delivery of a defence programme with DRDO, and digitised procurement and supplier evaluation that cut operating cost by 10%.','₹50 Cr','programme · 10% cost cut'),
 ]
 studies=[
  ('Electronics demand forecast','Power BI','Finance, sales and supply-chain data in one model; a 26.8% forecast deviation surfaced.','Open ↗',PBI+'eyJrIjoiZjM3NjVlYjAtMjFkMi00MGFjLWExYjQtOTdkODg2MzY5OTEzIiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9'),
@@ -107,33 +107,23 @@ science=[
 def ent_rows(): return '\n'.join(item(t,s,d,m,ms) for t,s,d,m,ms in enterprise)
 def link_rows(L): return '\n'.join(item(t,s,d,m,'',href) if href else item(t,s,d,'',m) for t,s,d,m,href in L)
 
-INDEX = head('Shubham Narang — data, AI and products','Shubham Narang — Digital Transformation Manager. Enterprise data and AI strategy, process mining, and products built end to end.','/') + header('work') + f'''
+INDEX = head('Shubham Narang | Data, AI and products','Shubham Narang, Digital Transformation Manager. Enterprise data and AI strategy, process mining, and products built end to end.','/') + header('work') + f'''
 <main>
 
 <section class="intro">
   <div class="wrap">
     <div class="who rise">
       <span class="av"><img src="/images/portrait-exec.webp" width="800" height="800" alt="Portrait of Shubham Narang"></span>
-      <div><b>Shubham Narang</b><span>Digital Transformation Manager · Chandigarh, India</span></div>
+      <div><b>Digital Transformation Manager</b><span>Chandigarh, India</span></div>
     </div>
-    <h1 class="rise d1">I help large organisations see themselves clearly through data <em>— and I build products of my own.</em></h1>
-    <p class="rise d2">I lead enterprise data and AI work at Mahindra Group. Before that: process mining and analytics at IBM, and defence programme delivery at Larsen &amp; Toubro.</p>
+    <h1 class="rise d1">I help large organisations see themselves clearly through data, <em>and I build products of my own.</em></h1>
+    <p class="rise d2">I lead enterprise data and AI work at Mahindra Group. Earlier at IBM and Larsen &amp; Toubro.</p>
     <div class="row rise d3">
       <a class="btn" href="#work">See the work</a>
       <a class="lnk" href="/about">About me →</a>
-      <a class="lnk plain" href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
   </div>
 </section>
-
-<div class="wrap">
-  <div class="figs" aria-label="Impact">
-    <div><b>250+</b><span>KPIs being unified across ten business functions</span></div>
-    <div><b>15%</b><span>efficiency gains for Fortune 500 clients at IBM</span></div>
-    <div><b>₹50 Cr</b><span>defence programme delivered at L&amp;T</span></div>
-    <div><b>10%</b><span>operating cost cut by digitising procurement</span></div>
-  </div>
-</div>
 
 <div id="work">
 
@@ -145,7 +135,7 @@ INDEX = head('Shubham Narang — data, AI and products','Shubham Narang — Digi
       <div class="txt">
         <div class="mono">Process mining · Procurement</div>
         <h3>ProcessPro</h3>
-        <p>Connects to an ERP, rebuilds every purchase order step by step, checks it against the ideal process, and shows where buying breaks the rules — and what it costs.</p>
+        <p>Connects to an ERP, rebuilds every purchase order step by step, checks it against the ideal process, and shows where buying breaks the rules and what it costs.</p>
         <div class="kpis">
           <div><b>₹102.2 Cr</b><span>spend analysed</span></div>
           <div><b>₹3.6 Cr</b><span>losses found</span></div>
@@ -219,7 +209,7 @@ INDEX = head('Shubham Narang — data, AI and products','Shubham Narang — Digi
 </main>
 ''' + FOOT
 
-WRITING = head('Writing — Shubham Narang','Notes and essays by Shubham Narang on data, AI, process and building products.','/writing') + header('writing') + '''
+WRITING = head('Writing | Shubham Narang','Notes and essays by Shubham Narang on data, AI, process and building products.','/writing') + header('writing') + '''
 <main>
 <section class="page-head">
   <div class="wrap">
@@ -247,7 +237,7 @@ WRITING = head('Writing — Shubham Narang','Notes and essays by Shubham Narang 
 def shot(name, title, cap, alt):
     return f'<figure class="shot"><a href="/images/processpro/{name}.png" target="_blank" rel="noopener"><img src="/images/processpro/{name}.webp" width="1440" height="900" alt="{alt}" loading="lazy"></a><figcaption><b>{title}.</b> {cap}</figcaption></figure>'
 
-PP = head('ProcessPro — case study · Shubham Narang','ProcessPro is a process-mining tool for procurement: it rebuilds every purchase order from the ERP, checks it against the ideal process, and shows where buying breaks the rules and what it costs.','/work/processpro') + header('work') + f'''
+PP = head('ProcessPro case study | Shubham Narang','ProcessPro is a process-mining tool for procurement: it rebuilds every purchase order from the ERP, checks it against the ideal process, and shows where buying breaks the rules and what it costs.','/work/processpro') + header('work') + f'''
 <main>
 
 <section class="case-head">
@@ -255,7 +245,7 @@ PP = head('ProcessPro — case study · Shubham Narang','ProcessPro is a process
     <a class="back" href="/#work">← All work</a>
     <div class="mono rise" style="margin-top:20px">Case study · Product · Purchase-to-pay, pharma manufacturing</div>
     <h1 class="rise d1">ProcessPro</h1>
-    <p class="lede rise d2">Every order looked fine. The sequence told the truth. ProcessPro connects to an ERP, rebuilds every purchase order step by step, checks it against the ideal process, and shows where buying breaks the rules and what it costs.</p>
+    <p class="lede rise d2">ProcessPro connects to an ERP, rebuilds every purchase order step by step, checks it against the ideal process, and shows where buying breaks the rules and what it costs.</p>
     <div class="row rise d3">
       <a class="btn" href="https://p2p-processpro.streamlit.app/" target="_blank" rel="noopener">Open the live app ↗</a>
       <a class="lnk" href="#findings">Jump to the findings</a>
@@ -335,7 +325,7 @@ PP = head('ProcessPro — case study · Shubham Narang','ProcessPro is a process
 <section class="part" id="findings">
   <div class="mono">The findings</div>
   <div>
-    <h2>₹102.2 crore spent. Only 42% of orders followed every rule.</h2>
+    <h2>What a year of buying revealed.</h2>
     <p>76.5% of orders follow the ideal order of steps, across 122 distinct paths with a 77-day median cycle time. All amounts are before GST. The planted mistake rates are deliberately higher than a real company's, so every pattern appears within one year; the shape of the findings is what matters.</p>
     <div class="loss">
       <div><b class="big">₹3.6 Cr</b><span class="h">Money lost</span><dl>
@@ -358,11 +348,11 @@ PP = head('ProcessPro — case study · Shubham Narang','ProcessPro is a process
 <section class="part">
   <div class="mono">What I learned</div>
   <div>
-    <h2>Three insights from the build.</h2>
+    <h2>What the build taught me.</h2>
     <div class="cards">
-      <div><b>A process map can't see money</b>A ₹69 lakh order with no approval follows a perfectly normal path. That is why ProcessPro pairs the process model with business rules: together they explain why 76.5% conform to the model but only 42% follow every rule.</div>
+      <div><b>A process map can't see money</b>A ₹69 lakh order with no approval follows a perfectly normal path. That is why ProcessPro pairs the process model with business rules that check amounts, roles and dates.</div>
       <div><b>Exact-match controls fail on human typing</b>The ERP blocked 12 duplicate invoices and missed 17 that were retyped, <code>INV/25-26/0652</code> against <code>INV-25-26-0652</code>.</div>
-      <div><b>Mistakes cascade</b>An invoice dated before its order starts the due-date clock early, so payment ends up late — with nobody planting it.</div>
+      <div><b>Mistakes cascade</b>An invoice dated before its order starts the due-date clock early, so payment ends up late, with nobody planting it.</div>
       <div><b>Three fixes close most of it</b>Match the order and delivery before posting an invoice; hold payment on price or quantity differences; let Quality block unapproved suppliers and unreleased batches.</div>
     </div>
   </div>
@@ -401,14 +391,13 @@ PP = head('ProcessPro — case study · Shubham Narang','ProcessPro is a process
 <section class="part">
   <div class="mono">What it shows</div>
   <div>
-    <h2>Five things this project demonstrates.</h2>
+    <h2>What this project demonstrates.</h2>
     <div class="cards">
       <div><b>ERP implementation</b>Configured approvals, quarantine, batches and roles, and mapped every object to SAP.</div>
       <div><b>Pharma purchasing</b>Quality co-owns the process: approved suppliers per material, release before use, GMP.</div>
       <div><b>Process mining</b>Event-log design, discovery, conformance and reconciliation.</div>
       <div><b>Product</b>An interactive tool in a clean corporate style, built for walkthroughs.</div>
       <div><b>End-to-end ownership</b>From raw database tables to a live product.</div>
-      <div><b>Stack</b>Odoo 17 Community · PostgreSQL · Docker · Python · pandas · PM4Py · Streamlit · Graphviz</div>
     </div>
     <div class="row" style="margin-top:28px">
       <a class="btn" href="https://p2p-processpro.streamlit.app/" target="_blank" rel="noopener">Open the live app ↗</a>
@@ -421,12 +410,12 @@ PP = head('ProcessPro — case study · Shubham Narang','ProcessPro is a process
 </main>
 ''' + FOOT
 
-NF = head('Page not found — Shubham Narang','This page does not exist.','/404',noindex=True) + header('') + '''
+NF = head('Page not found | Shubham Narang','This page does not exist.','/404',noindex=True) + header('') + '''
 <main>
 <section class="page-head" style="padding-bottom:0">
   <div class="wrap">
     <div class="mono">404</div>
-    <h1>This page doesn't exist — yet.</h1>
+    <h1>This page doesn't exist yet.</h1>
     <div class="row" style="margin-top:28px"><a class="btn" href="/">Go to Work</a><a class="lnk" href="/writing">Writing</a><a class="lnk" href="/about">About</a></div>
   </div>
 </section>
@@ -436,7 +425,7 @@ NF = head('Page not found — Shubham Narang','This page does not exist.','/404'
 def tl(when, what, where, detail=''):
     return f'<li><span class="when">{when}</span><span class="what"><b>{what}</b><span class="org">{where}</span>' + (f'<span class="det">{detail}</span>' if detail else '') + '</span></li>'
 
-ABOUT = head('About — Shubham Narang','About Shubham Narang: background, career, education, skills and certifications.','/about').replace('<link rel="stylesheet" href="/assets/site.css">','<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="/assets/site.css">') + header('about') + f"""
+ABOUT = head('About | Shubham Narang','About Shubham Narang: background, career, education, skills and certifications.','/about').replace('<link rel="stylesheet" href="/assets/site.css">','<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="/assets/site.css">') + header('about') + f"""
 <main>
 
 <section class="about-head">
@@ -444,12 +433,9 @@ ABOUT = head('About — Shubham Narang','About Shubham Narang: background, caree
     <div>
       <div class="mono rise">About</div>
       <h1 class="rise d1">Engineer by training, operations by study, <mark>data by choice.</mark></h1>
-      <p class="rise d2">I'm Shubham, a Digital Transformation Manager at Mahindra Group, based in Chandigarh. I started as a mechatronics engineer delivering a defence programme, studied operations and data science, then spent four years in process mining and analytics at IBM.</p>
-      <p class="rise d2">Today I work on enterprise data and AI: getting a large business to agree on its numbers and putting them in front of the people who decide. Outside work I build products of my own, end to end.</p>
+      <p class="rise d2">I'm Shubham. I work on enterprise data and AI: getting a large business to agree on its numbers and putting them in front of the people who decide. Outside work I build products of my own, end to end.</p>
       <div class="row rise d3">
         <a class="btn" href="/#work">See the work</a>
-        <a class="lnk" href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a class="lnk" href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
     <figure class="pop rise d1">
@@ -465,9 +451,9 @@ ABOUT = head('About — Shubham Narang','About Shubham Narang: background, caree
   <div class="mono">Career</div>
   <div>
     <ol class="tl">
-      {tl('2026 — now','Digital Transformation Manager','Mahindra Group · Chandigarh','Enterprise data and AI: unifying 250+ KPIs across ten business functions, C-suite dashboards, and a demand-forecasting pilot.')}
-      {tl('2022 — 2026','Business Analytics Analyst','IBM · Noida','Process mining with Celonis and analytics with Power BI for Fortune 500 clients in manufacturing, retail fuel and aerospace. 15% efficiency gains.')}
-      {tl('2017 — 2019','Sr. Engineer, Data &amp; Delivery','Larsen &amp; Toubro, Defence','Delivery of a ₹50 Cr defence programme with DRDO. Digitised procurement and supplier evaluation, cutting operating cost by 10%.')}
+      {tl('2026 to now','Digital Transformation Manager','Mahindra Group · Chandigarh','Enterprise data platform, C-suite dashboards and ML forecasting.')}
+      {tl('2022 to 2026','Business Analytics Analyst','IBM · Noida','Process mining and analytics for Fortune 500 clients.')}
+      {tl('2017 to 2019','Sr. Engineer, Data &amp; Delivery','Larsen &amp; Toubro, Defence','Defence programme delivery and procurement digitisation.')}
     </ol>
   </div>
 </section>
@@ -476,8 +462,8 @@ ABOUT = head('About — Shubham Narang','About Shubham Narang: background, caree
   <div class="mono">Education</div>
   <div>
     <ol class="tl">
-      {tl('2020 — 2022','MBA, Operations &amp; Data Sciences','NMIMS, Mumbai')}
-      {tl('2013 — 2017','B.Tech, Mechatronics, Robotics &amp; Automation','UPES, Dehradun')}
+      {tl('2020 to 2022','MBA, Operations &amp; Data Sciences','NMIMS, Mumbai')}
+      {tl('2013 to 2017','B.Tech, Mechatronics, Robotics &amp; Automation','UPES, Dehradun')}
     </ol>
   </div>
 </section>
@@ -487,7 +473,7 @@ ABOUT = head('About — Shubham Narang','About Shubham Narang: background, caree
   <div>
     <div class="chips">
       <span class="hot">AI strategy</span><span class="hot">Business transformation</span><span class="hot">Process mining</span>
-      <span>Celonis</span><span>Power BI</span><span>Tableau</span><span>Python · pandas</span><span>SQL</span><span>Streamlit</span>
+      <span class="hot">Power BI</span><span>Celonis</span><span>Tableau</span><span>Python · pandas</span><span>SQL</span><span>Streamlit</span>
     </div>
   </div>
 </section>
