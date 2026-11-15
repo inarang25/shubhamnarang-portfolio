@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProcessPro — case study · Shubham Narang</title>
+<meta name="description" content="ProcessPro is a process-mining tool for procurement: it rebuilds every purchase order from the ERP, checks it against the ideal process, and shows where buying breaks the rules and what it costs.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0F12" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://www.shubhamnarang.in/work/processpro">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/portrait.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shubham Narang">
+<meta property="og:url" content="https://www.shubhamnarang.in/work/processpro">
+<meta property="og:title" content="ProcessPro — case study · Shubham Narang">
+<meta property="og:description" content="ProcessPro is a process-mining tool for procurement: it rebuilds every purchase order from the ERP, checks it against the ideal process, and shows where buying breaks the rules and what it costs.">
+<meta property="og:image" content="https://www.shubhamnarang.in/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.shubhamnarang.in/images/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-head" id="head">
+  <div class="wrap">
+    <a class="name" href="/">Shubham Narang</a>
+    <nav aria-label="Main">
+      <a href="/#work" aria-current="page">Work</a>
+      <a href="/writing">Writing</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="case-head">
+  <div class="wrap">
+    <a class="back" href="/#work">← All work</a>
+    <div class="mono rise" style="margin-top:20px">Case study · Product · Purchase-to-pay, pharma manufacturing</div>
+    <h1 class="rise d1">ProcessPro</h1>
+    <p class="lede rise d2">Every order looked fine. The sequence told the truth. ProcessPro connects to an ERP, rebuilds every purchase order step by step, checks it against the ideal process, and shows where buying breaks the rules and what it costs.</p>
+    <div class="row rise d3">
+      <a class="btn" href="https://p2p-processpro.streamlit.app/" target="_blank" rel="noopener">Open the live app ↗</a>
+      <a class="lnk" href="#findings">Jump to the findings</a>
+    </div>
+    <div class="banner"><i></i>Aravelle Formulations is a fictional company. All data is synthetic, generated for this project.</div>
+  </div>
+</section>
+
+<div class="wrap">
+  <figure class="shot"><a href="/images/processpro/process_explorer.png" target="_blank" rel="noopener"><img src="/images/processpro/process_explorer.webp" width="1440" height="900" alt="ProcessPro process map: 1,208 cases, 122 variants, 77-day median cycle time" loading="lazy"></a><figcaption><b>Process Explorer.</b> The real process, mined from the event log. Dashed red lines are paths the ideal process does not allow.</figcaption></figure>
+  <div class="figs" style="margin-top:40px" aria-label="Headline numbers">
+    <div><b>₹102.2 Cr</b><span>spend analysed · 1,208 purchase orders, FY 2025–26</span></div>
+    <div><b>7,899</b><span>events rebuilt from 23 ERP tables</span></div>
+    <div><b>42%</b><span>of orders broke no business rule</span></div>
+    <div><b>₹3.6 Cr</b><span>lost: paid twice, overcharged, overbilled</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section class="part">
+  <div class="mono">The problem</div>
+  <div>
+    <h2>Every company knows how its buying should work. Very few can see how it actually works.</h2>
+    <p>A purchase order, a goods receipt, an invoice and a payment each look correct on their own. The problems hide in the order they happened in, in who did them, and in how far apart they were. That evidence is spread across thousands of ERP records that no one reads end to end.</p>
+    <p>An invoice dated before the order existed. A batch released from quarantine by the storekeeper instead of Quality. A ₹15 lakh need split into two orders that each stay under the approval limit. None of these show up in a single document.</p>
+    <p class="quote">Every document looked fine on its own. The problems only appear when you line them up in time.</p>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">The company</div>
+  <div>
+    <h2>Aravelle Formulations, a fictional generic-medicines maker near Ahmedabad.</h2>
+    <p>One GMP plant, 40 suppliers, 120 materials and 12 people across purchasing, stores, Quality and accounts. I configured the ERP like an implementation: approval at ₹10 lakh, goods into quarantine, Quality release before payment. Its ideal process has six steps.</p>
+    <ol class="steps">
+      <li><b>Request</b>A department records the need and owns the budget.</li>
+      <li><b>Order</b>A buyer orders from an approved supplier at an agreed price.</li>
+      <li><b>Approval</b>Orders of ₹10 lakh or more need the Purchase Head.</li>
+      <li><b>Into quarantine</b>Goods arrive into a locked area. Nobody may use them yet.</li>
+      <li><b>Quality release + invoice</b>The lab releases the batch. The invoice arrives in parallel.</li>
+      <li><b>Payment</b>Only when the batch is released and the invoice is in.</li>
+    </ol>
+    <p style="margin-top:24px"><strong>What makes pharma different: Quality co-owns purchasing.</strong> Under Good Manufacturing Practice, only the Quality unit decides which supplier may supply which material, and when a batch may be used. Buying from an unapproved supplier or paying before release is a regulatory finding first and a cost problem second.</p>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">The approach</div>
+  <div>
+    <h2>From raw ERP tables to a process, in five stages.</h2>
+    <p>I built every layer myself, the way an implementation team and a process-mining team would split the work.</p>
+    <ol class="steps">
+      <li><b>Build the ERP</b>Approvals, receipt into quarantine, batches with expiry, payment terms and 12 role-based users.<small>Odoo 17 · PostgreSQL · Docker</small></li>
+      <li><b>Run a year of buying</b>A planned year with 14 kinds of mistake planted at known rates, each written to an answer key.<small>Python</small></li>
+      <li><b>Extract</b>SQL over 23 tables turns documents into an event log: case, step, time, person.<small>SQL · CSV · XES</small></li>
+      <li><b>Check</b>An editable process model checks the order of steps. Fourteen business rules check amounts, roles, dates and quality data. Each finding is valued in rupees.<small>PM4Py · pandas</small></li>
+      <li><b>Show</b>A six-page tool: overview, process explorer, conformance, issues, single order and the data behind every number.<small>Streamlit · Graphviz</small></li>
+    </ol>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">The product</div>
+  <div>
+    <h2>What ProcessPro looks like.</h2>
+    <div class="grid2">
+      <figure class="shot"><a href="/images/processpro/overview.png" target="_blank" rel="noopener"><img src="/images/processpro/overview.webp" width="1440" height="900" alt="Purchase-to-pay overview with KPIs and main paths" loading="lazy"></a><figcaption><b>Overview.</b> Headline KPIs and the main paths.</figcaption></figure>
+      <figure class="shot"><a href="/images/processpro/conformance_model.png" target="_blank" rel="noopener"><img src="/images/processpro/conformance_model.webp" width="1440" height="900" alt="Editable ideal process model" loading="lazy"></a><figcaption><b>Conformance.</b> Define the ideal process as a table; every order is replayed against it at once.</figcaption></figure>
+      <figure class="shot"><a href="/images/processpro/issues.png" target="_blank" rel="noopener"><img src="/images/processpro/issues.webp" width="1440" height="900" alt="Issue page: same invoice paid twice, 29 orders, ₹83.4 lakh" loading="lazy"></a><figcaption><b>Issues.</b> Each problem in three sentences, the SAP setting that fixes it, and the orders behind it.</figcaption></figure>
+      <figure class="shot"><a href="/images/processpro/case.png" target="_blank" rel="noopener"><img src="/images/processpro/case.webp" width="1440" height="900" alt="One purchase order timeline by role" loading="lazy"></a><figcaption><b>Case.</b> One order's timeline: who did what, and when.</figcaption></figure>
+    </div>
+    <div style="margin-top:20px"><figure class="shot"><a href="/images/processpro/data_reconciliation.png" target="_blank" rel="noopener"><img src="/images/processpro/data_reconciliation.webp" width="1440" height="900" alt="Source tables and reconciliation" loading="lazy"></a><figcaption><b>Data.</b> 23 source tables with their SAP equivalents, and an eight-point reconciliation against the ERP.</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="part" id="findings">
+  <div class="mono">The findings</div>
+  <div>
+    <h2>₹102.2 crore spent. Only 42% of orders followed every rule.</h2>
+    <p>76.5% of orders follow the ideal order of steps, across 122 distinct paths with a 77-day median cycle time. All amounts are before GST. The planted mistake rates are deliberately higher than a real company's, so every pattern appears within one year; the shape of the findings is what matters.</p>
+    <div class="loss">
+      <div><b class="big">₹3.6 Cr</b><span class="h">Money lost</span><dl>
+        <div><dt>Billed for more than delivered</dt><dd>₹1.05 Cr</dd></div>
+        <div><dt>Unrequested buying (estimated)</dt><dd>₹86 L</dd></div>
+        <div><dt>Same invoice paid twice</dt><dd>₹83 L</dd></div>
+        <div><dt>Charged above the agreed price</dt><dd>₹63 L</dd></div></dl></div>
+      <div><b class="big">₹27.1 Cr</b><span class="h">Spend that skipped a check</span><dl>
+        <div><dt>Large orders never approved</dt><dd>₹11.3 Cr</dd></div>
+        <div><dt>Invoice booked before the goods</dt><dd>₹8.3 Cr</dd></div>
+        <div><dt>Split, late-raised or changed orders</dt><dd>the rest</dd></div></dl></div>
+      <div><b class="big">195</b><span class="h">Quality breaches on 176 orders</span><dl>
+        <div><dt>Delivered close to expiry</dt><dd>68 orders</dd></div>
+        <div><dt>Supplier Quality hadn't approved</dt><dd>45 orders</dd></div>
+        <div><dt>Released by the store, not Quality</dt><dd>41 orders</dd></div></dl></div>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">What I learned</div>
+  <div>
+    <h2>Three insights from the build.</h2>
+    <div class="cards">
+      <div><b>A process map can't see money</b>A ₹69 lakh order with no approval follows a perfectly normal path. That is why ProcessPro pairs the process model with business rules: together they explain why 76.5% conform to the model but only 42% follow every rule.</div>
+      <div><b>Exact-match controls fail on human typing</b>The ERP blocked 12 duplicate invoices and missed 17 that were retyped, <code>INV/25-26/0652</code> against <code>INV-25-26-0652</code>.</div>
+      <div><b>Mistakes cascade</b>An invoice dated before its order starts the due-date clock early, so payment ends up late — with nobody planting it.</div>
+      <div><b>Three fixes close most of it</b>Match the order and delivery before posting an invoice; hold payment on price or quantity differences; let Quality block unapproved suppliers and unreleased batches.</div>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">How I know it's right</div>
+  <div>
+    <h2>In a real company, accuracy means reconciliation.</h2>
+    <p>Because the data is planted, I could grade every rule against the answer key, and check the tool's counts against the ERP itself.</p>
+    <div class="figs" style="grid-template-columns:repeat(2,1fr)">
+      <div><b>13 / 14</b><span>kinds of planted mistake found perfectly. Split orders, the one judgement call: 94%.</span></div>
+      <div><b>8 / 8</b><span>counts reconcile with the ERP: orders, requests, approvals, receipts, releases, returns, invoices and payments.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">For SAP readers</div>
+  <div>
+    <h2>Every object, mapped to SAP.</h2>
+    <div class="scroll"><table class="map">
+      <thead><tr><th>Step</th><th>In Odoo</th><th>In SAP</th></tr></thead>
+      <tbody>
+        <tr><td>Request</td><td>Purchase requisition (custom module)</td><td>EBAN</td></tr>
+        <tr><td>Order</td><td>purchase_order / purchase_order_line</td><td>EKKO / EKPO</td></tr>
+        <tr><td>Approval</td><td>Two-step approval, read from change history</td><td>Release strategy</td></tr>
+        <tr><td>Quality release</td><td>Quarantine → Stock transfer</td><td>QM usage decision</td></tr>
+        <tr><td>Invoice</td><td>Vendor bill</td><td>MIRO · RBKP</td></tr>
+        <tr><td>Change history</td><td>mail_message / mail_tracking_value</td><td>CDHDR / CDPOS</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="mono">What it shows</div>
+  <div>
+    <h2>Five things this project demonstrates.</h2>
+    <div class="cards">
+      <div><b>ERP implementation</b>Configured approvals, quarantine, batches and roles, and mapped every object to SAP.</div>
+      <div><b>Pharma purchasing</b>Quality co-owns the process: approved suppliers per material, release before use, GMP.</div>
+      <div><b>Process mining</b>Event-log design, discovery, conformance and reconciliation.</div>
+      <div><b>Product</b>An interactive tool in a clean corporate style, built for walkthroughs.</div>
+      <div><b>End-to-end ownership</b>From raw database tables to a live product.</div>
+      <div><b>Stack</b>Odoo 17 Community · PostgreSQL · Docker · Python · pandas · PM4Py · Streamlit · Graphviz</div>
+    </div>
+    <div class="row" style="margin-top:28px">
+      <a class="btn" href="https://p2p-processpro.streamlit.app/" target="_blank" rel="noopener">Open the live app ↗</a>
+      <a class="lnk" href="/#work">← All work</a>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="mono">Contact</div>
+    <h2>Got a problem worth seeing clearly?</h2>
+    <div class="row">
+      <button class="btn" type="button" id="copy" data-email="i.shubham25@gmail.com">i.shubham25@gmail.com</button>
+      <a class="lnk" href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="lnk" href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="base"><span>© 2026 Shubham Narang · Chandigarh, India</span><span><a href="/">Work</a> · <a href="/writing">Writing</a> · <a href="/about">About</a></span></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var h=document.getElementById('head');
+  function s(){ h.classList.toggle('scrolled', window.scrollY>8); } s(); window.addEventListener('scroll', s, {passive:true});
+  var c=document.getElementById('copy'); if(!c) return;
+  c.addEventListener('click', function(){
+    var e=c.getAttribute('data-email');
+    function done(){ c.textContent='Copied — talk soon'; setTimeout(function(){ c.textContent=e; }, 2200); }
+    if(navigator.clipboard){ navigator.clipboard.writeText(e).then(done, function(){ location.href='mailto:'+e; }); } else { location.href='mailto:'+e; }
+  });
+})();
+</script>
+</body>
+</html>
