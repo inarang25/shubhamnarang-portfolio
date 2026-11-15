@@ -93,9 +93,6 @@ studies=[
  ('Hospitality revenue &amp; occupancy','Power BI','Revenue, occupancy and realisation by platform, category and season.','Open ↗',PBI+'eyJrIjoiYzY0NmY0Y2ItMTlhYS00NjhlLTg0MzgtMTNkNmVhNGU5OTczIiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9'),
  ('SaaS subscription lifecycle','Power BI','892 users: active rate and resubscription, to inform retention.','Open ↗',PBI+'eyJrIjoiM2IxNjNkOTUtNTAyYS00Yjg0LTg1Y2UtNTVhM2Y3NWUxNGE3IiwidCI6IjJlODViZWY5LWQ0OTktNGY1YS1hN2MxLWZkMGY0ZWNmYWVhNyJ9'),
  ('British Airways reviews','Tableau','20,000+ customer reviews by aircraft type and geography.','Open ↗','https://public.tableau.com/views/BritishAirwaysReviewAnalysis_17263136404000/BritishAirwaysReview'),
- ('Indian EV market','Power BI','State-wise and OEM-wise sales and revenue.','Soon',None),
- ('FMCG service levels','Power BI','On-time, in-full and fill rate by city, customer and product.','Soon',None),
- ('Fuel retail sales &amp; inventory','Power BI','Revenue, litres and inventory across 20 stations.','Soon',None),
 ]
 science=[
  ('Health insurance premium predictor','Python · Streamlit','A supervised model with a small app in front of it.','Try it ↗','https://inarang25-ml-project-premium-prediction.streamlit.app/'),
