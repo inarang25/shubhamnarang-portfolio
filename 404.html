@@ -3,28 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page not found — Shubham Narang</title>
+<title>Page not found | Shubham Narang</title>
+<meta name="description" content="This page does not exist.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0F12" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://www.shubhamnarang.in/404">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/portrait.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shubham Narang">
+<meta property="og:url" content="https://www.shubhamnarang.in/404">
+<meta property="og:title" content="Page not found | Shubham Narang">
+<meta property="og:description" content="This page does not exist.">
+<meta property="og:image" content="https://www.shubhamnarang.in/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.shubhamnarang.in/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-<style>
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F6F7FB;color:#111733;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-align:center;padding:24px;box-sizing:border-box}
-h1{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(80px,16vw,168px);line-height:1;font-variant-numeric:lining-nums}
-p{margin:12px 0 36px;font-size:18px;color:#4A5272}
-nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border:1px solid #26338A;color:#26338A;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s}
-nav a:hover,nav a.primary{background:#26338A;color:#FFFFFF}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
+<header class="site-head" id="head">
+  <div class="wrap">
+    <a class="name" href="/">Shubham Narang</a>
+    <nav aria-label="Main">
+      <a href="/#work">Work</a>
+      <a href="/writing">Writing</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<h1>404</h1>
-<p>This page doesn't exist — yet.</p>
-<nav>
-<a class="primary" href="/">Executive view</a>
-<a href="/builder">Builder view</a>
-</nav>
+<section class="page-head" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="mono">404</div>
+    <h1>This page doesn't exist yet.</h1>
+    <div class="row" style="margin-top:28px"><a class="btn" href="/">Go to Work</a><a class="lnk" href="/writing">Writing</a><a class="lnk" href="/about">About</a></div>
+  </div>
+</section>
 </main>
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="mono">Contact</div>
+    <h2>Got a problem worth seeing clearly?</h2>
+    <div class="row">
+      <button class="btn" type="button" id="copy" data-email="i.shubham25@gmail.com">i.shubham25@gmail.com</button>
+      <a class="lnk" href="https://www.linkedin.com/in/shubhamnarang25" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="lnk" href="https://github.com/inarang25" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="base"><span>© 2026 Shubham Narang</span><span><a href="/">Work</a> · <a href="/writing">Writing</a> · <a href="/about">About</a></span></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var h=document.getElementById('head');
+  function s(){ h.classList.toggle('scrolled', window.scrollY>8); } s(); window.addEventListener('scroll', s, {passive:true});
+  var c=document.getElementById('copy'); if(!c) return;
+  c.addEventListener('click', function(){
+    var e=c.getAttribute('data-email');
+    function done(){ c.textContent='Copied. Talk soon.'; setTimeout(function(){ c.textContent=e; }, 2200); }
+    if(navigator.clipboard){ navigator.clipboard.writeText(e).then(done, function(){ location.href='mailto:'+e; }); } else { location.href='mailto:'+e; }
+  });
+})();
+</script>
 </body>
 </html>
