@@ -15,7 +15,7 @@ Both views share one header: name, section links (Work · Career · Lab · Conta
 ### Information structure (both views, same order and facts)
 
 1. **Intro** — name, one-line positioning, four highlight figures (250+ KPIs, 15% at IBM, ₹50 Cr and 10% cost cut at L&T). demand.ai is a pilot, so its accuracy figure is not featured.
-2. **Work** — Project Vihan & the demand.ai pilot (Mahindra), then nurchur.in (independent).
+2. **Work** — Project Vihan & the demand.ai pilot (Mahindra), nurchur.in (independent), then ProcessPro (independent; fictional company, synthetic data, no employer named, private repo not linked).
 3. **Career** — roles and education, newest first, plus certifications.
 4. **Lab** — the same eleven capstone studies, labelled as work in progress.
 5. **Contact** — click-to-copy email, LinkedIn, GitHub; writing announced as coming soon.
@@ -26,7 +26,7 @@ Inspired by sebg.ch. The page is a scroll-told story with a guide:
 - **The guide** — a small bobblehead of the real pop-art portrait (head slightly enlarged, in its own layer). It stands at the bottom of the screen, walks to the left or right edge with each beat, bobbles its head while idle and walking, and wiggles when clicked. Images: `images/tour/mascot-body.webp`, `mascot-head.webp`, `mascot.webp` (composite used as the morph target).
 - **Hero portrait → mascot** — the photo portrait is drawn as a fine dot matrix inside a jaali-filled arch. As you scroll, the same dots fly to the guide's spot and take on the mascot's colours, then the crisp mascot takes over (reverses when scrolling up). The dot targets are sampled from the same mascot image the guide shows, so the dots land exactly on it.
 - **Narration** — a high-contrast speech bubble travels with the guide and changes with each "beat"; on phones it steps aside after a few seconds.
-- **Chapter colours** — the page shifts between four moods: light (intro, career, lab), deep (Mahindra), soft (nurchur.in) and night (contact).
+- **Chapter colours** — the page shifts between four moods: light (intro, career, lab), deep (Mahindra, ProcessPro), soft (nurchur.in) and night (contact).
 - **Beat visuals** — a KPI matrix of ten functions lighting up; ten functions converging onto one platform; an illustrative forecast line for the demand.ai pilot; nurchur.in in three phone mockups; the stack as a pipeline; the Lab as a thumbnail grid.
 - On phones the guide sits at the top and the story flows normally. Reduced-motion settings turn the animation off.
 

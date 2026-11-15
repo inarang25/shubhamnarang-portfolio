@@ -92,7 +92,7 @@
   .morph{position:fixed;inset:0;width:100vw;height:100vh;z-index:25;pointer-events:none}
 
   /* story */
-  .chapter{position:relative;border-top:1px solid var(--rule)}
+  .chapter{position:relative;border-top:1px solid var(--rule);overflow-x:clip}
   .beat{min-height:76vh;display:grid;grid-template-columns:1fr 1fr;gap:40px 64px;align-items:center;padding:72px 0;opacity:.2;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
   .beat.solo{grid-template-columns:1fr}
   .beat.on,.beat.seen{opacity:1;transform:none}
@@ -126,6 +126,28 @@
   .pipe i{font-style:normal;color:var(--accent)}
   .pipe .own{border-color:var(--line)}
 
+
+  /* ProcessPro: screenshots in a browser frame, figures, quote, gallery */
+  .shot{margin:0;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.45);transform:translateY(14px);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+  .beat.on .shot,.beat.seen .shot{transform:none}
+  .shot .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#EEF0F5;border-bottom:1px solid #DADFEC}
+  .shot .bar i{width:9px;height:9px;border-radius:50%;background:#C9CEDC}
+  .shot .bar span{margin-left:10px;font-size:11px;color:#4A5272;letter-spacing:.02em}
+  .shot img{width:100%;height:auto}
+  .shot figcaption,.gal figcaption{padding:8px 12px;font-size:12px;color:#4A5272;background:#fff;border-top:1px solid #E6E9F2}
+  .ppfigs{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--rule)}
+  .ppfigs div{padding:18px 18px 18px 0;border-bottom:1px solid var(--rule)}
+  .ppfigs b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(34px,3vw,44px);line-height:1;font-variant-numeric:lining-nums}
+  .ppfigs span{display:block;margin-top:6px;font-size:13px;line-height:1.4;color:var(--muted)}
+  .quote{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(24px,2.3vw,32px);line-height:1.25;color:var(--fg)}
+  .quote::before{content:"\201C";display:block;font-size:64px;line-height:.6;color:var(--accent);font-style:normal}
+  .gal{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .gal a{display:block;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:#fff;transition:transform .3s ease,box-shadow .3s ease}
+  .gal a:hover{transform:translateY(-3px);box-shadow:0 18px 36px -20px rgba(0,0,0,.45)}
+  .gal img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left}
+  .shows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:14px}
+  .shows li{border-top:1px solid var(--rule);padding-top:12px;font-size:14px;line-height:1.45;color:var(--muted)}
+  .shows b{display:block;margin-bottom:4px;font-size:15px;color:var(--fg)}
   .path{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
   .path li{display:grid;grid-template-columns:130px 1fr;gap:4px 28px;padding:18px 0;border-bottom:1px solid var(--rule)}
   .path .when{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -192,9 +214,12 @@
     .bubble{bottom:106px;max-width:220px;font-size:14px;padding:10px 13px}
   }
   @media (max-width:560px){
+    .ppfigs,.gal{grid-template-columns:1fr}
     .path li{grid-template-columns:1fr}
     .phones{height:400px}
     .phone{width:44%;left:28%}
+    .beat.on .phone.p2,.beat.seen .phone.p2{transform:translateX(-58%) rotate(-6deg)}
+    .beat.on .phone.p3,.beat.seen .phone.p3{transform:translateX(58%) rotate(6deg)}
   }
 </style>
 </head>
@@ -408,6 +433,75 @@
           <span>Lovable</span><i>→</i><span class="own">GitHub</span><i>→</i><span class="own">Vercel</span><i>+</i><span class="own">Supabase</span><i>+</i><span class="own">Razorpay</span>
         </div>
         <div class="row"><a class="btn" href="https://nurchur.in" target="_blank" rel="noopener">Visit nurchur.in ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter jaali" data-theme="deep" id="processpro">
+  <div class="wrap">
+    <div class="beat" data-say="Next, a tool I built to see how <b>buying really works</b>." data-pos="left">
+      <div class="txt">
+        <div class="label">Chapter three · Independent</div>
+        <h2 class="serif">ProcessPro</h2>
+        <p class="say">A process-mining tool for procurement. It rebuilds every purchase order step by step, checks it against the ideal process, and shows where buying breaks the rules — and <em>what it costs</em>.</p>
+        <div class="row"><a class="btn" href="https://p2p-processpro.streamlit.app/" target="_blank" rel="noopener">Open the live app ↗</a></div>
+      </div>
+      <figure class="shot">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>ProcessPro · Process Explorer</span></div>
+        <img src="images/processpro/process_explorer.webp" width="1440" height="900" alt="ProcessPro process map: 1,208 purchase orders, 122 variants, 77-day median cycle time, with paths from request raised to order placed, goods received, quality release and put away" loading="lazy">
+        <figcaption>The process map: every path 1,208 purchase orders actually took.</figcaption>
+      </figure>
+    </div>
+    <div class="beat" data-say="The company is fictional — <b>every record is synthetic</b>." data-pos="right">
+      <div class="txt">
+        <p class="say">Every company knows how its buying <em>should</em> work. Very few can see how it actually works.</p>
+        <p class="body">The evidence is spread across thousands of ERP records, and each document looks fine on its own. So I set up a real ERP — Odoo 17 Community on PostgreSQL — for Aravelle Formulations, a fictional Indian generic-medicines maker, configured like an implementation: approval at ₹10 lakh, goods into quarantine, Quality release before payment, 12 users in their roles. Then I ran a full year of purchasing through it with 14 kinds of mistake planted at known rates, and built the tool that finds them.</p>
+        <p class="note">Aravelle Formulations is fictional and all data is synthetic.</p>
+      </div>
+      <div class="txt">
+        <div class="label">Five stages</div>
+        <div class="pipe" aria-label="Five stages: build the ERP, fill it with a year of purchasing, extract, check, show">
+          <span class="own">Build the ERP</span><i>→</i><span class="own">Fill a year of purchasing</span><i>→</i><span class="own">Extract · SQL over 23 tables</span><i>→</i><span class="own">Check · process model + 14 rules + ₹ impact</span><i>→</i><span class="own">Show · interactive app</span>
+        </div>
+        <p class="note">Odoo 17 Community · PostgreSQL · Docker · Python · pandas · PM4Py · Streamlit · Graphviz</p>
+      </div>
+    </div>
+    <div class="beat" data-say="Every document looked fine on its own. <b>The problems appear in time.</b>" data-pos="left">
+      <div class="txt">
+        <p class="say">Only <em>42%</em> of orders broke no business rule.</p>
+        <div class="ppfigs">
+          <div><b>1,208</b><span>purchase orders · ₹102.2 Cr spend, FY 2025–26</span></div>
+          <div><b>76.5%</b><span>follow the ideal order of steps</span></div>
+          <div><b>₹3.6 Cr</b><span>lost: duplicate invoices, overcharges, over-billing, unrequested buying</span></div>
+          <div><b>₹27.1 Cr</b><span>of spend skipped a check · 195 quality breaches on 176 orders</span></div>
+        </div>
+        <p class="note">7,899 events from 23 ERP tables · 122 paths through a six-step process · 77-day median cycle time. All money before GST.</p>
+      </div>
+      <figure class="shot">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>ProcessPro · Issues</span></div>
+        <img src="images/processpro/issues.webp" width="1440" height="900" alt="ProcessPro issues page: same invoice paid twice, 29 orders, ₹83.4 lakh lost, with the orders and evidence listed" loading="lazy">
+        <figcaption>One of fourteen issues, with the orders and the evidence behind it.</figcaption>
+      </figure>
+    </div>
+    <div class="beat" data-say="And it checks itself: <b>8 of 8</b> counts reconcile with the ERP." data-pos="right">
+      <div class="txt">
+        <p class="say">It found <em>13 of the 14</em> planted mistakes perfectly — split orders at 94% — and its counts reconcile 8 out of 8 with the ERP.</p>
+        <p class="quote">A process map can't see money: a ₹69 lakh order with no approval follows a perfectly normal path.</p>
+        <ul class="shows" aria-label="What this project shows">
+          <li><b>ERP implementation</b>Approvals, quarantine, batches and roles, mapped to SAP (EKKO/EKPO, MIRO/RBKP, QM usage decision).</li>
+          <li><b>Pharma purchasing</b>Quality co-owns the process: approved suppliers, release before use, GMP.</li>
+          <li><b>Process mining</b>Event-log design, discovery, conformance and reconciliation.</li>
+          <li><b>Product</b>An interactive tool built for walkthroughs.</li>
+          <li><b>End to end</b>From raw database tables to a live product.</li>
+        </ul>
+        <div class="row"><a class="btn" href="https://p2p-processpro.streamlit.app/" target="_blank" rel="noopener">Open the live app ↗</a></div>
+      </div>
+      <div class="gal" aria-label="More ProcessPro screens">
+        <figure style="margin:0"><a href="images/processpro/overview.png" target="_blank" rel="noopener"><img src="images/processpro/overview.webp" width="1440" height="900" alt="Purchase-to-pay overview with headline KPIs and main paths" loading="lazy"><figcaption>KPI overview</figcaption></a></figure>
+        <figure style="margin:0"><a href="images/processpro/conformance_model.png" target="_blank" rel="noopener"><img src="images/processpro/conformance_model.webp" width="1440" height="900" alt="Editable ideal process model used for conformance checking" loading="lazy"><figcaption>Editable ideal process</figcaption></a></figure>
+        <figure style="margin:0"><a href="images/processpro/case.png" target="_blank" rel="noopener"><img src="images/processpro/case.webp" width="1440" height="900" alt="One purchase order's timeline showing who did what" loading="lazy"><figcaption>One order's timeline</figcaption></a></figure>
+        <figure style="margin:0"><a href="images/processpro/data_reconciliation.png" target="_blank" rel="noopener"><img src="images/processpro/data_reconciliation.webp" width="1440" height="900" alt="Source tables with their SAP equivalents and reconciliation against the ERP" loading="lazy"><figcaption>Source tables &amp; reconciliation</figcaption></a></figure>
       </div>
     </div>
   </div>
