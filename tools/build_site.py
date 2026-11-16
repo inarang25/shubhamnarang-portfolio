@@ -76,9 +76,11 @@ FOOT='''<footer class="site-foot" id="contact">
 </html>
 '''
 
-def item(t, sub, d, m, msub='', href=None):
-    inner=f'<span class="t">{t}'+(f'<small>{sub}</small>' if sub else '')+f'</span><span class="d">{d}</span><span class="m">{m}'+(f'<small>{msub}</small>' if msub else '')+'</span>'
-    if href: return f'      <li><a class="item" href="{html.escape(href)}" target="_blank" rel="noopener">{inner}</a></li>'
+def item(t, sub, d, m, msub='', href=None, thumb=None):
+    th=f'<img class="th" src="/images/thumbs/{thumb}.webp" width="352" height="220" alt="" loading="lazy">' if thumb else ''
+    inner=th+f'<span class="t">{t}'+(f'<small>{sub}</small>' if sub else '')+f'</span><span class="d">{d}</span><span class="m">{m}'+(f'<small>{msub}</small>' if msub else '')+'</span>'
+    cls='item has-th' if thumb else 'item'
+    if href: return f'      <li><a class="{cls}" href="{html.escape(href)}" target="_blank" rel="noopener">{inner}</a></li>'
     return f'      <li><div class="item">{inner}</div></li>'
 
 PBI='https://app.powerbi.com/view?r='
@@ -102,7 +104,8 @@ science=[
 ]
 
 def ent_rows(): return '\n'.join(item(t,s,d,m,ms) for t,s,d,m,ms in enterprise)
-def link_rows(L): return '\n'.join(item(t,s,d,m,'',href) if href else item(t,s,d,'',m) for t,s,d,m,href in L)
+THUMBS={'Electronics demand forecast':'electronics','Hospitality revenue &amp; occupancy':'hospitality','SaaS subscription lifecycle':'software-sales','British Airways reviews':'british-airways'}
+def link_rows(L): return '\n'.join(item(t,s,d,m,'',href,THUMBS.get(t)) if href else item(t,s,d,'',m) for t,s,d,m,href in L)
 
 INDEX = head('Shubham Narang | Data, AI and products','Shubham Narang, Digital Transformation Manager. Enterprise data and AI strategy, process mining, and products built end to end.','/') + header('work') + f'''
 <main>
